@@ -295,192 +295,77 @@
       <div id="username">
         <h3>Yash Ramana</h3>
         <h5>Grade 7 Diamond</h5>
-        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+        <div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
       </div>
     </div>
   </div>
+
+  <script src="js/canvasjs.min.js"></script>
   <script>
     var Total = 0;
     var score = 450;
     /*API WHICH DRAWS GRAPH FOR PERFORMANCE*/
-    window.onload = function() {
-
-      var options = {
-        animationEnabled: true,
-        theme: "light2",
-        title: {
-          text: "Actual vs Projected Sales"
-        },
-        axisX: {
-          valueFormatString: "DD MMM"
-        },
-        axisY: {
-          title: "Number of Sales",
-          suffix: "K",
-          minimum: 30
-        },
-        toolTip: {
-          shared: true
-        },
-        legend: {
-          cursor: "pointer",
-          verticalAlign: "bottom",
-          horizontalAlign: "left",
-          dockInsidePlotArea: true,
-          itemclick: toogleDataSeries
-        },
-        data: [{
-            type: "line",
-            showInLegend: true,
-            name: "Projected Sales",
-            markerType: "square",
-            xValueFormatString: "DD MMM, YYYY",
-            color: "#F08080",
-            yValueFormatString: "#,##0K",
-            dataPoints: [{
-                x: new Date(2017, 10, 1),
-                y: 63
-              },
-              {
-                x: new Date(2017, 10, 2),
-                y: 69
-              },
-              {
-                x: new Date(2017, 10, 3),
-                y: 65
-              },
-              {
-                x: new Date(2017, 10, 4),
-                y: 70
-              },
-              {
-                x: new Date(2017, 10, 5),
-                y: 71
-              },
-              {
-                x: new Date(2017, 10, 6),
-                y: 65
-              },
-              {
-                x: new Date(2017, 10, 7),
-                y: 73
-              },
-              {
-                x: new Date(2017, 10, 8),
-                y: 96
-              },
-              {
-                x: new Date(2017, 10, 9),
-                y: 84
-              },
-              {
-                x: new Date(2017, 10, 10),
-                y: 85
-              },
-              {
-                x: new Date(2017, 10, 11),
-                y: 86
-              },
-              {
-                x: new Date(2017, 10, 12),
-                y: 94
-              },
-              {
-                x: new Date(2017, 10, 13),
-                y: 97
-              },
-              {
-                x: new Date(2017, 10, 14),
-                y: 86
-              },
-              {
-                x: new Date(2017, 10, 15),
-                y: 89
-              }
-            ]
+    $(document).ready(function() {
+      $("#profile").click(function() {
+        var chart = new CanvasJS.Chart("chartContainer", {
+          animationEnabled: true,
+          theme: "light2",
+          title: {
+            text: "Simple Line Chart"
           },
-          {
+          axisY: {
+            includeZero: false
+          },
+          data: [{
             type: "line",
-            showInLegend: true,
-            name: "Actual Sales",
-            lineDashType: "dash",
-            yValueFormatString: "#,##0K",
             dataPoints: [{
-                x: new Date(2017, 10, 1),
-                y: 60
+                y: 450
               },
               {
-                x: new Date(2017, 10, 2),
-                y: 57
+                y: 414
               },
               {
-                x: new Date(2017, 10, 3),
-                y: 51
+                y: 520,
+                indexLabel: "highest",
+                markerColor: "red",
+                markerType: "triangle"
               },
               {
-                x: new Date(2017, 10, 4),
-                y: 56
+                y: 460
               },
               {
-                x: new Date(2017, 10, 5),
-                y: 54
+                y: 450
               },
               {
-                x: new Date(2017, 10, 6),
-                y: 55
+                y: 500
               },
               {
-                x: new Date(2017, 10, 7),
-                y: 54
+                y: 480
               },
               {
-                x: new Date(2017, 10, 8),
-                y: 69
+                y: 480
               },
               {
-                x: new Date(2017, 10, 9),
-                y: 65
+                y: 410,
+                indexLabel: "lowest",
+                markerColor: "DarkSlateGrey",
+                markerType: "cross"
               },
               {
-                x: new Date(2017, 10, 10),
-                y: 66
+                y: 500
               },
               {
-                x: new Date(2017, 10, 11),
-                y: 63
+                y: 480
               },
               {
-                x: new Date(2017, 10, 12),
-                y: 67
-              },
-              {
-                x: new Date(2017, 10, 13),
-                y: 66
-              },
-              {
-                x: new Date(2017, 10, 14),
-                y: 56
-              },
-              {
-                x: new Date(2017, 10, 15),
-                y: 64
+                y: 510
               }
             ]
-          }
-        ]
-      };
-      $("#chartContainer").CanvasJSChart(options);
-
-      function toogleDataSeries(e) {
-        if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-          e.dataSeries.visible = false;
-        } else {
-          e.dataSeries.visible = true;
-        }
-        e.chart.render();
-      }
-
-    }
+          }]
+        });
+        chart.render();
+      })
+    });
     /* QUESTION ANALYSIS */
     $(document).ready(function() {
       $("#submit").click(function() {
