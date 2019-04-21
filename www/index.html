@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Simple Calculator</title>
+  <link rel="stylesheet" href="js/jquery.mobile-1.4.5.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.mobile-1.4.5.js"></script>
+  <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+  <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+  <style>
+    #questionsheader {
+      background-color: #5961cc;
+      color: white;
+      font-weight: 50px;
+      border: none;
+    }
+
+    #questionsmain {
+      width: inherit;
+      height: auto;
+    }
+
+    #questionsmain {
+      width: 400px;
+    }
+
+    #smalllogo1 {
+      width: 7%;
+    }
+
+    #submit {
+      background-color: green;
+      color: white;
+      font-weight: lighter;
+    }
+
+    #clear {
+      background-color: red;
+      color: white;
+      font-weight: lighter;
+    }
+
+    #user {
+      width: 50%;
+      margin-left: 100px;
+      margin-right: 100px;
+      margin-top: 50px;
+    }
+
+    #username {
+      width: inherit;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    #chart_div {
+      width: inherit;
+      margin-top: 10px;
+    }
+
+    /**Sticks the footer to the bottom of the page */
+    [data-role=page] {
+      height: 100% !important;
+      position: relative !important;
+    }
+
+    [data-role=footer] {
+      bottom: 0;
+      position: absolute !important;
+      top: auto !important;
+      width: 100%;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- QUESTION PAGE -->
+  <div data-role="page" id="question">
+    <div data-role="header" id="questionsheader">
+      <img id="smalllogo1" src="img/file.png" class="ui-btn-left" />
+      <h3>English Learning</h3>
+    </div>
+    <!-- This is the navbar -->
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#home" data-icon="home">Home</a></li>
+        <li><a href="#question" data-icon="comment" class="ui-btn-active">Assessment</a></li>
+        <li><a href="#profile" data-icon="user">Profile</a></li>
+      </ul>
+    </div>
+    <div id="questionsmain" data-role="main" class="ui-content">
+      <form>
+        <fieldset data-role="controlgroup" id="1">
+          <h4>1) I haven`t got ......</h4>
+          <label><input name="radio" id="r11" type="radio" value="good" checked="checked"> A. no brothers or sisters </label>
+          <label><input name="radio" id="r12" type="radio" value="bad"> B. brothers or sisters </label>
+          <label><input name="radio" id="r13" type="radio" value="bad"> C. any brothers or sisters </label>
+          <label><input name="radio" id="r14" type="radio" value="bad">D. some brothers and sisters</label>
+        </fieldset>
+      </form>
+      <form>
+        <div data-role="controlgroup" id="2">
+          <h4>2) Every year,he goes to the coast for his holidays .... </h4>
+          <label><input name="radio" id="r15" type="radio" value="good" checked="checked"> A. in train</label>
+          <label><input name="radio" id="r16" type="radio" value="bad"> B. on train</label>
+          <label><input name="radio" id="r17" type="radio" value="bad"> C. by train</label>
+          <label><input name="radio" id="r18" type="radio" value="bad">D. with train</label>
+        </div>
+      </form>
+
+      <form>
+        <div data-role="controlgroup" id="3">
+          <h4>3) There is .......... of beer left from the party </h4>
+          <label><input name="radio" id="r19" type="radio" value="good" checked="checked"> A. little</label>
+          <label><input name="radio" id="r20" type="radio" value="bad"> B. much</label>
+          <label><input name="radio" id="r21" type="radio" value="bad"> C. a lot</label>
+          <label><input name="radio" id="r22" type="radio" value="bad">D. Too</label>
+        </div>
+      </form>
+      <form>
+        <div data-role="controlgroup" id="4">
+          <h4>4) She......Supper with us last Friday </h4>
+          <label><input name="radio" id="r23" type="radio" value="good" checked="checked"> A. hadn`t</label>
+          <label><input name="radio" id="r24" type="radio" value="bad"> B. no had</label>
+          <label><input name="radio" id="r25" type="radio" value="bad"> C. didn`t have</label>
+          <label><input name="radio" id="r26" type="radio" value="bad">D. didnt`t have</label>
+        </div>
+      </form>
+
+      <form>
+        <div data-role="controlgroup" id="5">
+          <h4>5) The door can`t be broken! he ........</h4>
+          <label><input name="radio" id="r27" type="radio" value="good" checked="checked"> A. is just fixed it.</label>
+          <label><input name="radio" id="r28" type="radio" value="bad"> B. have just fixed it.</label>
+          <label><input name="radio" id="r29" type="radio" value="bad"> C. just fix it.</label>
+          <label><input name="radio" id="r30" type="radio" value="bad">D. has just fixed it.</label>
+        </div>
+      </form>
+      <form>
+        <div data-role="controlgroup" id="6">
+          <h4>6) ..... have you been going out with him?Only a few months.</h4>
+          <label><input name="radio" id="31" type="radio" value="good" checked="checked"> A. How long</label>
+          <label><input name="radio" id="r32" type="radio" value="bad"> B. How long time.</label>
+          <label><input name="radio" id="r33" type="radio" value="bad"> C. What time</label>
+          <label><input name="radio" id="r34" type="radio" value="bad">D. For how long</label>
+        </div>
+      </form>
+      <form>
+        <div data-role="controlgroup" id=7"">
+          <h4>7) Don`t start ..... to me about it.You know I don't care.</h4>
+          <label><input name="radio" id="r35" type="radio" value="good" checked="checked"> A. to complaining</label>
+          <label><input name="radio" id="r36" type="radio" value="bad"> B. complaining</label>
+          <label><input name="radio" id="r37" type="radio" value="bad"> C. complain</label>
+          <label><input name="radio" id="r38" type="radio" value="bad">D. in complain</label>
+        </div>
+      </form>
+      <form>
+        <div data-role="controlgroup" id="8">
+          <h4>8) Choose the correct sentence:</h4>
+          <label><input name="radio" id="r39" type="radio" value="good" checked="checked">A. Give the Sarah book </label>
+          <label><input name="radio" id="r40" type="radio" value="bad"> B. Give the book to Sarah.</label>
+          <label><input name="radio" id="r41" type="radio" value="bad"> C. Give to Sarah the book.</label>
+          <label><input name="radio" id="r42" type="radio" value="bad">D. Give the book at Sarah.</label>
+        </div>
+      </form>
+      <form>
+        <div data-role="controlgroup" id="9">
+          <h4>9) We have to go to the supermarket ..... some bread and milk.</h4>
+          <label><input name="radio" id="r43" type="radio" value="good" checked="checked">A. for getting</label>
+          <label><input name="radio" id="r44" type="radio" value="bad"> B. to get</label>
+          <label><input name="radio" id="r45" type="radio" value="bad"> C. to getting</label>
+          <label><input name="radio" id="r46" type="radio" value="bad">D. for to get</label>
+        </div>
+      </form>
+      <form>
+        <div data-role="controlgroup" id="10">
+          <h4>10) They weren`t invited to the party, and nor .... I. </h4>
+          <label><input name="radio" id="r47" type="radio" value="good" checked="checked">A. weren`t</label>
+          <label><input name="radio" id="r48" type="radio" value="bad"> B. was</label>
+          <label><input name="radio" id="r49" type="radio" value="bad"> C. were</label>
+          <label><input name="radio" id="r50" type="radio" value="bad">D. wasn`t</label>
+        </div>
+      </form>
+      <form>
+        <div data-role="controlgroup" id="11">
+          <h4>11) The party was a disaster. There ..... there! </h4>
+          <label><input name="radio" id="r51" type="radio" value="good" checked="checked">A. wasn`t nobody </label>
+          <label><input name="radio" id="r52" type="radio" value="bad"> B. was anybody</label>
+          <label><input name="radio" id="r53" type="radio" value="bad"> C. was nobody</label>
+          <label><input name="radio" id="r54" type="radio" value="bad">D. was somebody</label>
+        </div>
+      </form>
+      <form>
+        <div data-role="controlgroup" id="12">
+          <h4>12) His wedding is the ..... of my problems! What about my car bills? </h4>
+          <label><input name="radio" id="r55" type="radio" value="good" checked="checked">A. fewer</label>
+          <label><input name="radio" id="r56" type="radio" value="bad"> B. less</label>
+          <label><input name="radio" id="r57" type="radio" value="bad"> C. last</label>
+          <label><input name="radio" id="r58" type="radio" value="bad">D. least</label>
+        </div>
+      </form>
+      <form>
+        <div data-role="controlgroup" id="13">
+          <h4>13) Let`s go for a walk in the mountains, .......</h4>
+          <label><input name="radio" id="r59" type="radio" value="good" checked="checked">A. don`t we?</label>
+          <label><input name="radio" id="r60" type="radio" value="bad"> B. let us?</label>
+          <label><input name="radio" id="r61" type="radio" value="bad"> C. shall we?</label>
+          <label><input name="radio" id="r62" type="radio" value="bad">D. will we?</label>
+        </div>
+      </form>
+      <form>
+        <div data-role="controlgroup" id="14">
+          <h4>14) I can't say for sure, but I think she......back to Mexico. </h4>
+          <label><input name="radio" id="r63" type="radio" value="good" checked="checked">A. may gone</label>
+          <label><input name="radio" id="r64" type="radio" value="bad"> B. might gone</label>
+          <label><input name="radio" id="r65" type="radio" value="bad"> C. should to go</label>
+          <label><input name="radio" id="r66" type="radio" value="bad">D. may have gone</label>
+        </div>
+      </form>
+      <form>
+        <div data-role="controlgroup" id="15">
+          <h4>15) The Chairman is ill and we`ll have to ....... the meeting for a few days.</h4>
+          <label><input name="radio" id="r64" type="radio" value="bad" checked="checked">A. put on</label>
+          <label><input name="radio" id="r65" type="radio" value="good"> B. put off</label>
+          <label><input name="radio" id="r66" type="radio" value="bad"> C. put away</label>
+          <label><input name="radio" id="r67" type="radio" value="bad">D. put of</label>
+        </div>
+      </form>
+      <form>
+        <div data-role="controlgroup" id="16">
+          <h4>16) The cat and the dog have a ........... enemy in the rat.</h4>
+          <label><input name="radio" id="r68" type="radio" value="bad" checked="checked">A. same</label>
+          <label><input name="radio" id="r69" type="radio" value="good"> B. common</label>
+          <label><input name="radio" id="r70" type="radio" value="bad"> C. mutual</label>
+          <label><input name="radio" id="r71" type="radio" value="bad">D. similar</label>
+        </div>
+      </form>
+      <form>
+        <div data-role="controlgroup" id="17">
+          <h4>17) He is very good ...... making stories.</h4>
+          <label><input name="radio" id="r72" type="radio" value="bad" checked="checked">A. in</label>
+          <label><input name="radio" id="r73" type="radio" value="bad"> B. about</label>
+          <label><input name="radio" id="r74" type="radio" value="good"> C. at</label>
+          <label><input name="radio" id="r75" type="radio" value="bad">D. for</label>
+        </div>
+      </form>
+      <form>
+        <div data-role="controlgroup" id="18">
+          <h4>18) I do my work ...... carefully to make mistakes.</h4>
+          <label><input name="radio" id="r76" type="radio" value="bad" checked="checked">A. so</label>
+          <label><input name="radio" id="r77" type="radio" value="bad"> B. very</label>
+          <label><input name="radio" id="r78" type="radio" value="good"> C. too</label>
+          <label><input name="radio" id="r79" type="radio" value="bad">D. much</label>
+        </div>
+      </form>
+      <form>
+        <div data-role="controlgroup" id="19">
+          <h4>19) The antonym of Plausible </h4>
+          <label><input name="radio" id="r80" type="radio" value="bad" checked="checked">A. inplausible</label>
+          <label><input name="radio" id="r81" type="radio" value="bad"> B. unplausible</label>
+          <label><input name="radio" id="r82" type="radio" value="good"> C. implausible</label>
+          <label><input name="radio" id="r83" type="radio" value="bad">D. displausible</label>
+        </div>
+      </form>
+      <div class="ui-grid-a">
+        <div class="ui-block-a"><button type="button" id="submit">Submit</button></div>
+        <div class="ui-block-b"><button type="button" id="clear" data-icon="delete">cancel</button></div>
+      </div>
+    </div>
+    <div data-role="footer" id="questionsfooter">
+    </div>
+  </div>
+  <!-- STUDENT PROFILE -->
+  <div data-role="page" id="profile">
+    <div data-role="header" id="questionsheader">
+      <img id="smalllogo1" src="img/file.png" class="ui-btn-left" />
+      <h3>English Learning</h3>
+    </div>
+    <!-- This is the navbar -->
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#home" data-icon="home">Home</a></li>
+        <li><a href="#question" data-icon="comment" class="ui-btn-active">Assessment</a></li>
+        <li><a href="#profile" data-icon="user">Profile</a></li>
+      </ul>
+    </div>
+    <div data-role="main" class="ui-content">
+      <div>
+        <img id="user" src="img/user.png">
+      </div>
+      <div id="username">
+        <h3>Yash Ramana</h3>
+        <h5>Grade 7 Diamond</h5>
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var Total = 0;
+    var score = 450;
+    /*API WHICH DRAWS GRAPH FOR PERFORMANCE*/
+    window.onload = function() {
+
+      var options = {
+        animationEnabled: true,
+        theme: "light2",
+        title: {
+          text: "Actual vs Projected Sales"
+        },
+        axisX: {
+          valueFormatString: "DD MMM"
+        },
+        axisY: {
+          title: "Number of Sales",
+          suffix: "K",
+          minimum: 30
+        },
+        toolTip: {
+          shared: true
+        },
+        legend: {
+          cursor: "pointer",
+          verticalAlign: "bottom",
+          horizontalAlign: "left",
+          dockInsidePlotArea: true,
+          itemclick: toogleDataSeries
+        },
+        data: [{
+            type: "line",
+            showInLegend: true,
+            name: "Projected Sales",
+            markerType: "square",
+            xValueFormatString: "DD MMM, YYYY",
+            color: "#F08080",
+            yValueFormatString: "#,##0K",
+            dataPoints: [{
+                x: new Date(2017, 10, 1),
+                y: 63
+              },
+              {
+                x: new Date(2017, 10, 2),
+                y: 69
+              },
+              {
+                x: new Date(2017, 10, 3),
+                y: 65
+              },
+              {
+                x: new Date(2017, 10, 4),
+                y: 70
+              },
+              {
+                x: new Date(2017, 10, 5),
+                y: 71
+              },
+              {
+                x: new Date(2017, 10, 6),
+                y: 65
+              },
+              {
+                x: new Date(2017, 10, 7),
+                y: 73
+              },
+              {
+                x: new Date(2017, 10, 8),
+                y: 96
+              },
+              {
+                x: new Date(2017, 10, 9),
+                y: 84
+              },
+              {
+                x: new Date(2017, 10, 10),
+                y: 85
+              },
+              {
+                x: new Date(2017, 10, 11),
+                y: 86
+              },
+              {
+                x: new Date(2017, 10, 12),
+                y: 94
+              },
+              {
+                x: new Date(2017, 10, 13),
+                y: 97
+              },
+              {
+                x: new Date(2017, 10, 14),
+                y: 86
+              },
+              {
+                x: new Date(2017, 10, 15),
+                y: 89
+              }
+            ]
+          },
+          {
+            type: "line",
+            showInLegend: true,
+            name: "Actual Sales",
+            lineDashType: "dash",
+            yValueFormatString: "#,##0K",
+            dataPoints: [{
+                x: new Date(2017, 10, 1),
+                y: 60
+              },
+              {
+                x: new Date(2017, 10, 2),
+                y: 57
+              },
+              {
+                x: new Date(2017, 10, 3),
+                y: 51
+              },
+              {
+                x: new Date(2017, 10, 4),
+                y: 56
+              },
+              {
+                x: new Date(2017, 10, 5),
+                y: 54
+              },
+              {
+                x: new Date(2017, 10, 6),
+                y: 55
+              },
+              {
+                x: new Date(2017, 10, 7),
+                y: 54
+              },
+              {
+                x: new Date(2017, 10, 8),
+                y: 69
+              },
+              {
+                x: new Date(2017, 10, 9),
+                y: 65
+              },
+              {
+                x: new Date(2017, 10, 10),
+                y: 66
+              },
+              {
+                x: new Date(2017, 10, 11),
+                y: 63
+              },
+              {
+                x: new Date(2017, 10, 12),
+                y: 67
+              },
+              {
+                x: new Date(2017, 10, 13),
+                y: 66
+              },
+              {
+                x: new Date(2017, 10, 14),
+                y: 56
+              },
+              {
+                x: new Date(2017, 10, 15),
+                y: 64
+              }
+            ]
+          }
+        ]
+      };
+      $("#chartContainer").CanvasJSChart(options);
+
+      function toogleDataSeries(e) {
+        if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+          e.dataSeries.visible = false;
+        } else {
+          e.dataSeries.visible = true;
+        }
+        e.chart.render();
+      }
+
+    }
+    /* QUESTION ANALYSIS */
+    $(document).ready(function() {
+      $("#submit").click(function() {
+        var i = 1;
+        for (i; i < 20; i++) {
+          var id = "#" + i;
+          var b = id + " input[name='radio']:checked";
+          var a = $(b).val();
+          //increment val
+          if (a == "good") {
+            Total++;
+          }
+        }
+        score += Total;
+
+      })
+    });
+  </script>
+</body>
+
+</html>
