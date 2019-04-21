@@ -1,9 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.phonegap.helloworld" version="1.4.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Research seminar</name>
     <description>
         A blank PhoneGap app.
     </description>
+    <platform name="android">
+    <icon src="img/res.png" platform="android" width="64" height="64" density="ldpi" />
+  </platform>
     <author email="support@phonegap.com" href="http://phonegap.com">
         PhoneGap Team
     </author>
