@@ -22,7 +22,6 @@
   <script src="jquery-ui/jquery-ui.js"></script>
   <!-- progress bar -->
   <script src="js/progressbar.js"></script>
-  <script src="js/populate.js"></script>
   <style>
     /*Navbar ICONS*/
     .botnav {
@@ -506,22 +505,22 @@
       <!-- PROGRESS BARS -->
       <div id="Kprogresscont">
         <h7>Verb: 12,900</h7>
-        <h8 id="K1"></h8>
+        <h8 id="K11"></h8>
         <div id="container"></div>
         <h7>Adjective: 2,890</h7>
-        <h8 id="K2"></h8>
+        <h8 id="K12"></h8>
         <div id="container1"></div>
         <h7>Sentence: 7,345</h7>
-        <h8 id="K3"></h8>
+        <h8 id="K13"></h8>
         <div id="container2"></div>
         <h7>Spelling: 9,650</h7>
-        <h8 id="K4"></h8>
+        <h8 id="K14"></h8>
         <div id="container3"></div>
         <h7>Focus: 8,431</h7>
-        <h8 id="K5"></h8>
+        <h8 id="K15"></h8>
         <div id="container4"></div>
         <h7>Passage: 1,980</h7>
-        <h8 id="K6"></h8>
+        <h8 id="K16"></h8>
         <div id="container5"></div>
       </div>
       <div id="Kseparator"></div>
@@ -588,6 +587,20 @@
     dialog.querySelector('.close').addEventListener('click', function() {
       dialog.close();
     });
+
+    //VALUES FOR GAME
+    var game1 = 1.0;
+    var game2 = 0.3;
+    var game3 = 0.6;
+    var game4 = 0.8;
+    var game5 = 0.7;
+    var game6 = 0.2;
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady() {
+      //code goes here
+      populateh8();
+    }
     $(document).ready(function() {
       $("#Kuser").click(function() {
         $.mobile.changePage("#Kacc", {
@@ -602,6 +615,7 @@
           transition: "slide"
         });
         animateg1();
+        populateh8();
       });
       $("#Kuser1").click(function() {
         $.mobile.changePage("#Kacc", {
@@ -616,6 +630,7 @@
           transition: "slide"
         });
         animateg1();
+        populateh8();
       });
       $("#home1").click(function() {
         $.mobile.changePage("#Khome", {
@@ -641,12 +656,50 @@
       })
     });
 
-    var game1 = 1.0;
-    var game2 = 0.3;
-    var game3 = 0.6;
-    var game4 = 0.8;
-    var game5 = 0.7;
-    var game6 = 0.2;
+    function populateh8() {
+      if ((game1 >= 0) & (game1 <= 0.4)) {
+        $("#K11").html("Beginner");
+      } else if ((game1 > 0.4) & (game1 <= 0.7)) {
+        $("#K11").html("Intermediate")
+      } else {
+        $("#K11").html("Advanced");
+      }
+      if ((game2 >= 0) & (game2 <= 0.4)) {
+        $("#K12").html("Beginner");
+      } else if ((game2 > 0.4) & (game2 <= 0.7)) {
+        $("#K12").html("Intermediate")
+      } else {
+        $("#K12").html("Advanced");
+      }
+      if ((game3 >= 0) & (game3 <= 0.4)) {
+        $("#K13").html("Beginner");
+      } else if ((game3 > 0.4) & (game3 <= 0.7)) {
+        $("#K13").html("Intermediate")
+      } else {
+        $("#K13").html("Advanced");
+      }
+      if ((game4 >= 0) & (game4 <= 0.4)) {
+        $("#K14").html("Beginner");
+      } else if ((game4 > 0.4) & (game4 <= 0.7)) {
+        $("#K14").html("Intermediate")
+      } else {
+        $("#K14").html("Advanced");
+      }
+      if ((game5 >= 0) & (game5 <= 0.4)) {
+        $("#K15").html("Beginner");
+      } else if ((game5 > 0.4) & (game5 <= 0.7)) {
+        $("#K15").html("Intermediate")
+      } else {
+        $("#K15").html("Advanced");
+      }
+      if ((game6 >= 0) & (game6 <= 0.4)) {
+        $("#K16").html("Beginner");
+      } else if ((game6 > 0.4) & (game6 <= 0.7)) {
+        $("#K16").html("Intermediate")
+      } else {
+        $("#K16").html("Advanced");
+      }
+    }
     /*ARRAY FOR GRAPH*/
     var progressBars = [];
 
