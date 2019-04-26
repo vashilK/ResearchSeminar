@@ -2,83 +2,289 @@
 <html>
 
 <head>
+  <title>Complaint App With Geo-Location</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Simple Calculator</title>
-  <link rel="stylesheet" href="js/jquery.mobile-1.4.5.css">
+  <!-- ICON PACK -->
+  <link rel="stylesheet" href="dist/jqm-icon-pack-fa-builder.css">
+  <link rel="stylesheet" href="dist/jqm-icon-pack-fa.css">
+  <!-- jQuery -->
+  <link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.5.css">
   <script src="js/jquery.js"></script>
   <script src="js/jquery.mobile-1.4.5.js"></script>
   <script src="cordova.js"></script>
-  <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-  <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+  <!-- MATERIAL DESIGN -->
+  <link rel="stylesheet" href="css/material.min.css">
+  <script src="js/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+  <script src="jquery-ui/jquery-ui.js"></script>
+  <!-- progress bar -->
+  <script src="js/progressbar.js"></script>
+  <script src="js/populate.js"></script>
   <style>
-    #questionsheader, #resultsheader {
-      background-color: #5961cc;
-      color: white;
-      font-weight: 50px;
-      border: none;
-      height: 50px;
-      align-items: center;
-    }
-
-    #questionsmain {
-      width: inherit;
-      height: auto;
-    }
-
-    #questionsmain {
-      width: 400px;
-    }
-
-    #smalllogo1 {
-      position: absolute;
-      top:10px;
-      left: 14px;
-      width: 8%;
-    }
-
-    #submit {
-      background-color: green;
-      color: white;
-      font-weight: lighter;
-    }
-
-    #clear {
-      background-color: red;
-      color: white;
-      font-weight: lighter;
-    }
-
-    #user {
-      width: 50%;
-      margin-left: 100px;
-      margin-right: 100px;
-      margin-top: 10px;
-    }
-
-    #username {
-      width: inherit;
-      margin-top: 10px;
+    /*Navbar ICONS*/
+    .botnav {
       text-align: center;
+      align-items: baseline;
+      height: 7px;
     }
 
-    #chart_div {
+    #Klogin {
+      background: linear-gradient(to bottom, #0033cc 0%, #9999ff 100%);
       width: inherit;
-      margin-top: 10px;
+      text-align: center;
+      height: 100%;
     }
 
-    #us {
-      text-align: center;
-    }
-    #show{
-      text-align: center;
+    #Klogo {
       margin-top: 150px;
-      font-size: 70px;
-      font-style: italic;
     }
-    #showitem{
+
+    #Kcontainter {
+      margin-top: 40px;
+      margin-left: 80px;
+      width: 280px;
+      height: 400px;
+      text-align: center;
+    }
+
+    #klarge {
+      color: black;
+    }
+
+    #klarge1 {
+      color: black;
+    }
+
+    #Kshowboy {
+      position: relative;
+      top: 34px;
+      left: 135px;
+      width: 10%;
+    }
+
+    #Kshowkey {
+      position: relative;
+      top: 68px;
+      left: 106px;
+      width: 9%;
+    }
+
+    /*KMENU CSS*/
+    h4 {
+      font-weight: 100;
+    }
+
+    #Kmenu {
+      background: #fafafa;
+    }
+
+    #Kmenucont {
+      width: inherit;
+      height: 60px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    #Kset {
+      position: relative;
+      top: -45px;
+      left: 410px;
+    }
+
+    #Kprogresscont {
+      margin-top: -10px;
+      width: inherit;
+      height: 300px;
+      text-align: left;
+      border-width: medium;
+      border-top-color: black;
+    }
+
+    h7 {
+      font-weight: lighter;
+      position: relative;
+      top: 20px;
+      left: 20px;
+    }
+
+    h8 {
+      font-weight: lighter;
+      position: relative;
+      top: 20px;
+      left: 280px;
+    }
+
+    /* percentage bars*/
+    #container,
+    #container1,
+    #container2,
+    #container3,
+    #container4,
+    #container5 {
+      margin: 20px;
+      margin-bottom: 0;
+      width: 400px;
+      height: 8px;
+    }
+
+    #Kseparator {
+      width: inherit;
+      margin-top: 20px;
+      height: 2px;
+      background-color: grey;
+    }
+
+    #Krankingcont {
+      width: inherit;
+      height: 300px;
+      text-align: center;
+      border-width: medium;
+      border-top-color: black;
+    }
+
+    #Krank {
+      position: relative;
+      top: -45px;
+      left: 410px;
+    }
+
+    #Kpodium {
+      width: inherit;
+      height: 100%;
+    }
+
+    /*PROFILE CSS*/
+    #Kprofilemain {
+      width: inherit;
+    }
+
+    #Kprofileicon {
+      position: relative;
+      top: 10px;
+      align-items: baseline;
+      text-align: center;
 
     }
+
+    #Klogout {
+      left: 400px;
+    }
+
+    h9 {
+      position: relative;
+      top: -20px;
+      font-weight: lighter;
+    }
+
+    .Ktitl {
+      font-size: 14px;
+      font-weight: lighter;
+      color: hsl(0, 0%, 50%);
+    }
+
+    #Ktitl1 {
+      text-align: left;
+    }
+
+    #Ktitl2 {
+      text-align: left;
+      margin-left: 220px;
+    }
+
+    #Khrs {
+      position: relative;
+      top: 20px;
+      left: -280px;
+    }
+
+    #Klevel {
+      position: relative;
+      top: 20px;
+      left: -45px;
+    }
+
+    #Kproseparator {
+      width: 470px;
+      position: relative;
+      top: 38px;
+      height: 2px;
+      background-color: grey;
+    }
+
+    #Kachievements {
+      position: relative;
+      top: 40px;
+      width: inherit;
+      height: 300px;
+      padding-top: 20px;
+    }
+
+    .ui-grid-c {
+      position: relative;
+      padding-top: 10px;
+      left: 20px;
+    }
+
+    /*UI HOMEPAGE*/
+    .demo-card-square.mdl-card {
+      width: 180px;
+      height: 140px;
+    }
+
+    #K1.demo-card-square>.mdl-card__title {
+      color: #fff;
+      background:
+        url('img/bookshelf.png') bottom right 15% no-repeat #BA68C8;
+    }
+
+    #K2.demo-card-square>.mdl-card__title {
+      color: #fff;
+      background:
+        url('img/dossier.png') bottom right 15% no-repeat #4DB6AC;
+    }
+
+    #K3.demo-card-square>.mdl-card__title {
+      color: #fff;
+      background:
+        url('img/blog.png') bottom right 15% no-repeat #EC407A;
+    }
+
+    #K4.demo-card-square>.mdl-card__title {
+      color: #fff;
+      background:
+        url('img/b.png') bottom right 15% no-repeat #FFEE58;
+    }
+
+    #K5.demo-card-square>.mdl-card__title {
+      color: #fff;
+      background:
+        url('img/book.png') bottom right 15% no-repeat #5C6BC0;
+    }
+
+    #K6.demo-card-square>.mdl-card__title {
+      color: #fff;
+      background:
+        url('img/reading.png') bottom right 15% no-repeat #9CCC65;
+    }
+
+    #Kred.ui-grid-a,
+    #Kred1.ui-grid-a,
+    #Kred2.ui-grid-a {
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding-top: 22px;
+      padding-left: 20px;
+    }
+
+    .ui-block-a .Ke,
+    .ui-block-b .ke {
+      padding: 5px;
+    }
+
     /**Sticks the footer to the bottom of the page */
     [data-role=page] {
       height: 100% !important;
@@ -92,405 +298,500 @@
       width: 100%;
     }
   </style>
-
 </head>
 
 <body>
-  <!-- QUESTION PAGE -->
-  <div data-role="page" id="question">
-    <div data-role="header" id="questionsheader">
-      <img id="smalllogo1" src="img/file.png" class="ui-btn-left" />
-      <h3>English Learning</h3>
-    </div>
-    <!-- This is the navbar -->
-    <div data-role="navbar">
-      <ul>
-        <li><a href="#home" data-icon="home">Home</a></li>
-        <li><a href="#question" data-icon="comment" class="ui-btn-active">Assessment</a></li>
-        <li><a href="#profile" data-icon="user" data-transition="pop">Profile</a></li>
-      </ul>
-    </div>
-    <div id="questionsmain" data-role="main" class="ui-content">
-      <form>
-        <fieldset data-role="controlgroup" id="1">
-          <h4>1) I haven`t got ......</h4>
-          <label><input name="radio" id="r11" type="radio" value="bad"> A. no brothers or sisters </label>
-          <label><input name="radio" id="r12" type="radio" value="bad"> B. brothers or sisters </label>
-          <label><input name="radio" id="r13" type="radio" value="good"> C. any brothers or sisters </label>
-          <label><input name="radio" id="r14" type="radio" value="bad">D. some brothers and sisters</label>
-        </fieldset>
-      </form>
-      <form>
-        <div data-role="controlgroup" id="2">
-          <h4>2) Every year,he goes to the coast for his holidays .... </h4>
-          <label><input name="radio" id="r15" type="radio" value="bad"> A. in train</label>
-          <label><input name="radio" id="r16" type="radio" value="bad"> B. on train</label>
-          <label><input name="radio" id="r17" type="radio" value="good"> C. by train</label>
-          <label><input name="radio" id="r18" type="radio" value="bad">D. with train</label>
-        </div>
-      </form>
-
-      <form>
-        <div data-role="controlgroup" id="3">
-          <h4>3) There is .......... of beer left from the party </h4>
-          <label><input name="radio" id="r19" type="radio" value="bad"> A. little</label>
-          <label><input name="radio" id="r20" type="radio" value="bad"> B. much</label>
-          <label><input name="radio" id="r21" type="radio" value="good"> C. a lot</label>
-          <label><input name="radio" id="r22" type="radio" value="bad">D. Too</label>
-        </div>
-      </form>
-      <form>
-        <div data-role="controlgroup" id="4">
-          <h4>4) She......Supper with us last Friday </h4>
-          <label><input name="radio" id="r23" type="radio" value="bad"> A. hadn`t</label>
-          <label><input name="radio" id="r24" type="radio" value="bad"> B. no had</label>
-          <label><input name="radio" id="r25" type="radio" value="good"> C. didn`t have</label>
-          <label><input name="radio" id="r26" type="radio" value="bad">D. didnt`t have</label>
-        </div>
-      </form>
-
-      <form>
-        <div data-role="controlgroup" id="5">
-          <h4>5) The door can`t be broken! he ........</h4>
-          <label><input name="radio" id="r27" type="radio" value="bad"> A. is just fixed it.</label>
-          <label><input name="radio" id="r28" type="radio" value="bad"> B. have just fixed it.</label>
-          <label><input name="radio" id="r29" type="radio" value="bad"> C. just fix it.</label>
-          <label><input name="radio" id="r30" type="radio" value="good">D. has just fixed it.</label>
-        </div>
-      </form>
-      <form>
-        <div data-role="controlgroup" id="6">
-          <h4>6) ..... have you been going out with him?Only a few months.</h4>
-          <label><input name="radio" id="31" type="radio" value="bad"> A. How long</label>
-          <label><input name="radio" id="r32" type="radio" value="bad"> B. How long time.</label>
-          <label><input name="radio" id="r33" type="radio" value="bad"> C. What time</label>
-          <label><input name="radio" id="r34" type="radio" value="good">D. For how long</label>
-        </div>
-      </form>
-      <form>
-        <div data-role="controlgroup" id=7"">
-          <h4>7) Don`t start ..... to me about it.You know I don't care.</h4>
-          <label><input name="radio" id="r35" type="radio" value="bad"> A. to complaining</label>
-          <label><input name="radio" id="r36" type="radio" value="good"> B. complaining</label>
-          <label><input name="radio" id="r37" type="radio" value="bad"> C. complain</label>
-          <label><input name="radio" id="r38" type="radio" value="bad">D. in complain</label>
-        </div>
-      </form>
-      <form>
-        <div data-role="controlgroup" id="8">
-          <h4>8) Choose the correct sentence:</h4>
-          <label><input name="radio" id="r39" type="radio" value="bad">A. Give the Sarah book </label>
-          <label><input name="radio" id="r40" type="radio" value="good"> B. Give the book to Sarah.</label>
-          <label><input name="radio" id="r41" type="radio" value="bad"> C. Give to Sarah the book.</label>
-          <label><input name="radio" id="r42" type="radio" value="bad">D. Give the book at Sarah.</label>
-        </div>
-      </form>
-      <form>
-        <div data-role="controlgroup" id="9">
-          <h4>9) We have to go to the supermarket ..... some bread and milk.</h4>
-          <label><input name="radio" id="r43" type="radio" value="bad">A. for getting</label>
-          <label><input name="radio" id="r44" type="radio" value="good"> B. to get</label>
-          <label><input name="radio" id="r45" type="radio" value="bad"> C. to getting</label>
-          <label><input name="radio" id="r46" type="radio" value="bad">D. for to get</label>
-        </div>
-      </form>
-      <form>
-        <div data-role="controlgroup" id="10">
-          <h4>10) They weren`t invited to the party, and nor .... I. </h4>
-          <label><input name="radio" id="r47" type="radio" value="bad">A. weren`t</label>
-          <label><input name="radio" id="r48" type="radio" value="good"> B. was</label>
-          <label><input name="radio" id="r49" type="radio" value="bad"> C. were</label>
-          <label><input name="radio" id="r50" type="radio" value="bad">D. wasn`t</label>
-        </div>
-      </form>
-      <form>
-        <div data-role="controlgroup" id="11">
-          <h4>11) The party was a disaster. There ..... there! </h4>
-          <label><input name="radio" id="r51" type="radio" value="bad">A. wasn`t nobody </label>
-          <label><input name="radio" id="r52" type="radio" value="bad"> B. was anybody</label>
-          <label><input name="radio" id="r53" type="radio" value="good"> C. was nobody</label>
-          <label><input name="radio" id="r54" type="radio" value="bad">D. was somebody</label>
-        </div>
-      </form>
-      <form>
-        <div data-role="controlgroup" id="12">
-          <h4>12) His wedding is the ..... of my problems! What about my car bills? </h4>
-          <label><input name="radio" id="r55" type="radio" value="bad">A. fewer</label>
-          <label><input name="radio" id="r56" type="radio" value="bad"> B. less</label>
-          <label><input name="radio" id="r57" type="radio" value="bad"> C. last</label>
-          <label><input name="radio" id="r58" type="radio" value="good">D. least</label>
-        </div>
-      </form>
-      <form>
-        <div data-role="controlgroup" id="13">
-          <h4>13) Let`s go for a walk in the mountains, .......</h4>
-          <label><input name="radio" id="r59" type="radio" value="bad">A. don`t we?</label>
-          <label><input name="radio" id="r60" type="radio" value="bad"> B. let us?</label>
-          <label><input name="radio" id="r61" type="radio" value="good"> C. shall we?</label>
-          <label><input name="radio" id="r62" type="radio" value="bad">D. will we?</label>
-        </div>
-      </form>
-      <form>
-        <div data-role="controlgroup" id="14">
-          <h4>14) I can't say for sure, but I think she......back to Mexico. </h4>
-          <label><input name="radio" id="r63" type="radio" value="bad">A. may gone</label>
-          <label><input name="radio" id="r64" type="radio" value="good"> B. might go</label>
-          <label><input name="radio" id="r65" type="radio" value="bad"> C. should to go</label>
-          <label><input name="radio" id="r66" type="radio" value="bad">D. may have gone</label>
-        </div>
-      </form>
-      <form>
-        <div data-role="controlgroup" id="15">
-          <h4>15) The Chairman is ill and we`ll have to ....... the meeting for a few days.</h4>
-          <label><input name="radio" id="r64" type="radio" value="bad">A. put on</label>
-          <label><input name="radio" id="r65" type="radio" value="good"> B. put off</label>
-          <label><input name="radio" id="r66" type="radio" value="bad"> C. put away</label>
-          <label><input name="radio" id="r67" type="radio" value="bad">D. put of</label>
-        </div>
-      </form>
-      <form>
-        <div data-role="controlgroup" id="16">
-          <h4>16) The cat and the dog have a ........... enemy in the rat.</h4>
-          <label><input name="radio" id="r68" type="radio" value="bad">A. same</label>
-          <label><input name="radio" id="r69" type="radio" value="good"> B. common</label>
-          <label><input name="radio" id="r70" type="radio" value="bad"> C. mutual</label>
-          <label><input name="radio" id="r71" type="radio" value="bad">D. similar</label>
-        </div>
-      </form>
-      <form>
-        <div data-role="controlgroup" id="17">
-          <h4>17) He is very good ...... making stories.</h4>
-          <label><input name="radio" id="r72" type="radio" value="bad">A. in</label>
-          <label><input name="radio" id="r73" type="radio" value="bad"> B. about</label>
-          <label><input name="radio" id="r74" type="radio" value="good"> C. at</label>
-          <label><input name="radio" id="r75" type="radio" value="bad">D. for</label>
-        </div>
-      </form>
-      <form>
-        <div data-role="controlgroup" id="18">
-          <h4>18) I do my work ...... carefully to make mistakes.</h4>
-          <label><input name="radio" id="r76" type="radio" value="bad">A. so</label>
-          <label><input name="radio" id="r77" type="radio" value="bad"> B. very</label>
-          <label><input name="radio" id="r78" type="radio" value="good"> C. too</label>
-          <label><input name="radio" id="r79" type="radio" value="bad">D. much</label>
-        </div>
-      </form>
-      <form>
-        <div data-role="controlgroup" id="19">
-          <h4>19) The antonym of Plausible </h4>
-          <label><input name="radio" id="r80" type="radio" value="bad">A. inplausible</label>
-          <label><input name="radio" id="r81" type="radio" value="bad"> B. unplausible</label>
-          <label><input name="radio" id="r82" type="radio" value="good"> C. implausible</label>
-          <label><input name="radio" id="r83" type="radio" value="bad">D. displausible</label>
-        </div>
-      </form>
-      <form>
-        <div data-role="controlgroup" id="20">
-          <h4>19) The antonym of Fraility </h4>
-          <label><input name="radio" id="r84" type="radio" value="bad">A. Energy</label>
-          <label><input name="radio" id="r85" type="radio" value="bad"> B. Intensity</label>
-          <label><input name="radio" id="r86" type="radio" value="bad"> C. Vehemence</label>
-          <label><input name="radio" id="r87" type="radio" value="good">D. Strength</label>
-        </div>
-      </form>
-      <div class="ui-grid-a">
-        <div class="ui-block-a"><a href="#results" data-transition="slide"><button type="button" id="submit">Submit</button></a></div>
-        <div class="ui-block-b"><button type="button" id="clear" data-icon="delete">cancel</button></div>
-      </div>
-    </div>
-    <div data-role="footer" id="questionsfooter">
-    </div>
-  </div>
-  <!-- STUDENT PROFILE -->
-  <div data-role="page" id="profile">
-    <div data-role="header" id="questionsheader">
-      <img id="smalllogo1" src="img/file.png" class="ui-btn-left" />
-      <h3>English Learning</h3>
-    </div>
-    <!-- This is the navbar -->
-    <div data-role="navbar">
-      <ul>
-        <li><a href="#home" data-icon="home">Home</a></li>
-        <li><a href="#question" data-icon="comment">Assessment</a></li>
-        <li><a href="#profile" data-icon="user" class="ui-btn-active">Profile</a></li>
-      </ul>
-    </div>
+  <!-- MAIN LOGIN PAGE -->
+  <div data-role="page" id="Klogin">
     <div data-role="main" class="ui-content">
-      <div id="us">
-        <img id="user" src="img/user.png">
-        <img id="highs" src="img/score.png">
-        <div id="scorer"></div>
-      </div>
-      <div id="username">
-        <h3>Yash Ramana</h3>
-        <h5>Grade 7 Diamond</h5>
-        <div id="chartContainer" style="height: 370px; width: 350px;"></div>
-        <br><br>
-        <div id="chartContainer2" style="height: 370px; width: 350px;"></div>
+      <img src="img/logo.png" id="Klogo">
+      <div id="Kcontainter">
+        <img src="img/boy.png" id="Kshowboy">
+        <img src="img/key.png" id="Kshowkey">
+        <input id="klarge" type="text">
+        <input id="klarge1" type="text">
+        <button id="Kloginbtn" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+          LOGIN
+        </button>
       </div>
     </div>
   </div>
 
-  <!-- RESULTS PAGE -->
-  <div data-role="page" id="results">
-    <div data-role="header" id="resultsheader">
-      <img id="smalllogo1" src="img/file.png" class="ui-btn-left" />
-      <h3>English Learning</h3>
-    </div>
-    <!-- This is the navbar -->
-    <div data-role="navbar">
-      <ul>
-        <li><a href="#home" data-icon="home">Home</a></li>
-        <li><a href="#question" data-icon="comment" class="ui-btn-active">Assessment</a></li>
-        <li><a href="#profile" data-icon="user">Profile</a></li>
-      </ul>
-    </div>
-    <!-- MAIN -->
+  <!-- HOMEPAGE -->
+  <div data-role="page" id="Khome">
     <div data-role="main" class="ui-content">
-      <div id="show">
-
+      <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+        <div class="mdl-tabs__tab-bar">
+          <a href="#starks-panel" class="mdl-tabs__tab is-active">Activities</a>
+          <a href="#lannisters-panel" class="mdl-tabs__tab">Books</a>
+        </div>
+        <div class="mdl-tabs__panel is-active" id="starks-panel">
+          <div id="Kred" class="ui-grid-a">
+            <div class="ui-block-a ke">
+              <!-- Square card -->
+              <div id="K1" class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text">Verb</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Play
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="ui-block-b ke">
+              <!-- Square card -->
+              <div id="K2" class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text">Adjective</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Play
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="Kred1" class="ui-grid-a">
+            <div class="ui-block-a ke">
+              <!-- Square card -->
+              <div id="K3" class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text">Sentence</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Play
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="ui-block-b ke">
+              <!-- Square card -->
+              <div id="K4" class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text">Spelling</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Play
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="Kred2" class="ui-grid-a">
+            <div class="ui-block-a ke">
+              <!-- Square card -->
+              <div id="K5" class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text">Focus</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Play
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="ui-block-b ke">
+              <!-- Square card -->
+              <div id="K6" class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text">Passage</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Play
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FOOTER NAV -->
+      <div data-role="footer">
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#home" data-icon="book" class="botnav"></a></li>
+            <li><a id="Kstats1" data-icon="bar-chart-o" class="botnav"></a></li>
+            <li><a id="Kuser1" data-icon="user" class="botnav"></a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-  <script src="js/canvasjs.min.js"></script>
+  <!-- PROFILE -->
+  <div data-role="page" id="Kacc">
+    <div data-role="main" class="ui-content" id="Kprofilemain">
+      <a id="Klogout" class="ui-btn ui-shadow ui-corner-all ui-icon-sign-out ui-btn-icon-notext ui-btn-a" href="#Klogin" data-transition="fade"></a>
+      <div id="Kprofileicon">
+        <img src="img/sboy.png">
+        <h4>Vashil Kissoon</h4>
+        <h9>Grade 7 Diamond</h9>
+        <br>
+        <span id="Ktitl1" class="Ktitl">Hours</span>
+        <span id="Ktitl2" class="Ktitl">Level</span>
+        <span id="Khrs">234</span>
+        <span id="Klevel">34</span>
+        <div id="Kproseparator"></div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="ui-grid-c">
+        <div class="ui-block-a"><img src="img/file.png"></div>
+        <div class="ui-block-b"><img src="img/ques.png"></div>
+        <div class="ui-block-c"><img src="img/ques.png"></div>
+        <div class="ui-block-d"><img src="img/ques.png"></div>
+      </div>
+      <div class="ui-grid-c">
+        <div class="ui-block-a"><img src="img/ques.png"></div>
+        <div class="ui-block-b"><img src="img/ques.png"></div>
+        <div class="ui-block-c"><img src="img/ques.png"></div>
+        <div class="ui-block-d"><img src="img/ques.png"></div>
+      </div>
+      <div class="ui-grid-c">
+        <div class="ui-block-a"><img src="img/ques.png"></div>
+        <div class="ui-block-b"><img src="img/ques.png"></div>
+        <div class="ui-block-c"><img src="img/ques.png"></div>
+        <div class="ui-block-d"><img src="img/ques.png"></div>
+      </div>
+      <div class="ui-grid-c">
+        <div class="ui-block-a"><img src="img/ques.png"></div>
+        <div class="ui-block-b"><img src="img/ques.png"></div>
+        <div class="ui-block-c"><img src="img/ques.png"></div>
+        <div class="ui-block-d"><img src="img/ques.png"></div>
+      </div>
+      <div class="ui-grid-c">
+        <div class="ui-block-a"><img src="img/ques.png"></div>
+        <div class="ui-block-b"><img src="img/ques.png"></div>
+        <div class="ui-block-c"><img src="img/ques.png"></div>
+        <div class="ui-block-d"><img src="img/ques.png"></div>
+      </div>
+    </div>
+    <!-- FOOTER NAV -->
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li><a id="home1" data-icon="book" class="botnav" data-transition="slide"></a></li>
+          <li><a id="Kstats" data-icon="bar-chart-o" class="botnav"></a></li>
+          <li><a data-icon="user" class="botnav"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- MAIN MENU -->
+  <div data-role="page" id="Kmenu">
+    <div data-role="main" class="ui-content">
+      <!-- DIV FOR TITLE -->
+      <div id="Kmenucont">
+        <h4>Performance</h4>
+        <a id="Kset" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-a" onclick="model">Check</a>
+        <dialog class="mdl-dialog">
+          <h4 class="mdl-dialog__title">Performance</h4>
+          <div class="mdl-dialog__content">
+            <p>
+              The stats show the performance of the student in specific fields as mentionned. The scores accumulated show the work completed and overall performance of the student.
+            </p>
+          </div>
+          <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button close" data-icon="delete">close</button>
+          </div>
+        </dialog>
+      </div>
+      <!-- PROGRESS BARS -->
+      <div id="Kprogresscont">
+        <h7>Verb: 12,900</h7>
+        <h8 id="K1"></h8>
+        <div id="container"></div>
+        <h7>Adjective: 2,890</h7>
+        <h8 id="K2"></h8>
+        <div id="container1"></div>
+        <h7>Sentence: 7,345</h7>
+        <h8 id="K3"></h8>
+        <div id="container2"></div>
+        <h7>Spelling: 9,650</h7>
+        <h8 id="K4"></h8>
+        <div id="container3"></div>
+        <h7>Focus: 8,431</h7>
+        <h8 id="K5"></h8>
+        <div id="container4"></div>
+        <h7>Passage: 1,980</h7>
+        <h8 id="K6"></h8>
+        <div id="container5"></div>
+      </div>
+      <div id="Kseparator"></div>
+      <!-- RANKING -->
+      <div id="Krankingcont">
+        <h4>Ranking</h4>
+        <a id="Krank" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-a" href="#"></a>
+        <dialog class="mdl-dialog">
+          <h4 class="mdl-dialog__title">Ranking</h4>
+          <div class="mdl-dialog__content">
+            <p>
+              The Rank shows the top 5 students in the class with the best average score of all the activies.
+            </p>
+          </div>
+          <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button close" data-icon="delete">close</button>
+          </div>
+        </dialog>
+        <div id="Kpodium">
+          <img src="img/podium.png">
+          <ul data-role="listview" data-inset="true">
+            <li><img class="ui-li-icon ui-corner-none" src="img/gf.png">Anne Lise</li>
+            <li><img class="ui-li-icon" src="img/gf.png">Nabihah Mahaboob</li>
+            <li><img class="ui-li-icon" src="img/boy.png">Divesh Mootia</li>
+            <li><img class="ui-li-icon" src="img/gf.png">Priyasha Ramdass</li>
+            <li><img class="ui-li-icon ui-corner-none" src="img/boy.png">Dharma Singh</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- FOOTER NAV -->
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li><a id="home2" data-icon="book" class="botnav" data-transition="slide"></a></li>
+          <li><a data-icon="bar-chart-o" class="botnav"></a></li>
+          <li><a id="Kuser" data-icon="user" class="botnav"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <script>
-    var Total = 258;
-    var score = 0;
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    function onDeviceReady() {
-      Showmegraph();
-      Showmepiechart();
-      topstudents();
+    //Dialogs
+    var dialog = document.querySelector('dialog');
+    var showDialogButton = document.querySelector('#Kset');
+    if (!dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
     }
-    /*High Score*/
-    function topstudents() {
-      $("#scorer").html(Total);
+    showDialogButton.addEventListener('click', function() {
+      dialog.showModal();
+    });
+    dialog.querySelector('.close').addEventListener('click', function() {
+      dialog.close();
+    });
+    var dialog = document.querySelector('dialog');
+    var showDialogButton = document.querySelector('#Krank');
+    if (!dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
     }
-    /*API WHICH DRAWS GRAPH FOR PERFORMANCE*/
-    function Showmegraph() {
-      var chart = new CanvasJS.Chart("chartContainer", {
-        theme: "light2", // "light1", "light2", "dark1", "dark2"
-        animationEnabled: true,
-        title: {
-          text: "Student Performance"
-        },
-        axisX: {
-          interval: 1,
-          intervalType: "month",
-          valueFormatString: "MMM"
-        },
-        axisY: {
-          title: "Test Points",
-          valueFormatString: "#0",
-          interval: 20,
-          maximum: 100
-        },
-        data: [{
-          type: "line",
-          markerSize: 12,
-          xValueFormatString: "MMM, YYYY",
-          yValueFormatString: "###.#",
-          dataPoints: [{
-              x: new Date(2019, 00, 1),
-              y: 61,
-              indexLabel: "baseline",
-              markerType: "square",
-              markerColor: "yellow"
-            },
-            {
-              x: new Date(2019, 01, 1),
-              y: 71,
-              indexLabel: "gain",
-              markerType: "triangle",
-              markerColor: "#6B8E23"
-            },
-            {
-              x: new Date(2019, 02, 1),
-              y: 55,
-              indexLabel: "decline",
-              markerType: "cross",
-              markerColor: "tomato"
-            },
-            {
-              x: new Date(2019, 03, 1),
-              y: 65,
-              indexLabel: "gain",
-              markerType: "triangle",
-              markerColor: "#6B8E23"
-            }
-          ]
-        }]
-      });
-      chart.render();
-    }
-
-    function Showmepiechart() {
-      var chart = new CanvasJS.Chart("chartContainer2", {
-        theme: "light2",
-        animationEnabled: true,
-        title: {
-          text: "Mistakes Details"
-        },
-        data: [{
-          type: "pie",
-          indexLabelFontSize: 18,
-          radius: 80,
-          indexLabel: "{label} - {y}",
-          yValueFormatString: "###0.0'%'",
-          click: explodePie,
-          dataPoints: [{
-              y: 42,
-              label: "Verbs"
-            },
-            {
-              y: 21,
-              label: "Idioms & Phrases"
-            },
-            {
-              y: 24.5,
-              label: "Conjunctive Adverbs"
-            },
-            {
-              y: 9,
-              label: "Adjectives"
-            },
-            {
-              y: 3.1,
-              label: "Pronouns"
-            }
-          ]
-        }]
-      });
-      chart.render();
-
-      function explodePie(e) {
-        for (var i = 0; i < e.dataSeries.dataPoints.length; i++) {
-          if (i !== e.dataPointIndex)
-            e.dataSeries.dataPoints[i].exploded = false;
-        }
-      }
-    }
-    /* QUESTION ANALYSIS */
+    showDialogButton.addEventListener('click', function() {
+      dialog.showModal();
+    });
+    dialog.querySelector('.close').addEventListener('click', function() {
+      dialog.close();
+    });
     $(document).ready(function() {
-      $("#submit").click(function() {
-        var i = 1;
-        for (i; i < 20; i++) {
-          var id = "#" + i;
-          var b = id + " input[name='radio']:checked";
-          var a = $(b).val();
-          //increment val
-          if (a == "good") {
-            Total++;
-            score++;
-          }
+      $("#Kuser").click(function() {
+        $.mobile.changePage("#Kacc", {
+          reverse: false,
+          transition: "slide"
+        });
+        destroyall();
+      });
+      $("#Kstats").click(function() {
+        $.mobile.changePage("#Kmenu", {
+          reverse: false,
+          transition: "slide"
+        });
+        animateg1();
+      });
+      $("#Kuser1").click(function() {
+        $.mobile.changePage("#Kacc", {
+          reverse: false,
+          transition: "slide"
+        });
+        destroyall();
+      });
+      $("#Kstats1").click(function() {
+        $.mobile.changePage("#Kmenu", {
+          reverse: false,
+          transition: "slide"
+        });
+        animateg1();
+      });
+      $("#home1").click(function() {
+        $.mobile.changePage("#Khome", {
+          reverse: false,
+          transition: "slide"
+        });
+        destroyall();
+      });
+      $("#home2").click(function() {
+        $.mobile.changePage("#Khome", {
+          reverse: false,
+          transition: "slide"
+        });
+        destroyall();
+      });
+      $("#Kloginbtn").click(function() {
+        if (($("#klarge").val() == "admin") & ($("#klarge1").val() == "admin")) {
+          $.mobile.changePage("#Khome", {
+            reverse: false,
+            transition: "pop"
+          });
         }
-        topstudents();
-        var printer = score + " pts";
-        $("#show").html(printer);
-        $("#submit").hide();
       })
     });
+
+    var game1 = 1.0;
+    var game2 = 0.3;
+    var game3 = 0.6;
+    var game4 = 0.8;
+    var game5 = 0.7;
+    var game6 = 0.2;
+    /*ARRAY FOR GRAPH*/
+    var progressBars = [];
+
+    function animateg1() {
+      progressBars[0] = (new ProgressBar.Line(container, {
+        strokeWidth: 4,
+        easing: 'easeInOut',
+        duration: 1400,
+        color: '#FFEA82',
+        trailColor: '#eee',
+        trailWidth: 1,
+        svgStyle: {
+          width: '100%',
+          height: '100%'
+        },
+        from: {
+          color: '#FFEA82'
+        },
+        to: {
+          color: '#F44336'
+        },
+        step: (state, bar) => {
+          bar.path.setAttribute('stroke', state.color);
+        }
+      }));
+      progressBars[1] = (new ProgressBar.Line(container1, {
+        strokeWidth: 4,
+        easing: 'easeInOut',
+        duration: 1400,
+        color: '#FFEA82',
+        trailColor: '#eee',
+        trailWidth: 1,
+        svgStyle: {
+          width: '100%',
+          height: '100%'
+        },
+        from: {
+          color: '#CE93D8'
+        },
+        to: {
+          color: '#8E24AA'
+        },
+        step: (state, bar) => {
+          bar.path.setAttribute('stroke', state.color);
+        }
+      }));
+      progressBars[2] = (new ProgressBar.Line(container2, {
+        strokeWidth: 4,
+        easing: 'easeInOut',
+        duration: 1400,
+        color: '#FFEA82',
+        trailColor: '#eee',
+        trailWidth: 1,
+        svgStyle: {
+          width: '100%',
+          height: '100%'
+        },
+        from: {
+          color: '#FFEA82'
+        },
+        to: {
+          color: '#009688'
+        },
+        step: (state, bar) => {
+          bar.path.setAttribute('stroke', state.color);
+        }
+      }));
+      progressBars[3] = (new ProgressBar.Line(container3, {
+        strokeWidth: 4,
+        easing: 'easeInOut',
+        duration: 1400,
+        color: '#FFEA82',
+        trailColor: '#eee',
+        trailWidth: 1,
+        svgStyle: {
+          width: '100%',
+          height: '100%'
+        },
+        from: {
+          color: '#FFEA82'
+        },
+        to: {
+          color: '#3F51B5'
+        },
+        step: (state, bar) => {
+          bar.path.setAttribute('stroke', state.color);
+        }
+      }));
+      progressBars[4] = (new ProgressBar.Line(container4, {
+        strokeWidth: 4,
+        easing: 'easeInOut',
+        duration: 1400,
+        color: '#FFEA82',
+        trailColor: '#eee',
+        trailWidth: 1,
+        svgStyle: {
+          width: '100%',
+          height: '100%'
+        },
+        from: {
+          color: '#FFEA82'
+        },
+        to: {
+          color: '#E91E63'
+        },
+        step: (state, bar) => {
+          bar.path.setAttribute('stroke', state.color);
+        }
+      }));
+      progressBars[5] = (new ProgressBar.Line(container5, {
+        strokeWidth: 4,
+        easing: 'easeInOut',
+        duration: 1400,
+        color: '#FFEA82',
+        trailColor: '#eee',
+        trailWidth: 1,
+        svgStyle: {
+          width: '100%',
+          height: '100%'
+        },
+        from: {
+          color: '#FFEA82'
+        },
+        to: {
+          color: '#F57C00'
+        },
+        step: (state, bar) => {
+          bar.path.setAttribute('stroke', state.color);
+        }
+      }));
+      //ANIMATE SECTION
+      var i;
+      var a = [game1, game2, game3, game4, game5, game6];
+      for (i = 0; i < 6; i++) {
+        progressBars[i].animate(a[i]); // Number from 0.0 to 1.0
+      }
+    }
+
+    function destroyall() {
+      var i;
+      progressBars.forEach(function(bar) {
+        bar.destroy();
+      });
+      progressBars = [];
+    }
   </script>
 </body>
 
