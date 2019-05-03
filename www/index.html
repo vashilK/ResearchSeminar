@@ -1,0 +1,2547 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ai Companion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <!-- ICON PACK -->
+  <link rel="stylesheet" href="dist/jqm-icon-pack-fa-builder.css">
+  <link rel="stylesheet" href="dist/jqm-icon-pack-fa.css">
+  <!-- MATERIAL DESIGN -->
+  <link rel="stylesheet" href="css/material.min.css">
+  <script src="js/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- jQuery -->
+  <link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.5.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.mobile-1.4.5.js"></script>
+  <script src="cordova.js"></script>
+  <!-- jQuery UI
+  <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+  <script src="jquery-ui/jquery-ui.js"></script>
+-->
+  <!-- progress bar -->
+  <script src="js/progressbar.js"></script>
+  <!-- DRAWING SCRIPT
+  <script src="js/processing.min.js"></script>
+-->
+  <!-- Ai Neural Network -->
+  <script src="js/brain-0.6.3.js"></script>
+  <!-- CUSTOM CSS
+  <link rel="stylesheet" href="css/game.css">
+-->
+  <!-- CUSTOM JS
+  <script src="js/game.js"></script>
+-->
+  <style>
+    /*Navbar ICONS*/
+    .botnav {
+      text-align: center;
+      align-items: baseline;
+      height: 7px;
+    }
+
+    #Klogin {
+      background: linear-gradient(to bottom, #0033cc 0%, #9999ff 100%);
+      width: inherit;
+      text-align: center;
+      height: 100%;
+    }
+
+    #Klogo {
+      margin-top: 150px;
+    }
+
+    #Kcontainter {
+      margin-top: 40px;
+      margin-left: 80px;
+      width: 280px;
+      height: 400px;
+      text-align: center;
+    }
+
+    #klarge {
+      color: black;
+    }
+
+    #klarge1 {
+      color: black;
+    }
+
+    #Kshowboy {
+      position: relative;
+      top: 34px;
+      left: 135px;
+      width: 10%;
+    }
+
+    #Kshowkey {
+      position: relative;
+      top: 68px;
+      left: 106px;
+      width: 9%;
+    }
+
+    /*KMENU CSS*/
+    h4 {
+      font-weight: 100;
+    }
+
+    #Kmenu {
+      background: #fafafa;
+    }
+
+    #Kmenucont {
+      width: inherit;
+      height: 60px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    #Kset {
+      position: relative;
+      top: -45px;
+      left: 410px;
+    }
+
+    #Kprogresscont {
+      margin-top: -10px;
+      width: inherit;
+      height: 300px;
+      text-align: left;
+      border-width: medium;
+      border-top-color: black;
+    }
+
+    h7 {
+      font-weight: lighter;
+      position: relative;
+      top: 20px;
+      left: 20px;
+    }
+
+    h8 {
+      font-weight: lighter;
+      position: relative;
+      top: 20px;
+      left: 280px;
+    }
+
+    /* percentage bars*/
+    #container,
+    #container1,
+    #container2,
+    #container3,
+    #container4,
+    #container5 {
+      margin: 20px;
+      margin-bottom: 0;
+      width: 400px;
+      height: 8px;
+    }
+
+    #Kseparator {
+      width: inherit;
+      margin-top: 20px;
+      height: 2px;
+      background-color: grey;
+    }
+
+    #Krankingcont {
+      width: inherit;
+      height: 300px;
+      text-align: center;
+      border-width: medium;
+      border-top-color: black;
+    }
+
+    #Krank {
+      position: relative;
+      top: -45px;
+      left: 410px;
+    }
+
+    #Kpodium {
+      width: inherit;
+      height: 100%;
+    }
+
+    /*PROFILE CSS*/
+    #Kprofilemain {
+      width: inherit;
+    }
+
+    #Kprofileicon {
+      position: relative;
+      top: 10px;
+      align-items: baseline;
+      text-align: center;
+
+    }
+
+    #Klogout {
+      left: 400px;
+    }
+
+    h9 {
+      position: relative;
+      top: -20px;
+      font-weight: lighter;
+    }
+
+    .Ktitl {
+      font-size: 14px;
+      font-weight: lighter;
+      color: hsl(0, 0%, 50%);
+    }
+
+    #Ktitl1 {
+      text-align: left;
+    }
+
+    #Ktitl2 {
+      text-align: left;
+      margin-left: 220px;
+    }
+
+    #Khrs {
+      position: relative;
+      top: 20px;
+      left: -280px;
+    }
+
+    #Klevel {
+      position: relative;
+      top: 20px;
+      left: -45px;
+    }
+
+    #Kproseparator {
+      width: 470px;
+      position: relative;
+      top: 38px;
+      height: 2px;
+      background-color: grey;
+    }
+
+    #Kachievements {
+      position: relative;
+      top: 40px;
+      width: inherit;
+      height: 300px;
+      padding-top: 20px;
+    }
+
+    .ui-grid-c {
+      position: relative;
+      padding-top: 10px;
+      left: 20px;
+    }
+
+    /*UI HOMEPAGE*/
+    .demo-card-square.mdl-card {
+      width: 180px;
+      height: 140px;
+    }
+
+    #K1.demo-card-square>.mdl-card__title {
+      color: #fff;
+      background:
+        url('img/bookshelf.png') bottom right 15% no-repeat #BA68C8;
+    }
+
+    #K2.demo-card-square>.mdl-card__title {
+      color: #fff;
+      background:
+        url('img/dossier.png') bottom right 15% no-repeat #4DB6AC;
+    }
+
+    #K3.demo-card-square>.mdl-card__title {
+      color: #fff;
+      background:
+        url('img/blog.png') bottom right 15% no-repeat #EC407A;
+    }
+
+    #K4.demo-card-square>.mdl-card__title {
+      color: #fff;
+      background:
+        url('img/b.png') bottom right 15% no-repeat #FFEE58;
+    }
+
+    #K5.demo-card-square>.mdl-card__title {
+      color: #fff;
+      background:
+        url('img/book.png') bottom right 15% no-repeat #5C6BC0;
+    }
+
+    #K6.demo-card-square>.mdl-card__title {
+      color: #fff;
+      background:
+        url('img/reading.png') bottom right 15% no-repeat #9CCC65;
+    }
+
+    #Kred.ui-grid-a,
+    #Kred1.ui-grid-a,
+    #Kred2.ui-grid-a {
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding-top: 22px;
+      padding-left: 20px;
+    }
+
+    .ui-block-a .Ke,
+    .ui-block-b .ke {
+      padding: 5px;
+    }
+
+    /**Sticks the footer to the bottom of the page */
+    [data-role=page] {
+      height: 100% !important;
+      position: relative !important;
+    }
+
+    [data-role=footer] {
+      bottom: 0;
+      position: absolute !important;
+      top: auto !important;
+      width: 100%;
+    }
+
+    /** PREASSESMENT STYLE */
+    .foto {
+
+      border: 7px solid #DCDCDC;
+      margin: 0 auto;
+      width: 300px;
+      border-radius: 10px;
+
+
+    }
+
+    .foto img {
+      width: 100%;
+      height: 300px;
+
+
+    }
+
+    .hd-cent {
+      text-align: center;
+    }
+
+    div.quest {
+      padding: 5px;
+      text-align: center;
+
+    }
+
+    .easy {
+      height: 10px;
+      background-color: #6CFF33;
+      bottom: 0;
+      position: absolute !important;
+      top: auto !important;
+      width: 100%;
+    }
+
+    .medium {
+      height: 10px;
+      background-color: #F5B041;
+      bottom: 0;
+      position: absolute !important;
+      top: auto !important;
+      width: 100%;
+    }
+
+    .hard {
+      height: 10px;
+      background-color: red;
+      bottom: 0;
+      position: absolute !important;
+      top: auto !important;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- MAIN LOGIN PAGE -->
+  <div data-role="page" id="Klogin">
+    <div data-role="main" class="ui-content">
+      <img src="img/logo.png" id="Klogo">
+      <div id="Kcontainter">
+        <img src="img/boy.png" id="Kshowboy">
+        <img src="img/key.png" id="Kshowkey">
+        <input id="klarge" type="text">
+        <input id="klarge1" type="password">
+        <button id="Kloginbtn" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+          LOGIN
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOMEPAGE -->
+  <div data-role="page" id="Khome">
+    <div data-role="main" class="ui-content">
+      <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+        <div class="mdl-tabs__tab-bar">
+          <a href="#starks-panel" class="mdl-tabs__tab is-active">Activities</a>
+          <a href="#lannisters-panel" class="mdl-tabs__tab">Books</a>
+        </div>
+        <div class="mdl-tabs__panel is-active" id="starks-panel">
+          <div id="Kred" class="ui-grid-a">
+            <div class="ui-block-a ke">
+              <!-- Square card -->
+              <div id="K1" class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text">Verb</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Play
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="ui-block-b ke">
+              <!-- Square card -->
+              <div id="K2" class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text">Adjective</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a id="Kstarter" href="#Kgame" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-transition="pop">
+                    Play
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="Kred1" class="ui-grid-a">
+            <div class="ui-block-a ke">
+              <!-- Square card -->
+              <div id="K3" class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text">Sentence</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Play
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="ui-block-b ke">
+              <!-- Square card -->
+              <div id="K4" class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text">Spelling</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Play
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="Kred2" class="ui-grid-a">
+            <div class="ui-block-a ke">
+              <!-- Square card -->
+              <div id="K5" class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text">Focus</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Play
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="ui-block-b ke">
+              <!-- Square card -->
+              <div id="K6" class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text">Passage</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Play
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FOOTER NAV -->
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#home" data-icon="book" class="botnav"></a></li>
+          <li><a id="Kstats1" data-icon="bar-chart-o" class="botnav"></a></li>
+          <li><a id="Kuser1" data-icon="user" class="botnav"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- PROFILE -->
+  <div data-role="page" id="Kacc">
+    <div data-role="main" class="ui-content" id="Kprofilemain">
+      <a id="Klogout" class="ui-btn ui-shadow ui-corner-all ui-icon-sign-out ui-btn-icon-notext ui-btn-a" href="#Klogin" data-transition="fade"></a>
+      <div id="Kprofileicon">
+        <img src="img/sboy.png">
+        <h4>Vashil Kissoon</h4>
+        <h9>Grade 7 Diamond</h9>
+        <br>
+        <span id="Ktitl1" class="Ktitl">Hours</span>
+        <span id="Ktitl2" class="Ktitl">Level</span>
+        <span id="Khrs">234</span>
+        <span id="Klevel">34</span>
+        <div id="Kproseparator"></div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="ui-grid-c">
+        <div class="ui-block-a"><img src="img/file.png"></div>
+        <div class="ui-block-b"><img src="img/ques.png"></div>
+        <div class="ui-block-c"><img src="img/ques.png"></div>
+        <div class="ui-block-d"><img src="img/ques.png"></div>
+      </div>
+      <div class="ui-grid-c">
+        <div class="ui-block-a"><img src="img/ques.png"></div>
+        <div class="ui-block-b"><img src="img/ques.png"></div>
+        <div class="ui-block-c"><img src="img/ques.png"></div>
+        <div class="ui-block-d"><img src="img/ques.png"></div>
+      </div>
+      <div class="ui-grid-c">
+        <div class="ui-block-a"><img src="img/ques.png"></div>
+        <div class="ui-block-b"><img src="img/ques.png"></div>
+        <div class="ui-block-c"><img src="img/ques.png"></div>
+        <div class="ui-block-d"><img src="img/ques.png"></div>
+      </div>
+      <div class="ui-grid-c">
+        <div class="ui-block-a"><img src="img/ques.png"></div>
+        <div class="ui-block-b"><img src="img/ques.png"></div>
+        <div class="ui-block-c"><img src="img/ques.png"></div>
+        <div class="ui-block-d"><img src="img/ques.png"></div>
+      </div>
+      <div class="ui-grid-c">
+        <div class="ui-block-a"><img src="img/ques.png"></div>
+        <div class="ui-block-b"><img src="img/ques.png"></div>
+        <div class="ui-block-c"><img src="img/ques.png"></div>
+        <div class="ui-block-d"><img src="img/ques.png"></div>
+      </div>
+    </div>
+    <!-- FOOTER NAV -->
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li><a id="home1" data-icon="book" class="botnav" data-transition="slide"></a></li>
+          <li><a id="Kstats" data-icon="bar-chart-o" class="botnav"></a></li>
+          <li><a data-icon="user" class="botnav"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- MAIN MENU -->
+  <div data-role="page" id="Kmenu">
+    <div data-role="main" class="ui-content">
+      <!-- DIV FOR TITLE -->
+      <div id="Kmenucont">
+        <h4>Performance</h4>
+        <a id="Kset" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-a" onclick="model">Check</a>
+        <dialog class="mdl-dialog">
+          <h4 class="mdl-dialog__title">Performance</h4>
+          <div class="mdl-dialog__content">
+            <p>
+              The stats show the performance of the student in specific fields as mentionned. The scores accumulated show the work completed and overall performance of the student.
+            </p>
+          </div>
+          <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button close" data-icon="delete">close</button>
+          </div>
+        </dialog>
+      </div>
+      <!-- PROGRESS BARS -->
+      <div id="Kprogresscont">
+        <h7>Verb: 12,900</h7>
+        <h8 id="K11"></h8>
+        <div id="container"></div>
+        <h7>Adjective: 2,890</h7>
+        <h8 id="K12"></h8>
+        <div id="container1"></div>
+        <h7>Sentence: 7,345</h7>
+        <h8 id="K13"></h8>
+        <div id="container2"></div>
+        <h7>Spelling: 9,650</h7>
+        <h8 id="K14"></h8>
+        <div id="container3"></div>
+        <h7>Focus: 8,431</h7>
+        <h8 id="K15"></h8>
+        <div id="container4"></div>
+        <h7>Passage: 1,980</h7>
+        <h8 id="K16"></h8>
+        <div id="container5"></div>
+      </div>
+      <div id="Kseparator"></div>
+      <!-- RANKING -->
+      <div id="Krankingcont">
+        <h4>Ranking</h4>
+        <a id="Krank" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-a" href="#"></a>
+        <dialog class="mdl-dialog">
+          <h4 class="mdl-dialog__title">Ranking</h4>
+          <div class="mdl-dialog__content">
+            <p>
+              The Rank shows the top 5 students in the class with the best average score of all the activies.
+            </p>
+          </div>
+          <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button close" data-icon="delete">close</button>
+          </div>
+        </dialog>
+        <div id="Kpodium">
+          <img src="img/podium.png">
+          <ul data-role="listview" data-inset="true">
+            <li><img class="ui-li-icon ui-corner-none" src="img/gf.png">Anne Lise</li>
+            <li><img class="ui-li-icon" src="img/gf.png">Yud Hauradhun</li>
+            <li><img class="ui-li-icon" src="img/boy.png">Divesh Mootia</li>
+            <li><img class="ui-li-icon" src="img/gf.png">Priyasha Ramdass</li>
+            <li><img class="ui-li-icon ui-corner-none" src="img/boy.png">Dharma Singh</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- FOOTER NAV -->
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li><a id="home2" data-icon="book" class="botnav" data-transition="slide"></a></li>
+          <li><a data-icon="bar-chart-o" class="botnav"></a></li>
+          <li><a id="Kuser" data-icon="user" class="botnav"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- GAME ADJECTIVE -->
+  <div data-role="page" id="Kgame">
+    <div id="Ktopback">
+      <a id="Kgameback" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-a" data-transition="fade"></a>
+      <img id="Khrt1" src="img/heart.png">
+      <img id="Khrt2" src="img/heart.png">
+      <img id="Khrt3" src="img/heart.png">
+      <img id="Khrt4" src="img/heart.png">
+      <div id="Khighscore">0000</div>
+      <div id="Kques" class="Kclass"></div>
+    </div>
+    <div data-role="main" class="ui-content">
+      <div id="Kans1" class=" Kans"></div>
+      <div id="Kans2" class="Kans"></div>
+      <div id="Kans3" class="Kans"></div>
+      <div id="Kans4" class="Kans"></div>
+      <button id="Kstart">START</button>
+      <canvas id="triangle" data-processing-sources="drawing.pde"></canvas>
+    </div>
+  </div>
+
+  <!-- PRETEST INFO PAGE -->
+  <div data-role="page" id="pagehome" class="nbg">
+    <button class="ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all" style="position: fixed;">No Text</button>
+    <div>
+      <img src="img/abclogo.png" id="image" style="display: block; margin-left: auto; margin-right: auto; width: 15%;"> </img>
+    </div>
+    <h2 style="text-align: center; margin-bottom:  0px"> Pre-Test</h2>
+    <h4 style="text-align: center; margin: 0px;"> Take a quize to determine your level </h4>
+    <hr>
+
+
+
+
+    <div role="main" class="ui-content">
+      <p> Guideline:</p>
+      <p>1.Choose the correct question and then press the next button .</p>
+      <p>2.This quize is time based, the faster you answer the better it is.</p>
+      <p>3. Try to answer all questions</p>
+      <p>4. Once a qestion is submitted, it cannot be undone.</p>
+
+
+
+    </div>
+
+    <div data-role="footer" data-position="fixed" style="background-color: transparent;">
+      <button id="nplay" style="background-color:#8B008B; color: white; width: 100%;" class="ui-btn"> Play </button>
+    </div>
+
+    <div style="text-align: center;">
+      <h1>Are You Ready ??</h1>
+    </div>
+
+  </div>
+
+  <!-- QUESTION 1-->
+  <div data-role="page" id="p1" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <div class="foto">
+        <img src="img/sun.gif" alt="bird">
+        <div class="quest">The picture above is the _____ .</div>
+      </div>
+
+      <form>
+        <fieldset data-role="controlgroup" id="a1">
+
+          <label><input name="radio" id="o1" type="radio" value="bad"> A. ball </label>
+          <label><input name="radio" id="o2" type="radio" value="bad"> B. pen </label>
+          <label><input name="radio" id="o3" type="radio" value="good"> C. sun </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p2" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+
+  <!-- Question 2 -->
+  <div data-role="page" id="p2" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <form>
+        <fieldset data-role="controlgroup" id="a2">
+          <h3 class="hd-cent"> I ____ born in 1990</h3>
+          <label><input name="radio" id="o4" type="radio" value="good"> A. was </label>
+          <label><input name="radio" id="o5" type="radio" value="bad"> B. am </label>
+          <label><input name="radio" id="o6" type="radio" value="bad"> C. were </label>
+          <label><input name="radio" id="o7" type="radio" value="bad"> D. is </label>
+        </fieldset>
+      </form>
+      <br>
+
+      <div>
+        <button id="#p3" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+
+  <!-- QUESTION 3-->
+  <div data-role="page" id="p3" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <div class="foto">
+        <img src="img/comp.jpg" alt="computer">
+        <div class="quest">This is a ____ .</div>
+      </div>
+
+      <form>
+        <fieldset data-role="controlgroup" id="a3">
+
+          <label><input name="radio" id="o8" type="radio" value="bad"> A. television </label>
+          <label><input name="radio" id="o9" type="radio" value="good"> B. computer </label>
+          <label><input name="radio" id="o10" type="radio" value="bad"> C. clock </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p4" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+
+  <!-- Question 4 -->
+  <div data-role="page" id="p4" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <form>
+        <fieldset data-role="controlgroup" id="a4">
+          <h3 class="hd-cent"> How ___ you ?</h3>
+          <label><input name="radio" id="o11" type="radio" value="bad"> A. is </label>
+          <label><input name="radio" id="o12" type="radio" value="good"> B. are </label>
+          <label><input name="radio" id="o13" type="radio" value="bad"> C. am </label>
+        </fieldset>
+
+      </form>
+      <br>
+
+      <div>
+        <button id="#p5" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+
+  <!-- QUESTION 5-->
+  <div data-role="page" id="p5" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <div class="foto">
+        <img src="img/bird.gif" alt="bird">
+        <div class="quest">The ____ is flying.</div>
+      </div>
+
+      <form>
+        <fieldset data-role="controlgroup" id="a5">
+
+          <label><input name="radio" id="o14" type="radio" value="bad"> A. dog </label>
+          <label><input name="radio" id="o15" type="radio" value="good"> B. bird </label>
+          <label><input name="radio" id="o16" type="radio" value="bad"> C. cat </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p6" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+
+  <!-- Question 6 -->
+  <div data-role="page" id="p6" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <form>
+        <fieldset data-role="controlgroup" id="a6">
+          <h3 class="hd-cent"> Choose the correct answer below :</h3>
+          <label><input name="radio" id="o17" type="radio" value="bad"> A. I is a cold </label>
+          <label><input name="radio" id="o18" type="radio" value="bad"> B. I am cold </label>
+          <label><input name="radio" id="o19" type="radio" value="bad"> C. I has cold </label>
+          <label><input name="radio" id="o20" type="radio" value="good"> D. I have cold </label>
+        </fieldset>
+
+      </form>
+      <br>
+
+      <div>
+        <button id="#p7" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+
+  <!-- QUESTION 7-->
+  <div data-role="page" id="p7" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <div class="foto">
+        <img src="img/house.jpg" alt="house">
+        <div class="quest">A family lives in this ____.</div>
+      </div>
+
+      <form>
+        <fieldset data-role="controlgroup" id="p7">
+
+          <label><input name="radio" id="o21" type="radio" value="bad"> A. village </label>
+          <label><input name="radio" id="o22" type="radio" value="good"> B. house </label>
+          <label><input name="radio" id="o23" type="radio" value="bad"> C. playground </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p8" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+
+  <!-- Question 8 -->
+  <div data-role="page" id="p8" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <form>
+        <fieldset data-role="controlgroup" id="a8">
+          <h3 class="hd-cent"> She works ____ Saturday :</h3>
+          <label><input name="radio" id="o24" type="radio" value="bad"> A. at </label>
+          <label><input name="radio" id="o25" type="radio" value="bad"> B. to </label>
+          <label><input name="radio" id="o26" type="radio" value="bad"> C. in </label>
+          <label><input name="radio" id="o27" type="radio" value="good"> D. on </label>
+        </fieldset>
+      </form>
+      <br>
+
+      <div>
+        <button id="#p9" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+
+  <!-- QUESTION 9-->
+  <div data-role="page" id="p9" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <div class="foto">
+        <img src="img/run.gif" alt="house">
+        <div class="quest">This man is _____ .</div>
+      </div>
+
+      <form>
+        <fieldset data-role="controlgroup" id="a9">
+
+          <label><input name="radio" id="o28" type="radio" value="good"> A. running </label>
+          <label><input name="radio" id="o29" type="radio" value="bad"> B. walking </label>
+          <label><input name="radio" id="o30" type="radio" value="bad"> C. jumping </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p10" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+
+  <!-- Question 10 -->
+  <div data-role="page" id="p10" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <form>
+        <fieldset data-role="controlgroup" id="a10">
+          <h3 class="hd-cent"> I ____ to play football after school.</h3>
+          <label><input name="radio" id="o31" type="radio" value="bad"> A. likes </label>
+          <label><input name="radio" id="o32" type="radio" value="bad"> B. liking </label>
+          <label><input name="radio" id="o33" type="radio" value="bad"> C. lik </label>
+          <label><input name="radio" id="o34" type="radio" value="good"> D. like </label>
+        </fieldset>
+      </form>
+      <br>
+
+      <div>
+        <button id="#p11" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+
+  <!-- QUESTION 11-->
+  <div data-role="page" id="p11" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <div class="foto">
+        <img src="img/car.gif" alt="house">
+        <div class="quest">This red vehicle on the picture above is a _____ .</div>
+      </div>
+
+      <form>
+        <fieldset data-role="controlgroup" id="a11">
+
+          <label><input name="radio" id="o35" type="radio" value="bad"> A. bus </label>
+          <label><input name="radio" id="o36" type="radio" value="bad"> B. aeroplane </label>
+          <label><input name="radio" id="o37" type="radio" value="bad"> C. lorry </label>
+          <label><input name="radio" id="o38" type="radio" value="good"> D. car</label>
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p12" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+
+  <!-- Question 12 -->
+  <div data-role="page" id="p12" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <form>
+        <fieldset data-role="controlgroup" id="a12">
+          <h3 class="hd-cent"> This movie is ___.</h3>
+          <label><input name="radio" id="o39" type="radio" value="bad"> A. orange </label>
+          <label><input name="radio" id="o40" type="radio" value="bad"> B. badder </label>
+          <label><input name="radio" id="o41" type="radio" value="bad"> C. boring </label>
+          <label><input name="radio" id="o42" type="radio" value="good"> D. bestest </label>
+        </fieldset>
+      </form>
+      <br>
+
+      <div>
+        <button id="#p13" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+  <!-- QUESTION 13-->
+  <div data-role="page" id="p13" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <div class="foto">
+        <img src="img/cam.gif" alt="house">
+        <div class="quest">A _____ is used to take a photo.</div>
+      </div>
+
+      <form>
+        <fieldset data-role="controlgroup" id="a13">
+
+          <label><input name="radio" id="o43" type="radio" value="good"> A. camera </label>
+          <label><input name="radio" id="o44" type="radio" value="bad"> B. clock </label>
+          <label><input name="radio" id="o45" type="radio" value="bad"> C. glass </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p14" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+  <!-- Question 14 -->
+  <div data-role="page" id="p14" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <form>
+        <fieldset data-role="controlgroup" id="a14">
+          <h3 class="hd-cent"> Two + Three = ____ .</h3>
+          <label><input name="radio" id="o46" type="radio" value="bad"> A. 3 </label>
+          <label><input name="radio" id="o47" type="radio" value="bad"> B. 4 </label>
+          <label><input name="radio" id="o48" type="radio" value="good"> C. 5 </label>
+          <label><input name="radio" id="o49" type="radio" value="bad"> D. 6 </label>
+        </fieldset>
+      </form>
+      <br>
+
+      <div>
+        <button id="#p15" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+  <!-- QUESTION 15-->
+  <div data-role="page" id="p15" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <div class="foto">
+        <img src="img/cry.gif" alt="house">
+        <div class="quest">This child is ____ ..</div>
+      </div>
+
+      <form>
+        <fieldset data-role="controlgroup" id="a15">
+
+          <label><input name="radio" id="o50" type="radio" value="good"> A. crying </label>
+          <label><input name="radio" id="o51" type="radio" value="bad"> B. laughing </label>
+          <label><input name="radio" id="o52" type="radio" value="bad"> C. talking </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p16" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+  <!-- Question 16 -->
+  <div data-role="page" id="p16" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <form>
+        <fieldset data-role="controlgroup" id="a16">
+          <h3 class="hd-cent"> Shape of a ball is ____.</h3>
+          <label><input name="radio" id="o53" type="radio" value="bad"> A. square </label>
+          <label><input name="radio" id="o54" type="radio" value="bad"> B. triangle </label>
+          <label><input name="radio" id="o55" type="radio" value="good"> C. round </label>
+          <label><input name="radio" id="o56" type="radio" value="bad"> D. rectangle </label>
+        </fieldset>
+      </form>
+      <br>
+
+      <div>
+        <button id="#p17" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+  <!-- QUESTION 17-->
+  <div data-role="page" id="p17" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <div class="foto">
+        <img src="img/fish.gif" alt="house">
+        <div class="quest">Let's go ____.</div>
+      </div>
+
+      <form>
+        <fieldset data-role="controlgroup" id="a17">
+
+          <label><input name="radio" id="o57" type="radio" value="good"> A. fishing </label>
+          <label><input name="radio" id="o58" type="radio" value="bad"> B. swimming </label>
+          <label><input name="radio" id="o59" type="radio" value="bad"> C. walking </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p18" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+  <!-- Question 18 -->
+  <div data-role="page" id="p18" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <form>
+        <fieldset data-role="controlgroup" id="a18">
+          <h3 class="hd-cent"> It is ____ outside .</h3>
+          <label><input name="radio" id="o60" type="radio" value="bad"> A. rains </label>
+          <label><input name="radio" id="o61" type="radio" value="good"> B. raining </label>
+          <label><input name="radio" id="o62" type="radio" value="bad"> C. rain </label>
+        </fieldset>
+
+      </form>
+      <br>
+
+      <div>
+        <button id="#p19" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+  <!-- QUESTION 19-->
+  <div data-role="page" id="p19" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <div class="foto">
+        <img src="img/clock.png" alt="house">
+        <div class="quest">It is ___ o'clock .</div>
+      </div>
+
+      <form>
+        <fieldset data-role="controlgroup" id="a19">
+
+          <label><input name="radio" id="o57" type="radio" value="bad"> A. 9 </label>
+          <label><input name="radio" id="o58" type="radio" value="bad"> B. 12 </label>
+          <label><input name="radio" id="o59" type="radio" value="good"> C. 10 </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p20" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+  <!-- Question 20 -->
+  <div data-role="page" id="p20" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <form>
+        <fieldset data-role="controlgroup" id="a20">
+          <h3 class="hd-cent"> You see with your eyes .</h3>
+          <label><input name="radio" id="o60" type="radio" value="good"> A. True </label>
+          <label><input name="radio" id="o61" type="radio" value="bad"> B. False </label>
+
+        </fieldset>
+
+      </form>
+      <br>
+
+      <div>
+        <button id="#p21" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="easy"></div>
+  </div>
+  <!-- QUESTION 21-->
+  <div data-role="page" id="p21" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <div class="foto">
+        <img src="img/door.gif" alt="house">
+        <div class="quest">The door is ____ .</div>
+      </div>
+
+      <form>
+        <fieldset data-role="controlgroup" id="a21">
+
+          <label><input name="radio" id="o62" type="radio" value="bad"> A. closing </label>
+          <label><input name="radio" id="o63" type="radio" value="bad"> B. opens </label>
+          <label><input name="radio" id="o64" type="radio" value="good"> C. opening </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p22" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="medium"></div>
+  </div>
+  <!-- Question 22 -->
+  <div data-role="page" id="p22" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <form>
+        <fieldset data-role="controlgroup" id="a22">
+          <h3 class="hd-cent"> How long _________english ?</h3>
+          <label><input name="radio" id="o65" type="radio" value="good"> A. are you learning </label>
+          <label><input name="radio" id="o66" type="radio" value="bad"> B. have been learning </label>
+          <label><input name="radio" id="o67" type="radio" value="bad"> C. do you learn </label>
+          <label><input name="radio" id="o68" type="radio" value="bad"> D. you learn </label>
+        </fieldset>
+      </form>
+      <br>
+
+      <div>
+        <button id="#p23" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="medium"></div>
+  </div>
+  <!-- QUESTION 23 -->
+  <div data-role="page" id="p23" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+      <div class="foto">
+        <img src="img/miss.gif" alt="house">
+        <div class="quest">The man is missing a _____ .</div>
+      </div>
+
+      <form>
+        <fieldset data-role="controlgroup" id="a23">
+
+          <label><input name="radio" id="o69" type="radio" value="bad"> A. teeth </label>
+          <label><input name="radio" id="o70" type="radio" value="good"> B. tooth </label>
+          <label><input name="radio" id="o71" type="radio" value="bad"> C. toothe </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p24" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="medium"></div>
+  </div>
+  <!-- Question 24 -->
+  <div data-role="page" id="p24" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+    <!-- This is the navbar -->
+
+    <div data-role="main" class="ui-content">
+      <form>
+        <fieldset data-role="controlgroup" id="a24">
+          <h3 class="hd-cent"> Is Tom _____ Sam ?</h3>
+          <label><input name="radio" id="o72" type="radio" value="bad"> A. tall as </label>
+          <label><input name="radio" id="o73" type="radio" value="good"> B. as tall as </label>
+          <label><input name="radio" id="o74" type="radio" value="bad"> C. tall that </label>
+          <label><input name="radio" id="o75" type="radio" value="bad"> D. more tall </label>
+        </fieldset>
+      </form>
+      <br>
+
+      <div>
+        <button id="#p25" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="medium"></div>
+  </div>
+
+  <!-- QUESTION 25 -->
+  <div data-role="page" id="p25" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+      <div class="foto">
+        <img src="img/scar.gif" alt="house">
+        <div class="quest">The child got _____ .</div>
+      </div>
+
+      <form>
+        <fieldset data-role="controlgroup" id="a25">
+
+          <label><input name="radio" id="o76" type="radio" value="bad"> A. excited </label>
+          <label><input name="radio" id="o77" type="radio" value="good"> B. scared </label>
+          <label><input name="radio" id="o78" type="radio" value="bad"> C. bored </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p26" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="medium"></div>
+  </div>
+
+  <!-- QUESTION 26 -->
+  <div data-role="page" id="p26" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+
+
+      <form>
+        <h3 class="hd-cent"> ______ God bless you and your child .</h3>
+        <fieldset data-role="controlgroup" id="a26">
+
+          <label><input name="radio" id="o79" type="radio" value="bad"> A. Might </label>
+          <label><input name="radio" id="o80" type="radio" value="bad"> B. Should </label>
+          <label><input name="radio" id="o81" type="radio" value="good"> C. May </label>
+          <label><input name="radio" id="o82" type="radio" value="bad"> D. Can </label>
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p27" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="medium"></div>
+  </div>
+
+  <!-- QUESTION 27 -->
+  <div data-role="page" id="p27" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+      <div class="foto">
+        <img src="img/umbr.gif" alt="umbrella">
+        <div class="quest">I can't do ________ my umbrella on rainy days.</div>
+      </div>
+
+      <form>
+        <fieldset data-role="controlgroup" id="a27">
+
+          <label><input name="radio" id="o83" type="radio" value="bad"> A. with </label>
+          <label><input name="radio" id="o84" type="radio" value="bad"> B. from </label>
+          <label><input name="radio" id="o85" type="radio" value="good"> C. without </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p28" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="medium"></div>
+  </div>
+
+  <!-- QUESTION 28 -->
+  <div data-role="page" id="p28" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+
+      <form>
+        <h3 class="hd-cent"> Fresh flowers were strewn all ______ the way to welcome the leader.</h3>
+        <fieldset data-role="controlgroup" id="a28">
+
+          <label><input name="radio" id="o86" type="radio" value="good"> A. over </label>
+          <label><input name="radio" id="o87" type="radio" value="bad"> B. along </label>
+          <label><input name="radio" id="o88" type="radio" value="bad"> C. round </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p29" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="medium"></div>
+  </div>
+
+  <!-- QUESTION 29 -->
+  <div data-role="page" id="p29" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+      <div class="foto">
+        <img src="img/build.gif" alt="build">
+        <div class="quest">The young man is ready to build his new house by ________.</div>
+      </div>
+
+      <form>
+        <fieldset data-role="controlgroup" id="a29">
+
+          <label><input name="radio" id="o89" type="radio" value="bad"> A. itself</label>
+          <label><input name="radio" id="o90" type="radio" value="bad"> B. herself </label>
+          <label><input name="radio" id="o91" type="radio" value="good"> C. himself </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p30" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="medium"></div>
+  </div>
+
+  <!-- QUESTION 30 -->
+  <div data-role="page" id="p30" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+
+      <form>
+        <h3 class="hd-cent"> The toy shop is located ________ the new restaurant.</h3>
+        <fieldset data-role="controlgroup" id="a30">
+
+          <label><input name="radio" id="o92" type="radio" value="bad"> A. aside </label>
+          <label><input name="radio" id="o93" type="radio" value="good"> B. beside </label>
+          <label><input name="radio" id="o94" type="radio" value="bad"> C. besides </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p31" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="medium"></div>
+  </div>
+
+  <!-- QUESTION 31 -->
+  <div data-role="page" id="p31" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+      <div class="foto">
+        <img src="img/weight.gif" alt="fat">
+        <div class="quest">A nice buttery and chocolate filled biscuit is tasty but you will gain excess __________.</div>
+      </div>
+
+      <form>
+        <fieldset data-role="controlgroup" id="a31">
+
+          <label><input name="radio" id="o95" type="radio" value="bad"> A. wheat</label>
+          <label><input name="radio" id="o96" type="radio" value="good"> B. weight </label>
+          <label><input name="radio" id="o97" type="radio" value="bad"> C. wait </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p32" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="medium"></div>
+  </div>
+
+  <!-- QUESTION 32 -->
+  <div data-role="page" id="p32" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+
+      <form>
+        <h3 class="hd-cent"> _______ you and me, who is the greatest liar?.</h3>
+        <fieldset data-role="controlgroup" id="a32">
+
+          <label><input name="radio" id="o98" type="radio" value="good"> A. Between </label>
+          <label><input name="radio" id="o99" type="radio" value="bad"> B. before </label>
+          <label><input name="radio" id="o100" type="radio" value="bad"> C. besides </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p33" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="medium"></div>
+  </div>
+
+  <!-- QUESTION 33 -->
+  <div data-role="page" id="p33" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+      <div class="foto">
+        <img src="img/monu.jpg" alt="monument">
+        <div class="quest">A monument is _______.</div>
+      </div>
+
+      <form>
+        <fieldset data-role="controlgroup" id="a33">
+
+          <label><input name="radio" id="o101" type="radio" value="bad"> A. a symbol of god</label>
+          <label><input name="radio" id="o102" type="radio" value="good"> B. just a stone sculpture </label>
+          <label><input name="radio" id="o103" type="radio" value="bad"> C. a structure that is of historical importance </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p34" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="medium"></div>
+  </div>
+
+  <!-- QUESTION 34 -->
+  <div data-role="page" id="p34" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+
+      <form>
+        <h3 class="hd-cent">The earring was lying ________ the table.</h3>
+        <fieldset data-role="controlgroup" id="a34">
+
+          <label><input name="radio" id="o104" type="radio" value="bad"> A. Between </label>
+          <label><input name="radio" id="o105" type="radio" value="good"> B. under </label>
+          <label><input name="radio" id="o106" type="radio" value="bad"> C. inside </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p35" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="medium"></div>
+  </div>
+
+  <!-- QUESTION 35 -->
+  <div data-role="page" id="p35" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+
+      <form>
+        <h3 class="hd-cent">The opposit of afraid is ______.</h3>
+        <fieldset data-role="controlgroup" id="a35">
+
+          <label><input name="radio" id="o107" type="radio" value="bad"> A. unafraid </label>
+          <label><input name="radio" id="o108" type="radio" value="good"> B. brave </label>
+          <label><input name="radio" id="o109" type="radio" value="bad"> C. inafraid </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p36" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="medium"></div>
+  </div>
+
+  <!-- QUESTION 36 -->
+  <div data-role="page" id="p36" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+
+      <form>
+        <h3 class="hd-cent">She _____ visit her old grandmother once in a while.</h3>
+        <fieldset data-role="controlgroup" id="a36">
+
+          <label><input name="radio" id="o110" type="radio" value="good"> A. used to </label>
+          <label><input name="radio" id="o111" type="radio" value="bad"> B. use to </label>
+          <label><input name="radio" id="o112" type="radio" value="bad"> C. ought to </label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p37" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="hard"></div>
+  </div>
+
+  <!-- QUESTION 37 -->
+  <div data-role="page" id="p37" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+
+      <form>
+        <h3 class="hd-cent">Murphy _______ be receiving the guests tonight.</h3>
+        <fieldset data-role="controlgroup" id="a37">
+
+          <label><input name="radio" id="o113" type="radio" value="good"> A. will </label>
+          <label><input name="radio" id="o114" type="radio" value="bad"> B. would </label>
+          <label><input name="radio" id="o115" type="radio" value="bad"> C. shall</label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p38" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="hard"></div>
+  </div>
+
+  <!-- QUESTION 38 -->
+  <div data-role="page" id="p38" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+
+      <form>
+        <h3 class="hd-cent">I _______ be requested to replace th teacher today.</h3>
+        <fieldset data-role="controlgroup" id="a38">
+
+          <label><input name="radio" id="o116" type="radio" value="bad"> A. can </label>
+          <label><input name="radio" id="o117" type="radio" value="bad"> B. might </label>
+          <label><input name="radio" id="o118" type="radio" value="good"> C. may</label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p39" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="hard"></div>
+  </div>
+
+  <!-- QUESTION 39 -->
+  <div data-role="page" id="p39" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+
+      <form>
+        <h3 class="hd-cent">I _______ be requested to replace th teacher today.</h3>
+        <fieldset data-role="controlgroup" id="a39">
+
+          <label><input name="radio" id="o119" type="radio" value="bad"> A. can </label>
+          <label><input name="radio" id="o120" type="radio" value="bad"> B. might </label>
+          <label><input name="radio" id="o121" type="radio" value="good"> C. may</label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p40" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="hard"></div>
+  </div>
+
+  <!-- QUESTION 40 -->
+  <div data-role="page" id="p40" class="nbg">
+    <div data-role="header" style="background-color: transparent;">
+
+      <h3>Pre-test</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+
+      <form>
+        <h3 class="hd-cent">The synonym of eager is ______.</h3>
+        <fieldset data-role="controlgroup" id="a40">
+
+          <label><input name="radio" id="o122" type="radio" value="bad"> A. jaleous </label>
+          <label><input name="radio" id="o123" type="radio" value="good"> B. keen </label>
+          <label><input name="radio" id="o124" type="radio" value="bad"> C. desperate</label>
+
+
+        </fieldset>
+      </form>
+
+      <div>
+        <button id="#p41" class="ui-btn pretest" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+
+
+    </div>
+    <div class="hard"></div>
+  </div>
+  <!-- TEST PAGE -->
+  <div data-role="page" id="testhome">
+    <div data-role="main" class="ui-content" id="master">
+      <h3 id="uiw"></h3>
+    </div>
+    <!-- FOOTER NAV -->
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#home" data-icon="book" class="botnav"></a></li>
+          <li><a id="Kstats1" data-icon="bar-chart-o" class="botnav"></a></li>
+          <li><a id="Kuser1" data-icon="user" class="botnav"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    //Variables for Ai
+    var username;
+    var password;
+    var pretest;
+    var time;
+    var anstime = 0;
+    var pretestans;
+    var pretestlevel = 0;
+    var pretestgood = 0;
+    var studentlevel;
+    //DETERMINE QUESTIONS
+    var pretestcur = 1;
+    var numberques = 0;
+    var quesarr = [];
+    var db;
+    var usertestscore;
+    var queslast = [];
+    var quesbeforelast = [];
+
+    //Dialogs
+    var dialog = document.querySelector('dialog');
+    var showDialogButton = document.querySelector('#Kset');
+    if (!dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    showDialogButton.addEventListener('click', function() {
+      dialog.showModal();
+    });
+    dialog.querySelector('.close').addEventListener('click', function() {
+      dialog.close();
+    });
+
+    var dialog1 = document.querySelector('dialog');
+    var showDialogButton = document.querySelector('#Krank');
+    if (!dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog1);
+    }
+    showDialogButton.addEventListener('click', function() {
+      dialog.showModal();
+    });
+    dialog.querySelector('.close').addEventListener('click', function() {
+      dialog.close();
+    });
+
+    //VALUES FOR GAME
+    var game1 = 1.0;
+    var game2 = 0.3;
+    var game3 = 0.6;
+    var game4 = 0.8;
+    var game5 = 0.7;
+    var game6 = 0.2;
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady() {
+      //creates the database and size
+      db = openDatabase("Aitest", "1.0", "Database for Ai", 2 * 1024 * 1024);
+      //ALLOWS execution of all functions
+      db.transaction(function(tx) {
+        //CREATE TABLE STUDENT
+        tx.executeSql('CREATE TABLE IF NOT EXISTS stud(name text, password text, level int,pretest text)');
+        tx.executeSql('CREATE TABLE IF NOT EXISTS testscore(score int, time int)');
+        tx.executeSql('INSERT INTO stud(name,password,level,pretest) VALUES ("kissoon", "youknowyou", 0, "false")');
+        //CREATE TABLE QUESTIONS
+        tx.executeSql(
+          'CREATE TABLE IF NOT EXISTS ques(id int, q1 int,q2 int,q3 int,q4 int,q5 int,q6 int,q7 int,q8 int,q9 int,q10 int,q11 int,q12 int,q13 int,q14 int,q15 int,q16 int,q17 int,q18 int,q19 int,q20 int,q21 int,q22 int,q23 int,q24 int,q25 int,q26 int,q27 int,q28 int,q29 int,q30 int,q31 int,q32 int,q33 int,q34 int,q35 int,q36 int,q37 int,q38 int,q39 int,q40 int)'
+        );
+        //RETRIEVING VALUES FOR USER
+        tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, result) {
+          //console helps to locate result in array
+          //console.log(result);
+          username = result.rows[0].name;
+          password = result.rows[0].password;
+          pretest = result.rows[0].pretest;
+        });
+      });
+      //code goes here
+      populateh8();
+      assignlv();
+    }
+
+    //SELECT PRETEST QUESTIONS
+    function pretestques(level) {
+      //SEND TO ARRAY FOR COMPARISON
+      quesarr[numberques] = pretestcur;
+      if (numberques != 15) {
+        if ((level >= 0) && (level < 40)) {
+          var match = 0;
+          //BEGINNER LEVEL
+          do {
+            pretestcur = Math.floor((Math.random() * 20) + 1);
+            var i;
+            match = 0;
+            for (i = 0; i < quesarr.length; i++) {
+              if (quesarr[i] == pretestcur) {
+                match++;
+              }
+            }
+          }
+          while (match != 0);
+          //PRETEST Ai
+          preassesment();
+          var a = "#p" + pretestcur;
+          $.mobile.changePage(a, {
+            reverse: false,
+            transition: "slide"
+          });
+          //TIMER
+          timer();
+          //INTERMEDIATE LEVEL
+        } else if ((level >= 40) && (level < 70)) {
+          do {
+            pretestcur = Math.floor((Math.random() * 20) + 15);
+            var i;
+            match = 0;
+            for (i = 0; i < quesarr.length; i++) {
+              if (quesarr[i] == pretestcur) {
+                match++;
+              }
+            }
+          }
+          while (match != 0);
+          //REINITIALIZE match
+          match = false;
+          //PRETEST Ai
+          preassesment();
+          var a = "#p" + pretestcur;
+          $.mobile.changePage(a, {
+            reverse: false,
+            transition: "slide"
+          });
+          //TIMER
+          timer();
+          //ADVANCED LEVEL
+        } else if ((level >= 70) && (level < 100)) {
+          do {
+            pretestcur = Math.floor((Math.random() * 15) + 25);
+            var i;
+            match = 0;
+            for (i = 0; i < quesarr.length; i++) {
+              if (quesarr[i] == pretestcur) {
+                match++;
+              }
+            }
+          }
+          while (match != 0);
+          //REINITIALIZE match
+          match = false;
+          //PRETEST Ai
+          preassesment();
+          var a = "#p" + pretestcur;
+          $.mobile.changePage(a, {
+            reverse: false,
+            transition: "slide"
+          });
+          //TIMER
+          timer();
+        }
+      } else {
+        //Change to score page or homepage
+        $.mobile.changePage("#Kacc", {
+          reverse: false,
+          transition: "slide"
+        });
+        bye();
+      }
+    }
+
+    function bye() {
+      //PUSH LEVEL TO DATABASE
+      db = openDatabase("Aitest", "1.0", "Database for Ai", 2 * 1024 * 1024);
+      db.transaction(function(tx) {
+        tx.executeSql('UPDATE stud SET level=?, pretest=? WHERE rowid=1', [pretestlevel, "true"]);
+        tx.executeSql('SELECT level FROM stud WHERE rowid=1', [], function(tx, result) {
+          var a = result.rows[0].level;
+          $("#Klevel").html(Math.round(a));
+        })
+        tx.executeSql('INSERT INTO testscore(score) VALUES (?)', [pretestgood]);
+      });
+    }
+
+    function assignlv() {
+      db = openDatabase("Aitest", "1.0", "Database for Ai", 2 * 1024 * 1024);
+      db.transaction(function(tx) {
+        tx.executeSql('SELECT level FROM stud WHERE rowid=1', [], function(tx, result) {
+          var a = result.rows[0].level;
+          $("#Klevel").html(Math.round(a));
+        })
+      });
+    }
+
+    $(document).ready(function() {
+      //PREASSESMENT BG
+      $(".nbg").css("background-image", "url('img/background1.jpg')")
+      $(".nbg").css("background-repeat", "no-repeat");
+      $(".nbg").css("background-size", "100% 100%");
+
+      $("#Kuser").click(function() {
+        $.mobile.changePage("#Kacc", {
+          reverse: false,
+          transition: "slide"
+        });
+        destroyall();
+      });
+      $("#Kstats").click(function() {
+        $.mobile.changePage("#Kmenu", {
+          reverse: false,
+          transition: "slide"
+        });
+        animateg1();
+        populateh8();
+      });
+      $("#Kuser1").click(function() {
+        $.mobile.changePage("#Kacc", {
+          reverse: false,
+          transition: "slide"
+        });
+        destroyall();
+      });
+      $("#Kstats1").click(function() {
+        $.mobile.changePage("#Kmenu", {
+          reverse: false,
+          transition: "slide"
+        });
+        animateg1();
+        populateh8();
+      });
+      $("#home1").click(function() {
+        $.mobile.changePage("#Khome", {
+          reverse: false,
+          transition: "slide"
+        });
+        destroyall();
+      });
+      $("#home2").click(function() {
+        $.mobile.changePage("#Khome", {
+          reverse: false,
+          transition: "slide"
+        });
+        destroyall();
+      });
+      //TIMER FOR EACH PRETEST QUES
+      timer();
+      //AUTHENTICATE USER AND PRETEST AT THE SAME TIME
+      $("#Kloginbtn").click(function() {
+        if (($("#klarge").val() == "") || ($("#klarge1").val() == "")) {
+          alert("INVALID!");
+        } else if (($("#klarge").val() == username) || ($("#klarge1").val() == password)) {
+          if (pretest == "false") {
+            $.mobile.changePage("#pagehome", {
+              reverse: false,
+              transition: "pop"
+            });
+          } else {
+            $.mobile.changePage("#Khome", {
+              reverse: false,
+              transition: "pop"
+            });
+            //TIMER
+            timer();
+          }
+        } else {
+          alert("INVALID!");
+        }
+      });
+      //START pretest
+      $("#nplay").click(function() {
+        $.mobile.changePage("#p1", {
+          reverse: false,
+          transition: "pop"
+        });
+      });
+      //GENERIC BUTTON FOR PRETEST
+      $(".pretest").click(function() {
+        stoptimer();
+        pretestassess();
+        pretestques(pretestlevel);
+      });
+    });
+
+    //FUNCTION TIMER
+    function timer() {
+      time = setInterval(count, 1000);
+    }
+
+    function count() {
+      anstime += 1000;
+    }
+
+    function stoptimer() {
+      clearInterval(time);
+      anstime = 0;
+    }
+    //Ai LOGIC
+    function preassesment() {
+      var net = new brain.NeuralNetwork();
+      net.train([{
+        input: {
+          timer: 1000 / 1000000,
+          good: 15 / 15,
+        },
+        output: {
+          level: 1
+        }
+      }, {
+        input: {
+          timer: 120000 / 1000000,
+          good: 15 / 15,
+        },
+        output: {
+          level: 1
+        }
+      }, {
+        input: {
+          timer: 2000 / 1000000,
+          good: 0 / 15,
+        },
+        output: {
+          level: 0
+        }
+      }, {
+        input: {
+          timer: 700000 / 1000000,
+          good: 15 / 15,
+        },
+        output: {
+          level: 0
+        }
+      }], {
+        //Iterations
+        iterations: 1000000,
+        errorThresh: 0.0005,
+        log: true
+      });
+
+      const result = net.run({
+        timer: anstime,
+        good: (pretestgood / 15)
+      });
+      console.log(result);
+      pretestlevel = (result.level) * 100;
+      console.log(pretestlevel);
+    }
+
+    //CHECK ANSWER
+    function pretestassess() {
+      var x = "#a" + pretestcur + " input[name='radio']:checked";
+      pretestans = $(x).val();
+      if (pretestans == "good") {
+        pretestgood++;
+      }
+      numberques++;
+    }
+
+    /* -------------------------- BAR CHART LOGIC ------------------ */
+    function populateh8() {
+      if ((game1 >= 0) & (game1 <= 0.4)) {
+        $("#K11").html("Beginner");
+      } else if ((game1 > 0.4) & (game1 <= 0.7)) {
+        $("#K11").html("Intermediate")
+      } else {
+        $("#K11").html("Advanced");
+      }
+      if ((game2 >= 0) & (game2 <= 0.4)) {
+        $("#K12").html("Beginner");
+      } else if ((game2 > 0.4) & (game2 <= 0.7)) {
+        $("#K12").html("Intermediate")
+      } else {
+        $("#K12").html("Advanced");
+      }
+      if ((game3 >= 0) & (game3 <= 0.4)) {
+        $("#K13").html("Beginner");
+      } else if ((game3 > 0.4) & (game3 <= 0.7)) {
+        $("#K13").html("Intermediate")
+      } else {
+        $("#K13").html("Advanced");
+      }
+      if ((game4 >= 0) & (game4 <= 0.4)) {
+        $("#K14").html("Beginner");
+      } else if ((game4 > 0.4) & (game4 <= 0.7)) {
+        $("#K14").html("Intermediate")
+      } else {
+        $("#K14").html("Advanced");
+      }
+      if ((game5 >= 0) & (game5 <= 0.4)) {
+        $("#K15").html("Beginner");
+      } else if ((game5 > 0.4) & (game5 <= 0.7)) {
+        $("#K15").html("Intermediate")
+      } else {
+        $("#K15").html("Advanced");
+      }
+      if ((game6 >= 0) & (game6 <= 0.4)) {
+        $("#K16").html("Beginner");
+      } else if ((game6 > 0.4) & (game6 <= 0.7)) {
+        $("#K16").html("Intermediate")
+      } else {
+        $("#K16").html("Advanced");
+      }
+    }
+    /*ARRAY FOR GRAPH*/
+    var progressBars = [];
+
+    function animateg1() {
+      progressBars[0] = (new ProgressBar.Line(container, {
+        strokeWidth: 4,
+        easing: 'easeInOut',
+        duration: 1400,
+        color: '#FFEA82',
+        trailColor: '#eee',
+        trailWidth: 1,
+        svgStyle: {
+          width: '100%',
+          height: '100%'
+        },
+        from: {
+          color: '#FFEA82'
+        },
+        to: {
+          color: '#F44336'
+        },
+        step: (state, bar) => {
+          bar.path.setAttribute('stroke', state.color);
+        }
+      }));
+      progressBars[1] = (new ProgressBar.Line(container1, {
+        strokeWidth: 4,
+        easing: 'easeInOut',
+        duration: 1400,
+        color: '#FFEA82',
+        trailColor: '#eee',
+        trailWidth: 1,
+        svgStyle: {
+          width: '100%',
+          height: '100%'
+        },
+        from: {
+          color: '#CE93D8'
+        },
+        to: {
+          color: '#8E24AA'
+        },
+        step: (state, bar) => {
+          bar.path.setAttribute('stroke', state.color);
+        }
+      }));
+      progressBars[2] = (new ProgressBar.Line(container2, {
+        strokeWidth: 4,
+        easing: 'easeInOut',
+        duration: 1400,
+        color: '#FFEA82',
+        trailColor: '#eee',
+        trailWidth: 1,
+        svgStyle: {
+          width: '100%',
+          height: '100%'
+        },
+        from: {
+          color: '#FFEA82'
+        },
+        to: {
+          color: '#009688'
+        },
+        step: (state, bar) => {
+          bar.path.setAttribute('stroke', state.color);
+        }
+      }));
+      progressBars[3] = (new ProgressBar.Line(container3, {
+        strokeWidth: 4,
+        easing: 'easeInOut',
+        duration: 1400,
+        color: '#FFEA82',
+        trailColor: '#eee',
+        trailWidth: 1,
+        svgStyle: {
+          width: '100%',
+          height: '100%'
+        },
+        from: {
+          color: '#FFEA82'
+        },
+        to: {
+          color: '#3F51B5'
+        },
+        step: (state, bar) => {
+          bar.path.setAttribute('stroke', state.color);
+        }
+      }));
+      progressBars[4] = (new ProgressBar.Line(container4, {
+        strokeWidth: 4,
+        easing: 'easeInOut',
+        duration: 1400,
+        color: '#FFEA82',
+        trailColor: '#eee',
+        trailWidth: 1,
+        svgStyle: {
+          width: '100%',
+          height: '100%'
+        },
+        from: {
+          color: '#FFEA82'
+        },
+        to: {
+          color: '#E91E63'
+        },
+        step: (state, bar) => {
+          bar.path.setAttribute('stroke', state.color);
+        }
+      }));
+      progressBars[5] = (new ProgressBar.Line(container5, {
+        strokeWidth: 4,
+        easing: 'easeInOut',
+        duration: 1400,
+        color: '#FFEA82',
+        trailColor: '#eee',
+        trailWidth: 1,
+        svgStyle: {
+          width: '100%',
+          height: '100%'
+        },
+        from: {
+          color: '#FFEA82'
+        },
+        to: {
+          color: '#F57C00'
+        },
+        step: (state, bar) => {
+          bar.path.setAttribute('stroke', state.color);
+        }
+      }));
+      //ANIMATE SECTION
+      var i;
+      var a = [game1, game2, game3, game4, game5, game6];
+      for (i = 0; i < 6; i++) {
+        progressBars[i].animate(a[i]); // Number from 0.0 to 1.0
+      }
+    }
+
+    function destroyall() {
+      var i;
+      progressBars.forEach(function(bar) {
+        bar.destroy();
+      });
+      progressBars = [];
+    }
+  </script>
+</body>
+
+</html>
