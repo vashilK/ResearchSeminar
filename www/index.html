@@ -1,0 +1,2239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>English Ai Companion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <!-- ICON PACK -->
+  <link rel="stylesheet" href="dist/jqm-icon-pack-fa-builder.css">
+  <link rel="stylesheet" href="dist/jqm-icon-pack-fa.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+  <!-- jQuery -->
+  <link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.5.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.mobile-1.4.5.js"></script>
+  <script src="cordova.js"></script>
+  <!-- MATERIAL DESIGN -->
+  <link rel="stylesheet" href="css/material.min.css">
+  <script src="js/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- jQuery UI
+  <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+  <script src="jquery-ui/jquery-ui.js"></script>
+-->
+  <!-- progress bar -->
+  <script src="js/progressbar.js"></script>
+  <!-- Ai Neural Network -->
+  <script src="js/brain-0.6.3.js"></script>
+  <!-- CUSTOM JS -->
+  <script src="js/apt.js"></script>
+  <script src="js/customanimation.js"></script>
+  <style>
+    /*APTITUDE TEST*/
+    #questionsheader {
+      background-color: #5961cc;
+      color: white;
+      font-weight: 50px;
+    }
+
+    #questionsmain {
+      width: inherit;
+      height: auto;
+    }
+
+    #questionsmain {
+      width: 330px;
+    }
+
+    #smalllogo1 {
+      width: 7.5%;
+    }
+
+    #submit {
+      background-color: green;
+      color: white;
+      font-weight: lighter;
+    }
+
+    #clear {
+      background-color: red;
+      color: white;
+      font-weight: lighter;
+    }
+
+    /*Navbar ICONS*/
+    .botnav {
+      text-align: center;
+      align-items: baseline;
+      height: 7px;
+    }
+
+    #Klogin {
+      background: linear-gradient(to bottom, #0033cc 0%, #9999ff 100%);
+      width: inherit;
+      text-align: center;
+      height: 100%;
+    }
+
+    #Klogo {
+      margin-top: 150px;
+    }
+
+    #Kcontainter {
+      margin-top: 40px;
+      margin-left: 80px;
+      width: 280px;
+      height: 400px;
+      text-align: center;
+    }
+
+    #klarge {
+      color: black;
+    }
+
+    #klarge1 {
+      color: black;
+    }
+
+    #Kshowboy {
+      position: relative;
+      top: 34px;
+      left: 135px;
+      width: 10%;
+    }
+
+    #Kshowkey {
+      position: relative;
+      top: 68px;
+      left: 106px;
+      width: 9%;
+    }
+
+    /*KMENU CSS*/
+    h4 {
+      font-weight: 100;
+    }
+
+    #Kmenu {
+      background: #fafafa;
+    }
+
+    #Kmenucont {
+      width: inherit;
+      height: 60px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    #Kset {
+      position: relative;
+      top: -45px;
+      left: 410px;
+    }
+
+    #Kprogresscont {
+      margin-top: -10px;
+      width: inherit;
+      height: 300px;
+      text-align: left;
+      border-width: medium;
+      border-top-color: black;
+    }
+
+    h7 {
+      font-weight: lighter;
+      position: relative;
+      top: 20px;
+      left: 20px;
+    }
+
+    h8 {
+      font-weight: lighter;
+      position: relative;
+      top: 20px;
+      left: 280px;
+    }
+
+    /* percentage bars*/
+    #container,
+    #container1,
+    #container2,
+    #container3,
+    #container4,
+    #container5 {
+      margin: 20px;
+      margin-bottom: 0;
+      width: 400px;
+      height: 8px;
+    }
+
+    #Kseparator {
+      width: inherit;
+      margin-top: 20px;
+      height: 2px;
+      background-color: grey;
+    }
+
+    #Krankingcont {
+      width: inherit;
+      height: 300px;
+      text-align: center;
+      border-width: medium;
+      border-top-color: black;
+    }
+
+    #Krank {
+      position: relative;
+      top: -45px;
+      left: 410px;
+    }
+
+    #Kpodium {
+      width: inherit;
+      height: 100%;
+    }
+
+    /*PROFILE CSS*/
+    #Kprofilemain {
+      width: inherit;
+    }
+
+    #Kprofileicon {
+      position: relative;
+      top: 10px;
+      align-items: baseline;
+      text-align: center;
+
+    }
+
+    #Klogout {
+      left: 400px;
+    }
+
+    h9 {
+      position: relative;
+      top: -20px;
+      font-weight: lighter;
+    }
+
+    .Ktitl {
+      font-size: 14px;
+      font-weight: lighter;
+      color: hsl(0, 0%, 50%);
+    }
+
+    #Ktitl1 {
+      text-align: left;
+    }
+
+    #Ktitl2 {
+      text-align: left;
+      margin-left: 220px;
+    }
+
+    #Khrs {
+      position: relative;
+      top: 20px;
+      left: -280px;
+    }
+
+    #Klevel {
+      position: relative;
+      top: 20px;
+      left: -45px;
+    }
+
+    #Kproseparator {
+      width: 470px;
+      position: relative;
+      top: 38px;
+      height: 2px;
+      background-color: grey;
+    }
+
+    #Kachievements {
+      position: relative;
+      top: 40px;
+      width: inherit;
+      height: 300px;
+      padding-top: 20px;
+    }
+
+    .ui-grid-c {
+      position: relative;
+      padding-top: 10px;
+      left: 20px;
+    }
+
+    /*UI HOMEPAGE*/
+    .demo-card-square.mdl-card {
+      width: 240px;
+      height: 180px;
+    }
+
+    #K1.demo-card-square>.mdl-card__title {
+      color: #fff;
+      background:
+        url('img/bookshelf.png') bottom right 15% no-repeat #BA68C8;
+    }
+
+    #K2.demo-card-square>.mdl-card__title {
+      color: #fff;
+      background:
+        url('img/dossier.png') bottom right 15% no-repeat #4DB6AC;
+    }
+
+    #K3.demo-card-square>.mdl-card__title {
+      color: #fff;
+      background:
+        url('img/blog.png') bottom right 15% no-repeat #EC407A;
+    }
+
+    #K4.demo-card-square>.mdl-card__title {
+      color: #fff;
+      background:
+        url('img/res.png') bottom right 15% no-repeat #98A2DD;
+    }
+
+    #K5.demo-card-square>.mdl-card__title {
+      color: #fff;
+      background:
+        url('img/ranking.png') bottom right 15% no-repeat #B43C4E;
+    }
+
+    .kblue {
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding-top: 22px;
+      padding-left: 80px;
+    }
+
+    #Kred.ui-grid-a,
+    #Kred1.ui-grid-a,
+    #Kred2.ui-grid-a {
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding-top: 22px;
+      padding-left: 20px;
+    }
+
+    .ui-block-a .Ke,
+    .ui-block-b .ke {
+      padding: 5px;
+    }
+
+    /**Sticks the footer to the bottom of the page */
+    [data-role=page] {
+      height: 100% !important;
+      position: relative !important;
+    }
+
+    [data-role=footer] {
+      bottom: 0;
+      position: absolute !important;
+      top: auto !important;
+      width: 100%;
+    }
+
+    /** PREASSESMENT STYLE */
+    .foto {
+
+      border: 7px solid #DCDCDC;
+      margin: 0 auto;
+      width: 300px;
+      border-radius: 10px;
+
+
+    }
+
+    .foto img {
+      width: 100%;
+      height: 300px;
+
+
+    }
+
+    .hd-cent {
+      text-align: center;
+    }
+
+    div.quest {
+      padding: 5px;
+      text-align: center;
+
+    }
+
+    .easy {
+      height: 10px;
+      background-color: #6CFF33;
+      bottom: 0;
+      position: absolute !important;
+      top: auto !important;
+      width: 100%;
+    }
+
+    .medium {
+      height: 10px;
+      background-color: #F5B041;
+      bottom: 0;
+      position: absolute !important;
+      top: auto !important;
+      width: 100%;
+    }
+
+    .hard {
+      height: 10px;
+      background-color: red;
+      bottom: 0;
+      position: absolute !important;
+      top: auto !important;
+      width: 100%;
+    }
+
+    /*APTITUDE TEST PAGE*/
+    @font-face {
+      font-family: "AdventPro";
+      src: url("css/fonts/AlexBrush.ttf");
+    }
+
+    #testresults,
+    #globalres,
+    #CONGRATS1 {
+      background: linear-gradient(to top, #99ccff -15%, #ffcccc 100%);
+    }
+
+    #resmaster,
+    #resmaster1,
+    #resmaster2 {
+      text-align: center;
+    }
+
+    #aptres,
+    #aptres1,
+    #aptres3 {
+      font-family: 'AdventPro';
+      font-style: normal;
+      font-size: 80px;
+      border: none;
+    }
+
+    #containercircle,
+    #containercircle1,
+    #containercircle2 {
+      margin: 20px;
+      width: 200px;
+      height: 200px;
+      left: 65px;
+      position: relative;
+    }
+
+    #resadvance,
+    #resadvance1,
+    #resadvance2 {
+      width: 30%;
+    }
+
+    /*GLOBAL ALERT PAGE*/
+    @font-face {
+      font-family: "Lemon";
+      src: url("css/fonts/Lemon.ttf");
+    }
+
+    #globalalert {
+      text-align: center;
+      background: linear-gradient(to bottom, #0066cc 0%, #99ccff 100%);
+    }
+
+    #alertmain {
+      text-align: center;
+
+    }
+
+    #alerttext {
+      font-size: 30px;
+      font-family: 'Lemon';
+      font-style: normal;
+      text-align: center;
+    }
+
+    #alertbtn {
+      width: 25%;
+    }
+
+    #learning {
+      position: relative;
+      text-align: center;
+      left: 80px;
+    }
+
+    /*CONGRATS PAGE*/
+    #CONGRATS {
+      text-align: center;
+      background-color: #FFF99E;
+    }
+
+    #congratstxt {
+      font-family: 'Lemon';
+      font-size: 30px;
+      text-align: center;
+    }
+
+    #congratbtn {
+      width: 25%;
+    }
+
+    /*TEMPORARY*/
+    #VB6,
+    #VB7,
+    #VB8,
+    #VB9,
+    #VB10 {
+      display: none;
+    }
+
+    #examup {
+      background: linear-gradient(to bottom left, #ffffff 0%, #ffcccc 100%);
+    }
+
+    #topcolor {
+      font-family: 'Lemon';
+      background-color: #D07180;
+    }
+
+    #uiou {
+      font-family: 'AdventPro';
+      font-size: 24px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- LOGIN PAGE -->
+  <div data-role="page" id="Klogin">
+    <div data-role="main" class="ui-content">
+      <img src="img/logo.png" id="Klogo">
+      <div id="Kcontainter">
+        <img src="img/boy.png" id="Kshowboy">
+        <img src="img/key.png" id="Kshowkey">
+        <input id="klarge" type="text">
+        <input id="klarge1" type="password">
+        <button id="Kloginbtn" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+          LOGIN
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- HOMEPAGE -->
+  <div data-role="page" id="Khome">
+    <div data-role="main" class="ui-content">
+      <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect" id="learnAlign">
+        <div class="mdl-tabs__tab-bar">
+          <a href="#learning" class="mdl-tabs__tab is-active">LEARNING</a>
+          <a href="#globalactivity" class="mdl-tabs__tab">TEST</a>
+        </div>
+        <div class="mdl-tabs__panel is-active" id="learning">
+          <br><br>
+          <div id="Kred">
+            <div>
+              <!-- Square card -->
+              <div id="K1" class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text">Beginner</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a href="#VB" id="bvb" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Launch
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br><br>
+          <div id="Kred1">
+            <div>
+              <!-- Square card -->
+              <div id="K2" class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text">Intermediate</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a href="#VI" id="ivi" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Launch
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br><br>
+          <div id="Kred2">
+            <div>
+              <!-- Square card -->
+              <div id="K3" class="demo-card-square mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand">
+                  <h2 class="mdl-card__title-text">Advanced</h2>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                  <a href="#VA" id="ava" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Launch
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdl-tabs__panel" id="globalactivity">
+          <br><br>
+          <div class="kblue">
+            <!-- Square card -->
+            <div id="K4" class="demo-card-square mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__title mdl-card--expand">
+                <h2 class="mdl-card__title-text">Global Activity</h2>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a id="globalbtn" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                  Launch
+                </a>
+              </div>
+            </div>
+          </div>
+          <br><br>
+          <div class="kblue">
+            <!-- Square card -->
+            <div id="K5" class="demo-card-square mdl-card mdl-shadow--2dp">
+              <div class="mdl-card__title mdl-card--expand">
+                <h2 class="mdl-card__title-text">EXAM</h2>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+                <a href="examup" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                  Launch
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FOOTER NAV -->
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#home" data-icon="book" class="botnav home1"></a></li>
+          <li><a href="#Kmenu" data-icon="bar-chart-o" class="botnav stats"></a></li>
+          <li><a href="#Kacc" data-icon="user" class="botnav prof" data-transition="pop"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- APTITUDE -->
+  <div data-role="page" id="APT">
+    <div data-role="header" id="questionsheader">
+
+      <h3>Aptitude Test</h3>
+    </div>
+
+    <div id="questionsmain" data-role="main" class="ui-content">
+      <form>
+        <fieldset data-role="controlgroup" id="1">
+          <h4>1) I haven`t got ......</h4>
+          <label><input name="radio" id="r11" type="radio" value="bad"> A. no brothers or sisters </label>
+          <label><input name="radio" id="r12" type="radio" value="bad"> B. brothers or sisters </label>
+          <label><input name="radio" id="r13" type="radio" value="good"> C. any brothers or sisters </label>
+          <label><input name="radio" id="r14" type="radio" value="bad">D. some brothers and sisters</label>
+        </fieldset>
+      </form>
+      <form>
+        <div data-role="controlgroup" id="2">
+          <h4>2) Every year,he goes to the coast for his holidays ....... </h4>
+          <label><input name="radio" id="r15" type="radio" value="bad"> A. in train</label>
+          <label><input name="radio" id="r16" type="radio" value="bad"> B. on train</label>
+          <label><input name="radio" id="r17" type="radio" value="good"> C. by train</label>
+          <label><input name="radio" id="r18" type="radio" value="bad">D. with train</label>
+        </div>
+      </form>
+
+
+      <form>
+        <div data-role="controlgroup" id="3">
+          <h4>3) The door can`t be broken! he ........</h4>
+          <label><input name="radio" id="r19" type="radio" value="bad"> A. is just fixed it.</label>
+          <label><input name="radio" id="r20" type="radio" value="bad"> B. have just fixed it.</label>
+          <label><input name="radio" id="r21" type="radio" value="bad"> C. just fix it.</label>
+          <label><input name="radio" id="r22" type="radio" value="good">D. has just fixed it.</label>
+        </div>
+      </form>
+      <form>
+        <div data-role="controlgroup" id="4">
+          <h4>4) ..... have you been going out with him?Only a few months.</h4>
+          <label><input name="radio" id="r23" type="radio" value="bad"> A. How long</label>
+          <label><input name="radio" id="r24" type="radio" value="bad"> B. How long time.</label>
+          <label><input name="radio" id="r25" type="radio" value="bad"> C. What time</label>
+          <label><input name="radio" id="r26" type="radio" value="good">D. For how long</label>
+        </div>
+      </form>
+
+      <form>
+        <div data-role="controlgroup" id="5">
+          <h4>5) Choose the correct sentence:</h4>
+          <label><input name="radio" id="r27" type="radio" value="bad">A. Give the Sarah book </label>
+          <label><input name="radio" id="r28" type="radio" value="good"> B. Give the book to Sarah.</label>
+          <label><input name="radio" id="r29" type="radio" value="bad"> C. Give to Sarah the book.</label>
+          <label><input name="radio" id="r30" type="radio" value="bad">D. Give the book at Sarah.</label>
+        </div>
+      </form>
+      <form>
+        <div data-role="controlgroup" id="6">
+          <h4>6) We have to go to the supermarket ..... some bread and milk.</h4>
+          <label><input name="radio" id="r31" type="radio" value="bad">A. for getting</label>
+          <label><input name="radio" id="r32" type="radio" value="good"> B. to get</label>
+          <label><input name="radio" id="r33" type="radio" value="bad"> C. to getting</label>
+          <label><input name="radio" id="r34" type="radio" value="bad">D. for to get</label>
+        </div>
+      </form>
+
+
+
+      <form>
+        <fieldset data-role="controlgroup" id="7">
+          <h3 class="hd-cent"> 7)Choose the correct answer below :</h3>
+          <label><input name="radio" id="r35" type="radio" value="bad"> A. I is a cold </label>
+          <label><input name="radio" id="r36" type="radio" value="bad"> B. I am cold </label>
+          <label><input name="radio" id="r37" type="radio" value="bad"> C. I has cold </label>
+          <label><input name="radio" id="r38" type="radio" value="good"> D. I have cold </label>
+        </fieldset>
+
+      </form>
+      <form>
+        <fieldset data-role="controlgroup" id="8">
+          <h3 class="hd-cent"> 8)She works ____ Saturday :</h3>
+          <label><input name="radio" id="r39" type="radio" value="bad"> A. at </label>
+          <label><input name="radio" id="r40" type="radio" value="bad"> B. to </label>
+          <label><input name="radio" id="r41" type="radio" value="bad"> C. in </label>
+          <label><input name="radio" id="r42" type="radio" value="good"> D. on </label>
+        </fieldset>
+      </form>
+      <form>
+
+        <fieldset data-role="controlgroup" id="9">
+          <h3 class="hd-cent">9)Murphy _______ be receiving the guests tonight.</h3>
+          <label><input name="radio" id="r43" type="radio" value="good"> A. will </label>
+          <label><input name="radio" id="r44" type="radio" value="bad"> B. would </label>
+          <label><input name="radio" id="r45" type="radio" value="bad"> C. shall</label>
+
+
+        </fieldset>
+      </form>
+
+
+      <form>
+        <div data-role="controlgroup" id="10">
+          <h4>10) He is very good ...... making stories.</h4>
+          <label><input name="radio" id="r46" type="radio" value="bad">A. in</label>
+          <label><input name="radio" id="r47" type="radio" value="bad"> B. about</label>
+          <label><input name="radio" id="r48" type="radio" value="good"> C. at</label>
+          <label><input name="radio" id="r49" type="radio" value="bad">D. for</label>
+        </div>
+      </form>
+
+
+      <div>
+        <Buton data-icon="comment" class="ui-btn" id="aptsubmit">Submit</Buton>
+      </div>
+
+
+    </div>
+    <div data-role="footer" id="questionsfooter">
+    </div>
+  </div>
+  <!-- DEFAULT ALERT FOR BLOCKER GLOBAL Activities -->
+  <div data-role="page" id="globalalert">
+    <div data-role="main" class="ui-content" id="alertmain">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <img src="img/teacher.png">
+      <br><br>
+      <div id="alerttext">Your enthousiasm is appreciated but complete your learning session first.</div>
+      <br><br><br>
+      <a href="#Khome" id="alertbtn" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+        Go back
+      </a>
+    </div>
+  </div>
+  <!-- DRY RUN -->
+  <div data-role="page" id="VB">
+    <div data-role="main" class="ui-content">
+      <div id="VB1">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ1" class="VB">
+            <h3 class="hd-cent">1 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB2">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ2" class="VB">
+            <h3 class="hd-cent">2 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB3">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ3" class="VB">
+            <h3 class="hd-cent">3 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB4">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ4" class="VB">
+            <h3 class="hd-cent">4 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB5">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ5" class="VB">
+            <h3 class="hd-cent">5 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB6">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ6" class="VB">
+            <h3 class="hd-cent">6 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB7">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ7" class="VB">
+            <h3 class="hd-cent">7 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB8">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ8" class="VB">
+            <h3 class="hd-cent">8 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB9">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ9" class="VB">
+            <h3 class="hd-cent">9 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB10">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ10" class="VB">
+            <h3 class="hd-cent">10 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <br>
+      <button id="VBN">Advance</button>
+    </div>
+  </div>
+  <div data-role="page" id="AB">
+    <div data-role="main" class="ui-content">
+      <div id="VB1">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ1" class="VB">
+            <h3 class="hd-cent">1 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB2">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ2" class="VB">
+            <h3 class="hd-cent">2 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB3">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ3" class="VB">
+            <h3 class="hd-cent">3 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB4">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ4" class="VB">
+            <h3 class="hd-cent">4 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB5">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ5" class="VB">
+            <h3 class="hd-cent">5 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB6">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ6" class="VB">
+            <h3 class="hd-cent">6 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB7">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ7" class="VB">
+            <h3 class="hd-cent">7 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB8">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ8" class="VB">
+            <h3 class="hd-cent">8 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB9">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ9" class="VB">
+            <h3 class="hd-cent">9 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB10">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ10" class="VB">
+            <h3 class="hd-cent">10 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <br>
+      <button id="ABN">Advance</button>
+    </div>
+  </div>
+  <div data-role="page" id="NB">
+    <div data-role="main" class="ui-content">
+      <div id="VB1">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ1" class="VB">
+            <h3 class="hd-cent">1 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB2">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ2" class="VB">
+            <h3 class="hd-cent">2 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB3">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ3" class="VB">
+            <h3 class="hd-cent">3 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB4">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ4" class="VB">
+            <h3 class="hd-cent">4 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB5">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ5" class="VB">
+            <h3 class="hd-cent">5 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB6">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ6" class="VB">
+            <h3 class="hd-cent">6 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB7">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ7" class="VB">
+            <h3 class="hd-cent">7 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB8">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ8" class="VB">
+            <h3 class="hd-cent">8 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB9">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ9" class="VB">
+            <h3 class="hd-cent">9 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="VB10">
+        <form>
+          <fieldset data-role="controlgroup" id="VBQ10" class="VB">
+            <h3 class="hd-cent">10 I ____ born in 1990</h3>
+            <label><input name="radio" type="radio" value="good"> A. was </label>
+            <label><input name="radio" type="radio" value="bad"> B. am </label>
+            <label><input name="radio" type="radio" value="bad"> C. were </label>
+            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <br>
+      <button id="NBN">Advance</button>
+    </div>
+  </div>
+  <!-- APTITUDE TEST RESULTS -->
+  <div data-role="page" id="testresults">
+    <div data-role="main" class="ui-content" id="resmaster">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br><br>
+      <div id="aptres">Results</div>
+      <br><br>
+      <div id="containercircle"></div>
+      <br><br><br><br>
+      <a href="#Khome" id="resadvance" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+        Advance
+      </a>
+    </div>
+  </div>
+  <!-- PROFILE -->
+  <div data-role="page" id="Kacc">
+    <div data-role="main" class="ui-content" id="Kprofilemain">
+      <a id="Klogout" class="ui-btn ui-shadow ui-corner-all ui-icon-sign-out ui-btn-icon-notext ui-btn-a" href="#Klogin" data-transition="fade"></a>
+      <div id="Kprofileicon">
+        <img src="img/sboy.png">
+        <h4>Vashil Kissoon</h4>
+        <h9>Grade 7 Diamond</h9>
+        <br>
+        <span id="Ktitl1" class="Ktitl">Hours</span>
+        <span id="Ktitl2" class="Ktitl">Level</span>
+        <span id="Khrs">234</span>
+        <span id="Klevel">34</span>
+        <div id="Kproseparator"></div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="ui-grid-c">
+        <div class="ui-block-a"><img src="img/file.png"></div>
+        <div class="ui-block-b"><img src="img/ques.png"></div>
+        <div class="ui-block-c"><img src="img/ques.png"></div>
+        <div class="ui-block-d"><img src="img/ques.png"></div>
+      </div>
+      <div class="ui-grid-c">
+        <div class="ui-block-a"><img src="img/ques.png"></div>
+        <div class="ui-block-b"><img src="img/ques.png"></div>
+        <div class="ui-block-c"><img src="img/ques.png"></div>
+        <div class="ui-block-d"><img src="img/ques.png"></div>
+      </div>
+      <div class="ui-grid-c">
+        <div class="ui-block-a"><img src="img/ques.png"></div>
+        <div class="ui-block-b"><img src="img/ques.png"></div>
+        <div class="ui-block-c"><img src="img/ques.png"></div>
+        <div class="ui-block-d"><img src="img/ques.png"></div>
+      </div>
+      <div class="ui-grid-c">
+        <div class="ui-block-a"><img src="img/ques.png"></div>
+        <div class="ui-block-b"><img src="img/ques.png"></div>
+        <div class="ui-block-c"><img src="img/ques.png"></div>
+        <div class="ui-block-d"><img src="img/ques.png"></div>
+      </div>
+      <div class="ui-grid-c">
+        <div class="ui-block-a"><img src="img/ques.png"></div>
+        <div class="ui-block-b"><img src="img/ques.png"></div>
+        <div class="ui-block-c"><img src="img/ques.png"></div>
+        <div class="ui-block-d"><img src="img/ques.png"></div>
+      </div>
+    </div>
+    <!-- FOOTER NAV -->
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#Khome" data-icon="book" class="botnav home1" data-transition="slide"></a></li>
+          <li><a id="Kstats" href="#Kmenu" data-icon="bar-chart-o" class="botnav stats"></a></li>
+          <li><a data-icon="user" class="botnav prof"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- MAIN MENU -->
+  <div data-role="page" id="Kmenu">
+    <div data-role="main" class="ui-content">
+      <!-- DIV FOR TITLE -->
+      <div id="Kmenucont">
+        <h4>Performance</h4>
+        <a id="Kset" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-a" onclick="model">Check</a>
+        <dialog class="mdl-dialog">
+          <h4 class="mdl-dialog__title">Performance</h4>
+          <div class="mdl-dialog__content">
+            <p>
+              The stats show the performance of the student in specific fields as mentionned. The scores accumulated show the work completed and overall performance of the student.
+            </p>
+          </div>
+          <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button close" data-icon="delete">close</button>
+          </div>
+        </dialog>
+      </div>
+      <!-- PROGRESS BARS -->
+      <div id="Kprogresscont">
+        <h7>Verb: 12,900</h7>
+        <h8 id="K11"></h8>
+        <div id="container"></div>
+        <h7>Adjective: 2,890</h7>
+        <h8 id="K12"></h8>
+        <div id="container1"></div>
+        <h7>Sentence: 7,345</h7>
+        <h8 id="K13"></h8>
+        <div id="container2"></div>
+        <h7>Spelling: 9,650</h7>
+        <h8 id="K14"></h8>
+        <div id="container3"></div>
+        <h7>Focus: 8,431</h7>
+        <h8 id="K15"></h8>
+        <div id="container4"></div>
+        <h7>Passage: 1,980</h7>
+        <h8 id="K16"></h8>
+        <div id="container5"></div>
+      </div>
+      <div id="Kseparator"></div>
+      <!-- RANKING -->
+      <div id="Krankingcont">
+        <h4>Ranking</h4>
+        <a id="Krank" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-a" href="#"></a>
+        <dialog class="mdl-dialog">
+          <h4 class="mdl-dialog__title">Ranking</h4>
+          <div class="mdl-dialog__content">
+            <p>
+              The Rank shows the top 5 students in the class with the best average score of all the activies.
+            </p>
+          </div>
+          <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button close" data-icon="delete">close</button>
+          </div>
+        </dialog>
+        <div id="Kpodium">
+          <img src="img/podium.png">
+          <ul data-role="listview" data-inset="true">
+            <li><img class="ui-li-icon ui-corner-none" src="img/gf.png">Anne Lise</li>
+            <li><img class="ui-li-icon" src="img/gf.png">Yud Hauradhun</li>
+            <li><img class="ui-li-icon" src="img/boy.png">Divesh Mootia</li>
+            <li><img class="ui-li-icon" src="img/gf.png">Priyasha Ramdass</li>
+            <li><img class="ui-li-icon ui-corner-none" src="img/boy.png">Dharma Singh</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- FOOTER NAV -->
+    <div data-role="footer">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#Khome" data-icon="book" class="botnav home1" data-transition="slide"></a></li>
+          <li><a data-icon="bar-chart-o" class="botnav stats"></a></li>
+          <li><a href="#Kacc" data-icon="user" class="botnav prof"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- CONGRATS -->
+  <div data-role="page" id="CONGRATS">
+    <br><br><br><br><br><br><br>
+    <img src="img/fireworks.png">
+    <br><br>
+    <div id="congratstxt">Congratulations you completed your learning session you can now move to your global activity.</div>
+    <br><br>
+    <a href="#Khome" id="congratbtn" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+      Let`s go
+    </a>
+  </div>
+  <!-- GLOBAL ACT RES -->
+  <div data-role="page" id="globalres">
+    <div data-role="main" class="ui-content" id="resmaster1">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br><br>
+      <div id="aptres1">Results</div>
+      <br><br>
+      <div id="containercircle1"></div>
+      <br><br><br><br>
+      <a href="#Khome" id="resadvance1" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+        Advance
+      </a>
+    </div>
+  </div>
+  <!-- GLOBAL ACT TEST -->
+  <div data-role="page" id="GB">
+    <h1>BEGINNER</h1>
+  </div>
+  <div data-role="page" id="GI">
+    <h1>INTERMEDIATE</h1>
+  </div>
+  <div data-role="page" id="GA">
+    <h1>ADVANCED</h1>
+  </div>
+  <!-- EXAM -->
+  <div data-role="page" id="examup">
+    <div data-role="header" id="topcolor">
+      <h3 id="uiou">Examination</h3>
+    </div>
+    <div data-role="main" class="ui-content">
+      <form>
+        <fieldset data-role="controlgroup" id="PT1">
+          <h3 class="hd-cent"> How long _________english ?</h3>
+          <label><input name="radio" id="o65" type="radio" value="good"> A. are you learning </label>
+          <label><input name="radio" id="o66" type="radio" value="bad"> B. have been learning </label>
+          <label><input name="radio" id="o67" type="radio" value="bad"> C. do you learn </label>
+          <label><input name="radio" id="o68" type="radio" value="bad"> D. you learn </label>
+        </fieldset>
+      </form>
+      <br>
+      <form>
+        <fieldset data-role="controlgroup" id="PT2">
+          <h3 class="hd-cent"> Is Tom _____ Sam ?</h3>
+          <label><input name="radio" id="o72" type="radio" value="bad"> A. tall as </label>
+          <label><input name="radio" id="o73" type="radio" value="good"> B. as tall as </label>
+          <label><input name="radio" id="o74" type="radio" value="bad"> C. tall that </label>
+          <label><input name="radio" id="o75" type="radio" value="bad"> D. more tall </label>
+        </fieldset>
+      </form>
+      <br>
+      <form>
+        <h3 class="hd-cent"> ______ God bless you and your child .</h3>
+        <fieldset data-role="controlgroup" id="PT3">
+          <label><input name="radio" id="o79" type="radio" value="bad"> A. Might </label>
+          <label><input name="radio" id="o80" type="radio" value="bad"> B. Should </label>
+          <label><input name="radio" id="o81" type="radio" value="good"> C. May </label>
+          <label><input name="radio" id="o82" type="radio" value="bad"> D. Can </label>
+        </fieldset>
+      </form>
+      <br>
+      <form>
+        <h3 class="hd-cent"> Fresh flowers were strewn all ______ the way to welcome the leader.</h3>
+        <fieldset data-role="controlgroup" id="PT4">
+
+          <label><input name="radio" id="o86" type="radio" value="good"> A. over </label>
+          <label><input name="radio" id="o87" type="radio" value="bad"> B. along </label>
+          <label><input name="radio" id="o88" type="radio" value="bad"> C. round </label>
+
+
+        </fieldset>
+      </form>
+      <br>
+      <form>
+        <h3 class="hd-cent"> The toy shop is located ________ the new restaurant.</h3>
+        <fieldset data-role="controlgroup" id="PT5">
+
+          <label><input name="radio" id="o92" type="radio" value="bad"> A. aside </label>
+          <label><input name="radio" id="o93" type="radio" value="good"> B. beside </label>
+          <label><input name="radio" id="o94" type="radio" value="bad"> C. besides </label>
+
+
+        </fieldset>
+      </form>
+      <br>
+      <form>
+        <h3 class="hd-cent"> _______ you and me, who is the greatest liar?.</h3>
+        <fieldset data-role="controlgroup" id="PT6">
+
+          <label><input name="radio" id="o98" type="radio" value="good"> A. Between </label>
+          <label><input name="radio" id="o99" type="radio" value="bad"> B. before </label>
+          <label><input name="radio" id="o100" type="radio" value="bad"> C. besides </label>
+
+
+        </fieldset>
+      </form>
+      <br>
+      <form>
+        <h3 class="hd-cent">The earring was lying ________ the table.</h3>
+        <fieldset data-role="controlgroup" id="PT7">
+
+          <label><input name="radio" id="o104" type="radio" value="bad"> A. Between </label>
+          <label><input name="radio" id="o105" type="radio" value="good"> B. under </label>
+          <label><input name="radio" id="o106" type="radio" value="bad"> C. inside </label>
+
+
+        </fieldset>
+      </form>
+      <br>
+      <form>
+        <h3 class="hd-cent">The opposit of afraid is ______.</h3>
+        <fieldset data-role="controlgroup" id="PT8">
+
+          <label><input name="radio" id="o107" type="radio" value="bad"> A. unafraid </label>
+          <label><input name="radio" id="o108" type="radio" value="good"> B. brave </label>
+          <label><input name="radio" id="o109" type="radio" value="bad"> C. inafraid </label>
+
+
+        </fieldset>
+      </form>
+      <br>
+      <form>
+        <h3 class="hd-cent">She _____ visit her old grandmother once in a while.</h3>
+        <fieldset data-role="controlgroup" id="PT9">
+
+          <label><input name="radio" id="o110" type="radio" value="good"> A. used to </label>
+          <label><input name="radio" id="o111" type="radio" value="bad"> B. use to </label>
+          <label><input name="radio" id="o112" type="radio" value="bad"> C. ought to </label>
+
+
+        </fieldset>
+      </form>
+      <br>
+      <form>
+        <h3 class="hd-cent">Murphy _______ be receiving the guests tonight.</h3>
+        <fieldset data-role="controlgroup" id="PT10">
+
+          <label><input name="radio" id="o113" type="radio" value="good"> A. will </label>
+          <label><input name="radio" id="o114" type="radio" value="bad"> B. would </label>
+          <label><input name="radio" id="o115" type="radio" value="bad"> C. shall</label>
+
+
+        </fieldset>
+      </form>
+      <br>
+      <form>
+        <h3 class="hd-cent">I _______ be requested to replace th teacher today.</h3>
+        <fieldset data-role="controlgroup" id="PT11">
+
+          <label><input name="radio" id="o116" type="radio" value="bad"> A. can </label>
+          <label><input name="radio" id="o117" type="radio" value="bad"> B. might </label>
+          <label><input name="radio" id="o118" type="radio" value="good"> C. may</label>
+
+
+        </fieldset>
+      </form>
+      <br>
+      <form>
+        <h3 class="hd-cent">I _______ be requested to replace th teacher today.</h3>
+        <fieldset data-role="controlgroup" id="PT12">
+
+          <label><input name="radio" id="o119" type="radio" value="bad"> A. can </label>
+          <label><input name="radio" id="o120" type="radio" value="bad"> B. might </label>
+          <label><input name="radio" id="o121" type="radio" value="good"> C. may</label>
+
+
+        </fieldset>
+      </form>
+      <br>
+      <form>
+        <fieldset data-role="controlgroup" id="PT13">
+          <h4>1) I haven`t got ......</h4>
+          <label><input name="radio" id="r11" type="radio" value="bad"> A. no brothers or sisters </label>
+          <label><input name="radio" id="r12" type="radio" value="bad"> B. brothers or sisters </label>
+          <label><input name="radio" id="r13" type="radio" value="good"> C. any brothers or sisters </label>
+          <label><input name="radio" id="r14" type="radio" value="bad">D. some brothers and sisters</label>
+        </fieldset>
+      </form>
+      <br>
+      <form>
+        <div data-role="controlgroup" id="PT14">
+          <h4>2) Every year,he goes to the coast for his holidays ....... </h4>
+          <label><input name="radio" id="r15" type="radio" value="bad"> A. in train</label>
+          <label><input name="radio" id="r16" type="radio" value="bad"> B. on train</label>
+          <label><input name="radio" id="r17" type="radio" value="good"> C. by train</label>
+          <label><input name="radio" id="r18" type="radio" value="bad">D. with train</label>
+        </div>
+      </form>
+
+
+      <form>
+        <div data-role="controlgroup" id="PT15">
+          <h4>3) The door can`t be broken! he ........</h4>
+          <label><input name="radio" id="r19" type="radio" value="bad"> A. is just fixed it.</label>
+          <label><input name="radio" id="r20" type="radio" value="bad"> B. have just fixed it.</label>
+          <label><input name="radio" id="r21" type="radio" value="bad"> C. just fix it.</label>
+          <label><input name="radio" id="r22" type="radio" value="good">D. has just fixed it.</label>
+        </div>
+      </form>
+      <br><br>
+      <button id="examsub">Submit</button>
+    </div>
+  </div>
+
+  <!-- FINAL EXAM RESULTS -->
+  <div data-role="page" id="CONGRATS1">
+    <div data-role="main" class="ui-content" id="resmaster2">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br><br>
+      <div id="aptres3">Final Results</div>
+      <br><br>
+      <div id="containercircle2"></div>
+      <br><br><br><br>
+      <a href="#Khome" id="resadvance2" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+        Advance
+      </a>
+    </div>
+  </div>
+  <script>
+    //RETRIEVE FROM APTITUDE TEST
+    const aptvalue = 30.4;
+    //LEARNING timer
+    var anstime = 0;
+    var time;
+    //LEARNING SCORE MEMORY
+    var lscore = 0;
+    var quest = 1;
+    var questionaware = 0;
+    //GLOBAL ACTIVITY
+    var globalans = 0;
+    $(document).ready(function() {
+      creattable();
+      learningcard();
+      $("#Kloginbtn").click(function() {
+        if (($('#klarge').val() == "admin") && ($('#klarge1').val() == "admin")) {
+          checkpretest();
+        } else {
+          alert('INVALID!');
+        }
+      })
+      //EXAM PASS OR FAIL
+      $("#examsub").click(function() {
+        var a = exampassorfail();
+        $.mobile.changePage("#CONGRATS1", {
+          reverse: false,
+          transition: "pop"
+        });
+        rolling1(a);
+      })
+      //ANIMATION PURPOSES
+      $("#K5").hide('fast');
+      //GLOBAL ACTIVITY BUTTONS
+      $('#globalbtn').click(function() {
+        globalactdecision();
+      })
+      //START TIMER FOR Learning
+      $("#bvb").click(function() {
+        starttimer();
+      })
+      $("#ivi").click(function() {
+        starttimer();
+      })
+      $("#ava").click(function() {
+        starttimer();
+      })
+      //ALL LEARNING BUTTONS
+      $('#VBN').click(function() {
+        $.mobile.changePage("#AB", {
+          reverse: false,
+          transition: "pop"
+        });
+      })
+      $('#VIN').click(function() {
+        $.mobile.changePage("#AI", {
+          reverse: false,
+          transition: "pop"
+        });
+      })
+      $('#VAN').click(function() {
+        $.mobile.changePage("#AA", {
+          reverse: false,
+          transition: "pop"
+        });
+      })
+      $('#ABN').click(function() {
+        $.mobile.changePage("#NB", {
+          reverse: false,
+          transition: "pop"
+        });
+      })
+      $('#AIN').click(function() {
+        $.mobile.changePage("#NI", {
+          reverse: false,
+          transition: "pop"
+        });
+      })
+      $('#AAN').click(function() {
+        $.mobile.changePage("#NA", {
+          reverse: false,
+          transition: "pop"
+        });
+      })
+      $('#NBN').click(function() {
+        $.mobile.changePage("#CONGRATS", {
+          reverse: false,
+          transition: "pop"
+        });
+        learningcomplete();
+      })
+      $('#NIN').click(function() {
+        $.mobile.changePage("#CONGRATS", {
+          reverse: false,
+          transition: "pop"
+        });
+        learningcomplete();
+      })
+      $('#NAN').click(function() {
+        $.mobile.changePage("#CONGRATS", {
+          reverse: false,
+          transition: "pop"
+        });
+        learningcomplete();
+      })
+      //LEARNING DECIDER LOGIC
+      $(".VB").change(function() {
+        var a = "#" + this.getAttribute('id');
+        let x = a + " input[name='radio']:checked";
+        var ans = $(x).val();
+        if (ans == "good") {
+          lscore++;
+        }
+        let c = a + " input[name='radio']";
+        $(c).attr('disabled', true);
+        stoptimer();
+        let b = LearningAi(anstime, (lscore / 10));
+        questionaware++;
+        console.log(questionaware);
+        decidequestion(a, b);
+        starttimer();
+      })
+      $(".VI").change(function() {
+        var a = "#" + this.getAttribute('id');
+        let x = a + " input[name='radio']:checked";
+        var ans = $(x).val();
+        if (ans == "good") {
+          lscore++;
+        }
+        let c = a + " input[name='radio']";
+        $(c).attr('disabled', true);
+        stoptimer();
+        let b = LearningAi(anstime, (lscore / 8));
+        questionaware++;
+        console.log(questionaware);
+        decidequestion(a, b);
+        starttimer();
+      })
+      $(".VA").change(function() {
+        var a = "#" + this.getAttribute('id');
+        let x = a + " input[name='radio']:checked";
+        var ans = $(x).val();
+        if (ans == "good") {
+          lscore++;
+        }
+        let c = a + " input[name='radio']";
+        $(c).attr('disabled', true);
+        stoptimer();
+        let b = LearningAi(anstime, (lscore / 6));
+        questionaware++;
+        console.log(questionaware);
+        decidequestion(a, b);
+        starttimer();
+      })
+      $(".AB").change(function() {
+        var a = "#" + this.getAttribute('id');
+        let x = a + " input[name='radio']:checked";
+        var ans = $(x).val();
+        if (ans == "good") {
+          lscore++;
+        }
+        let c = a + " input[name='radio']";
+        $(c).attr('disabled', true);
+        stoptimer();
+        let b = LearningAi(anstime, (lscore / 10));
+        questionaware++;
+        console.log(questionaware);
+        decidequestion(a, b);
+        starttimer();
+      })
+      $(".AI").change(function() {
+        var a = "#" + this.getAttribute('id');
+        let x = a + " input[name='radio']:checked";
+        var ans = $(x).val();
+        if (ans == "good") {
+          lscore++;
+        }
+        let c = a + " input[name='radio']";
+        $(c).attr('disabled', true);
+        stoptimer();
+        let b = LearningAi(anstime, (lscore / 8));
+        questionaware++;
+        console.log(questionaware);
+        decidequestion(a, b);
+        starttimer();
+      })
+      $(".AA").change(function() {
+        var a = "#" + this.getAttribute('id');
+        let x = a + " input[name='radio']:checked";
+        var ans = $(x).val();
+        if (ans == "good") {
+          lscore++;
+        }
+        let c = a + " input[name='radio']";
+        $(c).attr('disabled', true);
+        stoptimer();
+        let b = LearningAi(anstime, (lscore / 6));
+        questionaware++;
+        console.log(questionaware);
+        decidequestion(a, b);
+        starttimer();
+      })
+      $(".NB").change(function() {
+        var a = "#" + this.getAttribute('id');
+        let x = a + " input[name='radio']:checked";
+        var ans = $(x).val();
+        if (ans == "good") {
+          lscore++;
+        }
+        let c = a + " input[name='radio']";
+        $(c).attr('disabled', true);
+        stoptimer();
+        let b = LearningAi(anstime, (lscore / 10));
+        questionaware++;
+        console.log(questionaware);
+        decidequestion(a, b);
+        starttimer();
+      })
+      $(".NI").change(function() {
+        var a = "#" + this.getAttribute('id');
+        let x = a + " input[name='radio']:checked";
+        var ans = $(x).val();
+        if (ans == "good") {
+          lscore++;
+        }
+        let c = a + " input[name='radio']";
+        $(c).attr('disabled', true);
+        stoptimer();
+        let b = LearningAi(anstime, (lscore / 8));
+        questionaware++;
+        console.log(questionaware);
+        decidequestion(a, b);
+        starttimer();
+      })
+      $(".NA").change(function() {
+        var a = "#" + this.getAttribute('id');
+        let x = a + " input[name='radio']:checked";
+        var ans = $(x).val();
+        if (ans == "good") {
+          lscore++;
+        }
+        let c = a + " input[name='radio']";
+        $(c).attr('disabled', true);
+        stoptimer();
+        let b = LearningAi(anstime, (lscore / 6));
+        questionaware++;
+        console.log(questionaware);
+        decidequestion(a, b);
+        starttimer();
+      })
+
+      //GLOBAL ACT BUTTONS
+      $("#GBB").click(function() {
+        for (let i = 1; i < 7; i++) {
+          let a = "#GBQ" + i + " input[name='radio']:checked";
+          let b = $(a).val();
+          if (b == good) {
+            globalans++;
+          }
+        }
+        if (globalans >= 5) {
+          let a = $(this).getAttribute('id');
+          incrementlevel(a);
+        }
+        $.mobile.changePage("#globalres", {
+          reverse: false,
+          transition: "pop"
+        });
+        let a = (globalans / 6) * 100;
+        rolling(a);
+        resetall();
+      })
+      $("#GIB").click(function() {
+        for (let i = 1; i < 7; i++) {
+          let a = "#GIQ" + i + " input[name='radio']:checked";
+          let b = $(a).val();
+          if (b == good) {
+            globalans++;
+          }
+        }
+        if (globalans >= 5) {
+          let a = $(this).getAttribute('id');
+          incrementlevel(a);
+        }
+        $.mobile.changePage("#globalres", {
+          reverse: false,
+          transition: "pop"
+        });
+        let a = (globalans / 6) * 100;
+        rolling(a);
+        resetall();
+      })
+      $("#GAB").click(function() {
+        for (let i = 1; i < 7; i++) {
+          let a = "#GAQ" + i + " input[name='radio']:checked";
+          let b = $(a).val();
+          if (b == good) {
+            globalans++;
+          }
+        }
+        if (globalans >= 5) {
+          let a = $(this).getAttribute('id');
+          incrementlevel(a);
+        }
+        $.mobile.changePage("#globalres", {
+          reverse: false,
+          transition: "pop"
+        });
+        let a = (globalans / 6) * 100;
+        rolling(a);
+        resetall();
+      })
+    });
+
+    function creattable() {
+      //creates the database and size
+      db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
+      //ALLOWS execution of all functions
+      db.transaction(function(tx) {
+        //CREATE TABLE STUDENT
+        //tx.executeSql('DROP TABLE stud');
+        tx.executeSql('CREATE TABLE IF NOT EXISTS stud(name text, password text, level int,pretest text, lesson text)');
+        tx.executeSql('CREATE TABLE IF NOT EXISTS testscore(score int, time int)');
+        tx.executeSql('INSERT INTO stud(name,password,lesson) values(?,?,?)', ['Vashil Kissoon', 'admin', 'false']);
+      });
+    }
+
+    function checkpretest() {
+      db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
+      //ALLOWS execution of all functions
+      db.transaction(function(tx) {
+        //CREATE TABLE STUDENT
+        tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, results) {
+          let a = results.rows[0].pretest;
+          console.log(a);
+          if (a == null) {
+            $.mobile.changePage("#APT", {
+              reverse: false,
+              transition: "pop"
+            });
+          } else {
+            $.mobile.changePage("#Khome", {
+              reverse: false,
+              transition: "pop"
+            });
+          }
+        });
+      });
+    }
+
+    function learningcard() {
+      db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
+      db.transaction(function(tx) {
+        tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, results) {
+          var apt = results.rows[0].level;
+          if ((apt > 0) && (apt <= 40)) {
+            $('#K1').show('fast');
+            $('#K2').hide('fast');
+            $('#K3').hide('fast');
+          } else if ((apt > 40) && (apt <= 80)) {
+            $('#K1').show('fast');
+            $('#K2').show('fast');
+            $('#K3').hide('fast');
+          } else if ((apt > 80) && (apt <= 100)) {
+            $('#K1').show('fast');
+            $('#K2').show('fast');
+            $('#K3').show('fast');
+          }
+        });
+      });
+    }
+
+    function globalactdecision() {
+      db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
+      //ALLOWS execution of all functions
+      db.transaction(function(tx) {
+        //CREATE TABLE STUDENT
+        tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, results) {
+          var a = results.rows[0].level;
+          var b = results.rows[0].lesson;
+          if (b == "false") {
+            $.mobile.changePage("#globalalert", {
+              reverse: false,
+              transition: "pop"
+            });
+          } else {
+            if ((a >= 0) && (a <= 40)) {
+              $.mobile.changePage("#GB", {
+                reverse: false,
+                transition: "pop"
+              });
+            } else if ((a > 40) && (a <= 80)) {
+              $.mobile.changePage("#GI", {
+                reverse: false,
+                transition: "pop"
+              });
+            } else if ((a > 80) && (a <= 100)) {
+              $.mobile.changePage("#GA", {
+                reverse: false,
+                transition: "pop"
+              });
+            }
+          }
+        });
+      });
+    }
+
+    //FUNCTION TIMER
+    function starttimer() {
+      time = setInterval(count, 1000);
+    }
+
+    function count() {
+      anstime += 1000;
+    }
+
+    function stoptimer() {
+      clearInterval(time);
+      anstime = 0;
+    }
+
+    function LearningAi(x, y) {
+      const stu = [{
+        time: (2000 / 1000000),
+        ans: 1
+      }, {
+        time: (2000 / 1000000),
+        ans: 0.8
+      }, {
+        time: (2000 / 1000000),
+        ans: 0
+      }, {
+        time: (120000 / 1000000),
+        ans: 1
+      }, {
+        time: (120000 / 1000000),
+        ans: 0
+      }, {
+        time: (300000 / 1000000),
+        ans: 1
+      }, {
+        time: (300000 / 1000000),
+        ans: 0
+      }, {
+        time: (600000 / 1000000),
+        ans: 1
+      }, {
+        time: (600000 / 1000000),
+        ans: 0
+      }];
+
+      const outing = [{
+          level: 1
+        },
+        {
+          level: 1
+        },
+        {
+          level: 0
+        },
+        {
+          level: 0.86
+        }, {
+          level: 0
+        }, {
+          level: 0.9
+        }, {
+          level: 0
+        }, {
+          level: 0.7
+        }, {
+          level: 0
+        }
+      ];
+
+      const trainingData = [];
+
+      for (let i = 0; i < stu.length; i++) {
+        trainingData.push({
+          input: stu[i],
+          output: outing[i]
+        });
+      }
+
+      const net = new brain.NeuralNetwork({
+        hiddenLayers: [3],
+        errorThresh: 0.0001
+      })
+
+      const stats = net.train(trainingData);
+
+      console.log(stats);
+
+      var a = net.run({
+        time: (x / 1000000),
+        ans: y
+      });
+      return a.level;
+    }
+
+    function decidequestion(xid, lv) {
+      console.log("LEVEL IS: " + lv);
+      if (lv < 0.5) {
+        starttimer();
+        if ((xid.includes("VB") == true) && (questionaware > 4)) {
+          let a = questionaware + 1;
+          let b = "#VB" + a;
+          $(b).show("fast");
+        } else if ((xid.includes("VIQ5") == true) && (questionaware > 3)) {
+          let a = questionaware + 1;
+          let b = "#VI" + a;
+          $(b).show("fast");
+        } else if ((xid.includes("VAQ5") == true) && (questionaware > 2)) {
+          let a = questionaware + 1;
+          let b = "#VA" + a;
+          $(b).show("fast");
+        } else if ((xid.includes("ABQ5") == true) && (questionaware > 4)) {
+          let a = questionaware + 1;
+          let b = "#AB" + a;
+          $(b).show("fast");
+        } else if ((xid.includes("AIQ5") == true) && (questionaware > 3)) {
+          let a = questionaware + 1;
+          let b = "#AI" + a;
+          $(b).show("fast");
+        } else if ((xid.includes("AAQ5") == true) && (questionaware > 2)) {
+          let a = questionaware + 1;
+          let b = "#AA" + a;
+          $(b).show("fast");
+        } else if ((xid.includes("NBQ5") == true) && (questionaware > 4)) {
+          let a = questionaware + 1;
+          let b = "#NB" + a;
+          $(b).show("fast");
+        } else if ((xid.includes("NIQ5") == true) && (questionaware > 3)) {
+          let a = questionaware + 1;
+          let b = "#NI" + a;
+          $(b).show("fast");
+        } else if ((xid.includes("NAQ5") == true) && (questionaware > 2)) {
+          let a = questionaware + 1;
+          let b = "#NA" + a;
+          $(b).show("fast");
+        }
+      }
+    }
+
+    function learningcomplete() {
+      db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
+      //ALLOWS execution of all functions
+      db.transaction(function(tx) {
+        //CREATE TABLE STUDENT
+        tx.executeSql('UPDATE stud SET lesson=? WHERE rowid=1', ["true"]);
+      });
+    }
+
+    function incrementlevel(lv) {
+      if (lv.includes("GBB")) {
+        db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
+        //ALLOWS execution of all functions
+        db.transaction(function(tx) {
+          //CREATE TABLE STUDENT
+          tx.executeSql('UPDATE stud SET level=?, lesson=? WHERE rowid=1', [70, "false"]);
+          tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, results) {
+            let a = results.rows[0].level;
+            learningcard(a);
+          })
+        });
+      } else if (lv.includes("GIB")) {
+        db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
+        //ALLOWS execution of all functions
+        db.transaction(function(tx) {
+          //CREATE TABLE STUDENT
+          tx.executeSql('UPDATE stud SET level=?, lesson=? WHERE rowid=1', [90, "false"]);
+          tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, results) {
+            let a = results.rows[0].level;
+            learningcard(a);
+          })
+        });
+      } else if (lv.includes("GAB")) {
+
+        db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
+        //ALLOWS execution of all functions
+        db.transaction(function(tx) {
+          //CREATE TABLE STUDENT
+          tx.executeSql('UPDATE stud SET level=?, lesson=? WHERE rowid=1', [100, "false"]);
+          tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, results) {
+            let a = results.rows[0].level;
+            learningcard(a);
+          })
+        });
+        $("#K5").show('fast');
+      }
+    }
+
+    function resetall() {
+      lscore = 0;
+      quest = 1;
+      questionaware = 0;
+      globalans = 0;
+      $("input[name='radio']").attr('disabled', false);
+    }
+
+    function exampassorfail() {
+      var res = 0;
+      for (let i = 1; i < 16; i++) {
+        let a = "#PT" + i + " input[name='radio']:checked";
+        var b = $(a).val();
+        if (b == "good") {
+          res++;
+        }
+      }
+      var n = (res / 15) * 100;
+      return n;
+    }
+
+    function rolling(x) {
+      var bar = new ProgressBar.Circle(containercircle1, {
+        color: '#aaa',
+        // This has to be the same size as the maximum width to
+        // prevent clipping
+        strokeWidth: 4,
+        trailWidth: 1,
+        easing: 'easeInOut',
+        duration: 1400,
+        text: {
+          autoStyleContainer: false
+        },
+        from: {
+          color: '#F00030',
+          width: 1
+        },
+        to: {
+          color: '#8ED47D',
+          width: 4
+        },
+        // Set default step function for all animate calls
+        step: function(state, circle) {
+          circle.path.setAttribute('stroke', state.color);
+          circle.path.setAttribute('stroke-width', state.width);
+
+          var value = Math.round(x);
+          if (value === 0) {
+            circle.setText('');
+          } else {
+            circle.setText(value);
+          }
+
+        }
+      });
+      var b = x / 100;
+      bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+      bar.text.style.fontSize = '2rem';
+      bar.animate(b); // Number from 0.0 to 1.0
+    }
+
+    function rolling1(x) {
+      var bar = new ProgressBar.Circle(containercircle2, {
+        color: '#aaa',
+        // This has to be the same size as the maximum width to
+        // prevent clipping
+        strokeWidth: 4,
+        trailWidth: 1,
+        easing: 'easeInOut',
+        duration: 1400,
+        text: {
+          autoStyleContainer: false
+        },
+        from: {
+          color: '#F00030',
+          width: 1
+        },
+        to: {
+          color: '#8ED47D',
+          width: 4
+        },
+        // Set default step function for all animate calls
+        step: function(state, circle) {
+          circle.path.setAttribute('stroke', state.color);
+          circle.path.setAttribute('stroke-width', state.width);
+
+          var value = Math.round(x);
+          if (value === 0) {
+            circle.setText('');
+          } else {
+            circle.setText(value);
+          }
+
+        }
+      });
+      var b = x / 100;
+      bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+      bar.text.style.fontSize = '2rem';
+      bar.animate(b); // Number from 0.0 to 1.0
+    }
+  </script>
+</body>
+
+</html>
