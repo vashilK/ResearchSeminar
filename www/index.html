@@ -29,6 +29,8 @@
   <!-- CUSTOM JS -->
   <script src="js/apt.js"></script>
   <script src="js/customanimation.js"></script>
+  <script type="text/javascript" src="js/ValidateVerb.js"></script>
+  <script src="js/adverbvalidate.js"></script>
   <style>
     /*APTITUDE TEST*/
     #questionsheader {
@@ -494,6 +496,40 @@
       display: none;
     }
 
+    #VI5,
+    #VI6,
+    #VI7,
+    VI8 {
+      display: none;
+    }
+
+    #VA4,
+    #VA5,
+    #VA6 {
+      display: none;
+    }
+
+    #AB6,
+    #AB7,
+    #AB8,
+    #AB9,
+    #AB10 {
+      display: none;
+    }
+
+    #AI5,
+    #AI6,
+    #AI7,
+    #AI8 {
+      display: none;
+    }
+
+    #AA4,
+    #AA5,
+    #AA6 {
+      display: none;
+    }
+
     #examup {
       background: linear-gradient(to bottom left, #ffffff 0%, #ffcccc 100%);
     }
@@ -506,6 +542,236 @@
     #uiou {
       font-family: 'AdventPro';
       font-size: 24px;
+    }
+
+    #down {
+      width: inherit;
+      align-items: center;
+      text-align: center;
+    }
+
+    /*RMABO*/
+    .foto {
+
+      border: 7px solid #DCDCDC;
+      margin: 0 auto;
+      width: 300px;
+      border-radius: 10px;
+
+
+    }
+
+    .foto img {
+      width: 100%;
+      height: 300px;
+
+
+    }
+
+    .hd-cent {
+      text-align: center;
+    }
+
+    div.quest {
+      padding: 5px;
+      text-align: center;
+
+    }
+
+    .easy {
+      height: 10px;
+      background-color: #6CFF33;
+      bottom: 0;
+      position: absolute !important;
+      top: auto !important;
+      width: 100%;
+    }
+
+    .medium {
+      height: 10px;
+      background-color: #F5B041;
+      bottom: 0;
+      position: absolute !important;
+      top: auto !important;
+      width: 100%;
+    }
+
+    .hard {
+      height: 10px;
+      background-color: red;
+      bottom: 0;
+      position: absolute !important;
+      top: auto !important;
+      width: 100%;
+    }
+
+    .er {
+      background-color: pink;
+      margin: auto;
+      width: 70%;
+      border-radius: 25px;
+      padding-bottom: 5px;
+    }
+
+    .er_div {
+      display: flex;
+      align-items: center;
+    }
+
+    .gd {
+      background-color: #85C1E9;
+      margin: auto;
+      width: 70%;
+      border-radius: 25px;
+      padding-bottom: 5px;
+    }
+
+    .cr_size {
+      width: 30px;
+      padding-right: 12px;
+
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    #CFVB1,
+    #CFVB2,
+    #CFVB3,
+    #CFVB4,
+    #CFVB5,
+    #CFVB6,
+    #CFVB7,
+    #CFVB8,
+    #CFVB9,
+    #CFVB10,
+    #CFVB11,
+    #CFVB12,
+    #CFVB13,
+    #CFVB14,
+    #CFVB15,
+    #CFVB16,
+    #CFVB17,
+    #CFVB18,
+    #CFVB19,
+    #CFVB20 {
+      display: none;
+    }
+
+    #CFVI1,
+    #CFVI2,
+    #CFVI3,
+    #CFVI4,
+    #CFVI5,
+    #CFVI6,
+    #CFVI7,
+    #CFVI8,
+    #CFVI9,
+    #CFVI10,
+    #CFVI11,
+    #CFVI12,
+    #CFVI13,
+    #CFVI14,
+    #CFVI15,
+    #CFVI16 {
+      display: none;
+    }
+
+    #CFVA1,
+    #CFVA2,
+    #CFVA3,
+    #CFVA4,
+    #CFVA5,
+    #CFVA6,
+    #CFVA7,
+    #CFVA8,
+    #CFVA9,
+    #CFVA10,
+    #CFVA11,
+    #CFVA12 {
+      display: none;
+    }
+
+    .column {
+      float: left;
+      width: 45%;
+      height: auto;
+      padding: 5px;
+      border: 2px solid #DCDCDC;
+    }
+
+
+    .hd-cent {
+      text-align: center;
+      object-position: center;
+    }
+
+    div.quest {
+      padding: 3px;
+      text-align: center;
+
+    }
+
+    .easy {
+      height: 10px;
+      background-color: #6CFF33;
+      bottom: 0;
+      position: absolute !important;
+      top: auto !important;
+      width: 100%;
+    }
+
+    .medium {
+      height: 10px;
+      background-color: #F5B041;
+      bottom: 0;
+      position: absolute !important;
+      top: auto !important;
+      width: 100%;
+    }
+
+    .hard {
+      height: 10px;
+      background-color: red;
+      bottom: 0;
+      position: absolute !important;
+      top: auto !important;
+      width: 100%;
+    }
+
+    .important {
+      font-weight: 5em;
+      font-size: 20px;
+      color: #FF8C00;
+
+    }
+
+    .questions {
+      background-color: #C0C0C0;
+      font-style: bold;
+    }
+
+    .answer {
+      background-color: #E0FFFF;
+    }
+
+    .emphasis {
+      font-weight: bolder;
+      text-decoration: underline;
+    }
+
+    .explain {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    table,
+    td,
+    th {
+      border: 1px solid black;
+      text-align: center;
+
     }
   </style>
 </head>
@@ -631,7 +897,6 @@
   <!-- APTITUDE -->
   <div data-role="page" id="APT">
     <div data-role="header" id="questionsheader">
-
       <h3>Aptitude Test</h3>
     </div>
 
@@ -698,7 +963,7 @@
 
       <form>
         <fieldset data-role="controlgroup" id="7">
-          <h3 class="hd-cent"> 7)Choose the correct answer below :</h3>
+          <h4> 7)Choose the correct answer below :</h4>
           <label><input name="radio" id="r35" type="radio" value="bad"> A. I is a cold </label>
           <label><input name="radio" id="r36" type="radio" value="bad"> B. I am cold </label>
           <label><input name="radio" id="r37" type="radio" value="bad"> C. I has cold </label>
@@ -708,7 +973,7 @@
       </form>
       <form>
         <fieldset data-role="controlgroup" id="8">
-          <h3 class="hd-cent"> 8)She works ____ Saturday :</h3>
+          <h4> 8)She works ____ Saturday :</h4>
           <label><input name="radio" id="r39" type="radio" value="bad"> A. at </label>
           <label><input name="radio" id="r40" type="radio" value="bad"> B. to </label>
           <label><input name="radio" id="r41" type="radio" value="bad"> C. in </label>
@@ -718,7 +983,7 @@
       <form>
 
         <fieldset data-role="controlgroup" id="9">
-          <h3 class="hd-cent">9)Murphy _______ be receiving the guests tonight.</h3>
+          <h4>9)Murphy _______ be receiving the guests tonight.</h4>
           <label><input name="radio" id="r43" type="radio" value="good"> A. will </label>
           <label><input name="radio" id="r44" type="radio" value="bad"> B. would </label>
           <label><input name="radio" id="r45" type="radio" value="bad"> C. shall</label>
@@ -739,13 +1004,9 @@
       </form>
 
 
-      <div>
-        <Buton data-icon="comment" class="ui-btn" id="aptsubmit">Submit</Buton>
+      <div id="down">
+        <Buton data-icon="arrow-r" class="ui-btn" id="aptsubmit">Submit</Buton>
       </div>
-
-
-    </div>
-    <div data-role="footer" id="questionsfooter">
     </div>
   </div>
   <!-- DEFAULT ALERT FOR BLOCKER GLOBAL Activities -->
@@ -769,257 +1030,1725 @@
       </a>
     </div>
   </div>
-  <!-- DRY RUN -->
+  <!-- VERB -->
+  <!-- LEVEL 1 -->
   <div data-role="page" id="VB">
+    <div data-role="header">
+
+      <h3>Learning Verbs and Tenses</h3>
+    </div>
+
+
     <div data-role="main" class="ui-content">
+
+      <!-- Start of present tense -->
+      <div>
+        <h3 class="center">Simple Present Tense</h3>
+        <h4>The simple present is a verb tense with two main uses. We use the simple present tense when an action is happening right now, or when it happens regularly </h4>
+        <h4 class="center">Verb: to be</h4>
+        <table data-role="table" id="" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+                      <th>Simple Present</th>
+                      <th>Sentence examples</th>
+                      
+                    </tr>
+                </thead>
+              <tbody>
+                  <tr>
+                      <th>I am</th>
+                      <td>I am 12 years old </td>  
+                    </tr>
+                  <tr>
+                       <th>You are</th>
+                       <td>You are happy</td>  
+                    </tr>
+            <tr>
+                      <th>He is</th>
+                      <td>He is a boy </td>  
+                    </tr>
+                  <tr>
+                       <th>She is</th>
+                       <td>She is a girl </td>  
+                    </tr>
+            <tr>
+                       <th>It is</th>
+                       <td>It is big</td>  
+                    </tr>
+            <tr>
+                      <th>We are</th>
+                      <td>We are in London</td>  
+                    </tr>
+                  <tr>
+                       <th>They are</th>
+                       <td>They are at home </td>  
+                    </tr>
+                
+          </tbody>
+            </table>
+        <br>
+
+        <h3>In english, every sentence <strong>must have a verb</strong>.Some students write sentences incorrectly</h3>
+        <p>1)</p>
+        <p>Wrong : <strike>I very hungry.</strike></p>
+        <p>Correct : I <strong>am</strong> very hungry</p>
+
+
+        <p>2)</p>
+        <p>Wrong : <strike>She is your sister ?</strike></p>
+        <p>Correct :<strong>Is</strong> she your sister ?</p>
+
+        <p>2)</p>
+        <p>Wrong : <strike>You very happy.</strike></p>
+        <p>Correct :You <strong>are</strong> very happy</p>
+        <br>
+      </div>
+
+      <!-- Start of past tense -->
+      <div>
+        <h3 class="center">Simple Past Tense</h3>
+        <h4>The simple past is a verb tense that is used to talk about things that happened or existed before now.</h4>
+        <h4 class="center">Verb: to be</h4>
+        <table data-role="table" id="" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+                      <th>Simple past</th>
+                      <th>Sentence examples</th>
+                      
+                    </tr>
+                </thead>
+              <tbody>
+                  <tr>
+                      <th>I was</th>
+                      <td>I was in the house </td>  
+                    </tr>
+                  <tr>
+                       <th>You were</th>
+                       <td>You were happy yesterday</td>  
+                    </tr>
+            <tr>
+                      <th>He was</th>
+                      <td>He was late</td>  
+                    </tr>
+                  <tr>
+                       <th>She was</th>
+                       <td>She was an english teacher</td>  
+                    </tr>
+            <tr>
+                       <th>It was</th>
+                       <td>It was nice</td>  
+                    </tr>
+            <tr>
+                      <th>We were</th>
+                      <td>We were at school</td>  
+                    </tr>
+                  <tr>
+                       <th>They were</th>
+                       <td>They were supposed to be here</td>  
+                    </tr>
+                
+          </tbody>
+            </table>
+        <br>
+
+        <h3>Examples of sentences with the simple past tense</h3>
+        <p>1)</p>
+        <p>He won the silver medal.</p>
+        <p><strong>won</strong> comes from the verb to win</p>
+
+        <p>2)</p>
+        <p>We saw a good film last week.</p>
+        <p><strong>saw</strong> comes from the verb to see</p>
+
+        <p>3)</p>
+        <p>People lived in caves a long time ago.</p>
+        <p><strong>lived</strong> comes from the verb to live</p>
+
+
+      </div>
+
+      <!-- Start of futur tense learnings -->
+      <div>
+        <h3 class="center">Simple Future Tense</h3>
+        <h4>The simple future is a verb tense that is used to talk about things that have not happened yet.</h4>
+        The simple future tense is composed of two parts: will / shall + the infinitive without to
+
+        <h4 class="center">Verb: to be</h4>
+        <table data-role="table" id="" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+                      <th>Simple future</th>
+                      <th>the infinitive without to</th>
+                      
+                    </tr>
+                </thead>
+              <tbody>
+                  <tr>
+                      <th>I will/shall</th>
+                      <td>I will go</td>  
+                    </tr>
+                  <tr>
+                       <th>You will</th>
+                       <td>You will go</td>  
+                    </tr>
+            <tr>
+                      <th>He will</th>
+                      <td>He will come</td>  
+                    </tr>
+                  <tr>
+                       <th>She will</th>
+                       <td>She will come</td>  
+                    </tr>
+            <tr>
+                       <th>It will</th>
+                       <td>It will happen</td>  
+                    </tr>
+            <tr>
+                      <th>We will/shall</th>
+                      <td>We will play</td>  
+                    </tr>
+                  <tr>
+                       <th>They will</th>
+                       <td>They will play</td>  
+                    </tr>
+                
+          </tbody>
+            </table>
+        <br>
+
+        <h3>Examples of sentences with the simple past tense</h3>
+        <p>1)</p>
+        <p>He will carry your bag for you</p>
+
+
+        <p>2)</p>
+        <p>Shall we go to the cinema tonight?</p>
+
+
+        <p>3)</p>
+        <p>It will rain tomorrow.</p>
+
+
+      </div>
+      <br>
+      <h3>Choose the correct options for the questions below</h3>
+
+      <!--q1-->
       <div id="VB1">
         <form>
-          <fieldset data-role="controlgroup" id="VBQ1" class="VB">
-            <h3 class="hd-cent">1 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <fieldset data-role="controlgroup" class="VB" id="VBQ1">
+            <h3 class="hd-cent">1) I __ a student.</h3>
+            <label><input name="radio" id="v1" type="radio" value="bad"> A. are </label>
+            <label><input name="radio" id="v2" type="radio" value="bad"> B. is </label>
+            <label><input name="radio" id="v3" type="radio" value="good"> C. am </label>
           </fieldset>
         </form>
+        <div id="CFVB1" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center">he, she and it use <b>is</b></p>
+          <p class="center">you, we and they use <b>are</b></p>
+          <p class="center">The answer is <b>C. am</b></p>
+        </div>
+        <div id="CFVB2" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer C is right</p>
+
+        </div>
+
       </div>
-      <br>
+
+
+
+
+      <!--q2-->
       <div id="VB2">
         <form>
-          <fieldset data-role="controlgroup" id="VBQ2" class="VB">
-            <h3 class="hd-cent">2 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <fieldset data-role="controlgroup" class="VB" id="VBQ2">
+            <h3 class="hd-cent">2) My name ___ Nikita.</h3>
+            <label><input name="radio" id="v4" type="radio" value="bad"> A. am </label>
+            <label><input name="radio" id="v5" type="radio" value="bad"> B. are </label>
+            <label><input name="radio" id="v6" type="radio" value="good"> C. is </label>
           </fieldset>
         </form>
+
+        <div id="CFVB3" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center"><b>am</b> is used for I, for only 1 person</p>
+          <p class="center">you, we and they use <b>are</b> and if there are many names <b>are</b> is used</p>
+          <p class="center">The answer is <b>C. is</b></p>
+        </div>
+        <div id="CFVB4" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer C is right</p>
+
+        </div>
+
       </div>
-      <br>
+
+
+      <!--q3-->
       <div id="VB3">
         <form>
-          <fieldset data-role="controlgroup" id="VBQ3" class="VB">
-            <h3 class="hd-cent">3 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <fieldset data-role="controlgroup" class="VB" id="VBQ3">
+            <h3 class="hd-cent">3) Clara and Steve ___ married.</h3>
+            <label><input name="radio" id="v7" type="radio" value="good"> A. are </label>
+            <label><input name="radio" id="v8" type="radio" value="bad"> B. is </label>
+            <label><input name="radio" id="v9" type="radio" value="bad"> C. am </label>
           </fieldset>
         </form>
+        <div id="CFVB5" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center">am is used for for only 1 person like I <b>is</b></p>
+          <p class="center">He, she and It all the three are singular and use <b>is</b></p>
+          <p class="center">The answer is <b>A. are</b></p>
+        </div>
+        <div id="CFVB6" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer A is right</p>
+
+        </div>
       </div>
-      <br>
+
+
+
+      <!-- start of past tense -->
+
+      <!--q4-->
       <div id="VB4">
         <form>
-          <fieldset data-role="controlgroup" id="VBQ4" class="VB">
-            <h3 class="hd-cent">4 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <fieldset data-role="controlgroup" class="VB" id="VBQ4">
+            <h3 class="hd-cent">4) He ___ in Japan yesterday.</h3>
+            <label><input name="radio" id="v10" type="radio" value="good"> A. was </label>
+            <label><input name="radio" id="v11" type="radio" value="bad"> B. were </label>
+            <label><input name="radio" id="v12" type="radio" value="bad"> C. is </label>
           </fieldset>
         </form>
+        <div id="CFVB7" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center">You, We and They use <b>are</b></p>
+          <p class="center"><b>is</b>is the verb to be in simple present</p>
+          <p class="center">The answer is <b>A. was</b></p>
+        </div>
+        <div id="CFVB8" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer A is right</p>
+
+        </div>
       </div>
-      <br>
+
+      <!--q5-->
       <div id="VB5">
         <form>
-          <fieldset data-role="controlgroup" id="VBQ5" class="VB">
-            <h3 class="hd-cent">5 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <fieldset data-role="controlgroup" class="VB" id="VBQ5">
+            <h3 class="hd-cent">5) He _____ the piano.</h3>
+            <label><input name="radio" id="v13" type="radio" value="bad"> A. play </label>
+            <label><input name="radio" id="v14" type="radio" value="bad"> B. ply </label>
+            <label><input name="radio" id="v15" type="radio" value="good"> C. played </label>
           </fieldset>
         </form>
+        <div id="CFVB9" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center"> <b>play</b> is can be used in simple present for example : you play, we play and they play</p>
+          <p class="center"><b>ply</b> is a verb which has a different meaning and doen not fit in the sentence</p>
+          <p class="center">The answer is <b>C. played</b> Many simple past verbs ends with <b>ed</b> verbs such as waited, wanted and needed</p>
+        </div>
+        <div id="CFVB10" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer C is right</p>
+
+        </div>
       </div>
-      <br>
+
+
+      <!--q6-->
       <div id="VB6">
         <form>
-          <fieldset data-role="controlgroup" id="VBQ6" class="VB">
-            <h3 class="hd-cent">6 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <fieldset data-role="controlgroup" class="VB" id="VBQ6">
+            <h3 class="hd-cent">6) She _____ her homework.</h3>
+            <label><input name="radio" id="v16" type="radio" value="good"> A. finished </label>
+            <label><input name="radio" id="v17" type="radio" value="bad"> B. finishes </label>
+            <label><input name="radio" id="v18" type="radio" value="bad"> C. finish </label>
           </fieldset>
         </form>
+        <div id="CFVB11" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center"> <b>finishes</b> is verb of simple present tense</p>
+          <p class="center"><b>finish</b> can be used in simple present tense when there is you, we and are</p>
+          <p class="center">The answer is <b>A. finished</b></p>
+        </div>
+        <div id="CFVB12" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer A is right</p>
+
+        </div>
+
       </div>
-      <br>
+
+
+
+
+
+
+      <!-- start of the simple future tense -->
+
+      <!--q7-->
       <div id="VB7">
         <form>
-          <fieldset data-role="controlgroup" id="VBQ7" class="VB">
-            <h3 class="hd-cent">7 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <fieldset data-role="controlgroup" class="VB" id="VBQ7">
+            <h3 class="hd-cent">7) We will ____ football after school.</h3>
+            <label><input name="radio" id="v19" type="radio" value="good"> A. play </label>
+            <label><input name="radio" id="v20" type="radio" value="bad"> B. plays </label>
+            <label><input name="radio" id="v21" type="radio" value="bad"> C. playing </label>
           </fieldset>
         </form>
+        <div id="CFVB13" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center"> <b>playing</b>is verb to play in present continuous tense, this verb tense will be in another chapter </p>
+          <p class="center"><b>plays</b> is a simple present verb tense</p>
+          <p class="center">The answer is <b>A. play</b> this answer is right because it is in infinitive form(basic form of the verb).</p>
+        </div>
+        <div id="CFVB14" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer A is right</p>
+
+        </div>
       </div>
-      <br>
+
+
+      <!--q8-->
       <div id="VB8">
         <form>
-          <fieldset data-role="controlgroup" id="VBQ8" class="VB">
-            <h3 class="hd-cent">8 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <fieldset data-role="controlgroup" class="VB" id="VBQ8">
+            <h3 class="hd-cent">8) You ___ do exactly as I say..</h3>
+            <label><input name="radio" id="v22" type="radio" value="bad"> A. have </label>
+            <label><input name="radio" id="v23" type="radio" value="bad"> B. are </label>
+            <label><input name="radio" id="v24" type="radio" value="good"> C. will </label>
           </fieldset>
         </form>
+        <div id="CFVB15" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center"> <b>have </b> is verb to have in infinitive form and in does not fit in the sentence as a simple future verb is needed </p>
+          <p class="center"><b>are</b> is verb to be in simple present tense</p>
+          <p class="center">The answer is <b>C. will</b> this answer is right because you, we and they use <b>will</b> .</p>
+        </div>
+        <div id="CFVB16" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer C is right</p>
+
+        </div>
       </div>
-      <br>
+
+
+      <!--q9-->
       <div id="VB9">
         <form>
-          <fieldset data-role="controlgroup" id="VBQ9" class="VB">
-            <h3 class="hd-cent">9 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <fieldset data-role="controlgroup" class="VB" id="VBQ9">
+            <h3 class="hd-cent">9) Shall I ____ the window ?</h3>
+            <label><input name="radio" id="v25" type="radio" value="good"> A. open </label>
+            <label><input name="radio" id="v26" type="radio" value="bad"> B. opened </label>
+            <label><input name="radio" id="v27" type="radio" value="bad"> C. opens </label>
           </fieldset>
         </form>
+        <div id="CFVB17" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center"> <b>opened</b> is verb to open in simple past tense and a simple futur tense verb is needed </p>
+          <p class="center"><b>opens</b> is verb to open in simple present tense</p>
+          <p class="center">The answer is <b>A. open</b> this answer is right because the verb is in infinitive form.</p>
+        </div>
+        <div id="CFVB18" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer A is right</p>
+
+        </div>
+
       </div>
-      <br>
+
+
+      <!--q10-->
       <div id="VB10">
         <form>
-          <fieldset data-role="controlgroup" id="VBQ10" class="VB">
-            <h3 class="hd-cent">10 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <fieldset data-role="controlgroup" class="VB" id="VBQ10">
+            <h3 class="hd-cent">10) She will ___ her homework after lunch</h3>
+            <label><input name="radio" id="v28" type="radio" value="bad"> A. does </label>
+            <label><input name="radio" id="v29" type="radio" value="good"> B. do </label>
+            <label><input name="radio" id="v30" type="radio" value="bad"> C. did </label>
           </fieldset>
         </form>
+        <div id="CFVB19" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center">The answer is <b>B. do</b></p>
+        </div>
+        <div id="CFVB20" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer B is right</p>
+
+        </div>
+
       </div>
-      <br>
-      <br>
-      <button id="VBN">Advance</button>
+
+      <div>
+        <button id="VBN" class="ui-btn" style="background-color: #8B008B; color: white;">Next Chapter</button>
+      </div>
+
     </div>
   </div>
-  <div data-role="page" id="AB">
+  <!-- LEVEL 2 -->
+  <div data-role="page" id="VI">
+    <div data-role="header">
+
+      <h3>Learning Verbs and Tenses</h3>
+    </div>
+
+
     <div data-role="main" class="ui-content">
-      <div id="VB1">
+
+      <!-- Start of present continous -->
+      <div>
+        <h3 class="center">Present Continuous Tense</h3>
+        <h4>The present continuous verb tense indicates that an action or condition is happening now, frequently, and may continue into the future. </h4>
+        <h4>The present continuous of any verb is composed of two parts - the present tense of the verb to be + the present participal of the verb main verb .</h4>
+        <h4>*The form of the present participle is <strong>base+ing</strong>, e.g talking, playing, moving, smiling.</h4>
+        <h4 class="center">Verb: to talk</h4>
+        <table data-role="table" id="" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+                      <th>Subject</th>
+                      <th>to be</th>
+                      <th>base+ing</th>
+                    </tr>
+                </thead>
+              <tbody>
+                  <tr>
+                      <th>I</th>
+                      <td>am</td> 
+              <td>talking</td>   
+                    </tr>
+                  <tr>
+                       <th>You</th>
+                       <td>are</td>
+              <td>talking</td>    
+                    
+            </tr>
+            <tr>
+                      <th>He</th>
+                      <td>is</td>
+              <td>talking</td>    
+                    
+            </tr>
+                  <tr>
+                       <th>She is</th>
+                       <td>is</td> 
+              <td>talking</td>   
+                    </tr>
+            <tr>
+                       <th>It</th>
+                       <td>is</td>
+              <td>talking</td>    
+                    
+            </tr>
+            <tr>
+                      <th>We</th>
+                      <td>are</td> 
+              <td>talking</td>   
+                    </tr>
+                  <tr>
+                       <th>They</th>
+                       <td>are</td> 
+              <td>talking</td>   
+                    </tr>
+                
+          </tbody>
+            </table>
+        <br>
+
+
+        <!--Affirmative-->
+        <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+              <caption>Affirmative</caption>
+                      <th>Subject</th>
+                      <th>to be</th>
+                      <th>base +ing</th>
+                    
+            </tr>
+                </thead>
+              <tbody>
+             <tr>
+                       <th>he is</th>
+                       <td>is</td> 
+              <td>playing</td>   
+                    </tr>
+                </tbody>
+            </table>
+
+
+        <!--Negative-->
+        <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+              <caption>Negative</caption>
+                      <th>Subject</th>
+                      <th>to be +not</th>
+                      <th>base +ing</th>
+                    
+            </tr>
+                </thead>
+              <tbody>
+             <tr>
+                       <th>he is</th>
+                       <td>is not</td> 
+              <td>playing</td>   
+                    </tr>
+                </tbody>
+            </table>
+
+        <!--Interrogative-->
+        <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+              <caption>Interrogative</caption>
+                      <th>to be</th>
+                      <th>+subject</th>
+                      <th>+base +ing</th>
+                    
+            </tr>
+                </thead>
+              <tbody>
+             <tr>
+                       <th>is</th>
+                       <td>he</td> 
+              <td>playing ?</td>   
+                    </tr>
+                </tbody>
+            </table>
+
+      </div>
+      <!-- End of present continuous tense -->
+      <br><br>
+      <!-- Start of the past continuous tense -->
+      <div>
+        <h3 class="center">Past Continuous Tense</h3>
+        <h4>The past continuous tense refers to a continuing action or state that was happening at some point in the past.</h4>
+        <h4>The past continuous tense is formed by combining the past tense of to be (was/were) with the verb’s present participle (-ing word).</h4>
+
+        <h4 class="center">Verb: to watch</h4>
+        <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+                      <th>Subject</th>
+                      <th>was/were</th>
+                      <th>base+ing</th>
+                    </tr>
+                </thead>
+              <tbody>
+                  <tr>
+                      <th>I</th>
+                      <td>was</td> 
+              <td>watching</td>   
+                    </tr>
+                  <tr>
+                       <th>You</th>
+                       <td>were</td>
+              <td>watching</td>    
+                    
+            </tr>
+            <tr>
+                      <th>He</th>
+                      <td>was</td>
+              <td>watching</td>    
+                    
+            </tr>
+                  <tr>
+                       <th>She</th>
+                       <td>was</td> 
+              <td>watching</td>   
+                    </tr>
+            <tr>
+                       <th>It</th>
+                       <td>was</td>
+              <td>watching</td>    
+                    
+            </tr>
+            <tr>
+                      <th>We</th>
+                      <td>were</td> 
+              <td>watching</td>   
+                    </tr>
+                  <tr>
+                       <th>They</th>
+                       <td>were</td> 
+              <td>watching</td>   
+                    </tr>
+                
+          </tbody>
+            </table>
+        <br>
+
+        <!--Affirmative-->
+        <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+              <caption>Affirmative</caption>
+                      <th>Subject</th>
+                      <th>was/were</th>
+                      <th>base +ing</th>
+                    
+            </tr>
+                </thead>
+              <tbody>
+             <tr>
+                       <th>They</th>
+                       <td>were</td> 
+              <td>reading</td>   
+                    </tr>
+                </tbody>
+            </table>
+
+
+        <!--Negative-->
+        <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+              <caption>Negative</caption>
+                      <th>Subject</th>
+                      <th>was/were +not</th>
+                      <th>base +ing</th>
+                    
+            </tr>
+                </thead>
+              <tbody>
+             <tr>
+                       <th>They</th>
+                       <td>were not</td> 
+              <td>reading</td>   
+                    </tr>
+                </tbody>
+            </table>
+
+        <!--Interrogative-->
+        <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+              <caption>Interrogative</caption>
+                      <th>was/were</th>
+                      <th>+subject</th>
+                      <th>+base +ing</th>
+                    
+            </tr>
+                </thead>
+              <tbody>
+             <tr>
+                       <th>were</th>
+                       <td>they</td> 
+              <td>reading</td>   
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+      </div>
+      <!-- End of past continuous tense -->
+
+      <!-- Start of futur continous tense  -->
+      <div>
+        <h3 class="center">Future Continuous Tense</h3>
+        <h4>The future continuous tense is a verb tense that indicates that something will occur in the future and continue for an expected length of time.</h4>
+        <h4>It is formed using the construction will + be + the present participle (the root verb + -ing).</h4>
+
+        <h4 class="center">Verb: to work</h4>
+
+        <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+                      <th>Subject</th>
+                      <th>simple future, 'to be'</th>
+                      <th>base+ing</th>
+                    </tr>
+                </thead>
+              <tbody>
+                  <tr>
+                      <th>I</th>
+                      <td>will be</td> 
+              <td>working</td>   
+                    </tr>
+                  <tr>
+                       <th>You</th>
+                        <td>will be</td> 
+              <td>working</td>    
+                    </tr>
+            <tr>
+                      <th>He</th>
+                       <td>will be</td> 
+              <td>working</td>    
+                    </tr>
+                  <tr>
+                       <th>She</th>
+                        <td>will be</td> 
+              <td>working</td>   
+                    </tr>
+            <tr>
+                       <th>It</th>
+                       <td>will be</td> 
+              <td>working</td>   
+                    </tr>
+            <tr>
+                      <th>We</th>
+                      <td>will be</td> 
+              <td>working</td>   
+                    </tr>
+                  <tr>
+                       <th>They</th>
+                        <td>will be</td> 
+              <td>working</td>   
+                    </tr>
+                
+          </tbody>
+            </table>
+        <br>
+
+        <!--Affirmative-->
+        <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+              <caption>Affirmative</caption>
+                      <th>Subject</th>
+                      <th>will+to be</th>
+                      <th>base+ing</th>
+                    
+            </tr>
+                </thead>
+              <tbody>
+             <tr>
+                       <th>we</th>
+                       <td>will be</td> 
+              <td>staying</td>   
+                    </tr>
+                </tbody>
+            </table>
+
+
+        <!--Negative-->
+        <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+              <caption>Negative</caption>
+                      <th>Subject</th>
+                      <th>will not+to be</th>
+                      <th>base+ing</th>
+                    
+            </tr>
+                </thead>
+              <tbody>
+             <tr>
+                       <th>we</th>
+                       <td>will not be</td> 
+              <td>staying</td>    
+                    </tr>
+                </tbody>
+            </table>
+
+        <!--Interrogative-->
+        <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+              <caption>Interrogative</caption>
+                      <th>will</th>
+                      <th>subject</th>
+                      <th>to be+base+ing</th>
+                    
+            </tr>
+                </thead>
+              <tbody>
+             <tr>
+                       <th>will</th>
+                       <td>we</td> 
+              <td>be staying ?</td>   
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+
+      </div>
+      <!-- End of futur continous tense -->
+      <br>
+      <h3>Choose the correct options for the questions below</h3>
+
+      <!--q1-->
+      <div id="VI1">
         <form>
-          <fieldset data-role="controlgroup" id="VBQ1" class="VB">
-            <h3 class="hd-cent">1 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <fieldset data-role="controlgroup" class="VI" id="VIQ1">
+            <h3 class="hd-cent">1) I am ___ to school today </h3>
+            <label><input name="radio" id="vv1" type="radio" value="bad"> A. go </label>
+            <label><input name="radio" id="vv2" type="radio" value="good"> B. going </label>
+            <label><input name="radio" id="vv3" type="radio" value="bad"> C. will go </label>
           </fieldset>
         </form>
+        <div id="CFVI1" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center"><strong>go</strong> is the infinitive of verb to go</p>
+          <p class="center"><strong>will go</strong> is a verb of the simple future tense<b>are</b></p>
+          <p class="center">The answer is <b>B. going</b></p>
+        </div>
+        <div id="CFVI2" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer B is right</p>
+
+        </div>
+
       </div>
-      <br>
-      <div id="VB2">
+
+
+
+
+      <!--q2-->
+      <div id="VI2">
+        <div class="foto">
+          <img src="img/read.jpg" alt="house">
+          <div class="quest">Which sentence describes the picture ?</div>
+        </div>
         <form>
-          <fieldset data-role="controlgroup" id="VBQ2" class="VB">
-            <h3 class="hd-cent">2 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <fieldset data-role="controlgroup" class="VI" id="VIQ2">
+            <label><input name="radio" id="vv4" type="radio" value="good"> A. She is reading a book</label>
+            <label><input name="radio" id="vv5" type="radio" value="bad"> B. She read a book </label>
+            <label><input name="radio" id="vv6" type="radio" value="bad"> C. She will read a book</label>
           </fieldset>
         </form>
+
+        <div id="CFVI3" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center">option B is wrong because <strong> read</strong> is a verb of simple past tense</p>
+          <p class="center">option C is wrong because <strong> will read</strong> is a verb of simple future tense</p>
+          <p class="center">The answer is <b>A. She is reading a book</b></p>
+        </div>
+        <div id="CFVI4" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer A is right</p>
+
+        </div>
+
       </div>
-      <br>
-      <div id="VB3">
+
+
+      <!--q3-->
+      <div id="VI3">
         <form>
-          <fieldset data-role="controlgroup" id="VBQ3" class="VB">
-            <h3 class="hd-cent">3 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <fieldset data-role="controlgroup" class="VI" id="VIQ3">
+            <h3 class="hd-cent">3) Tom ______ to ride a bicycle.</h3>
+            <label><input name="radio" id="vv7" type="radio" value="good"> A. is learning </label>
+            <label><input name="radio" id="vv8" type="radio" value="bad"> B. learn </label>
+            <label><input name="radio" id="vv9" type="radio" value="bad"> C. learning </label>
           </fieldset>
         </form>
+        <div id="CFVI5" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center">option B is wrong because <strong>learn</strong> is in infinitive form</p>
+          <p class="center">option C is wrong because <strong>learning</strong> is in present participle form and it is not with a present tense of verb be(is) = is learning</p>
+          <p class="center">The answer is <b>A. is learning</b></p>
+        </div>
+        <div id="CFVI6" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer A is right</p>
+
+        </div>
       </div>
-      <br>
-      <div id="VB4">
+
+
+
+      <!-- start of past tense -->
+
+      <!--q4-->
+      <div id="VI4">
         <form>
-          <fieldset data-role="controlgroup" id="VBQ4" class="VB">
-            <h3 class="hd-cent">4 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <fieldset data-role="controlgroup" class="VI" id="VIQ4">
+            <h3 class="hd-cent">4) The girl ____ in the park yesterday.</h3>
+            <label><input name="radio" id="vv10" type="radio" value="bad"> A. was run </label>
+            <label><input name="radio" id="vv11" type="radio" value="bad"> B. is running </label>
+            <label><input name="radio" id="vv12" type="radio" value="good"> C. was running </label>
           </fieldset>
         </form>
+        <div id="CFVI7" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center">option A is wrong because <strong> was run</strong> is verb to be(was) in simple past tense + verb to run in infinitive form</p>
+          <p class="center">option B is wron because <strong>is running</strong> is a present continous tense verb and yesterday is an action in the past</p>
+          <p class="center">The answer is <b>C. was running</b></p>
+        </div>
+        <div id="CFVI8" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer C is right</p>
+
+        </div>
       </div>
-      <br>
-      <div id="VB5">
+
+      <!--q5-->
+      <div id="VI5">
         <form>
-          <fieldset data-role="controlgroup" id="VBQ5" class="VB">
-            <h3 class="hd-cent">5 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <div class="foto">
+            <img src="img/tv.jpg" alt="house">
+            <div class="quest">What was the family doing yesterday at night ?</div>
+          </div>
+          <fieldset data-role="controlgroup" id="VIQ5">
+            <label><input name="radio" id="vv13" type="radio" value="bad"> A. The family watches televison.</label>
+            <label><input name="radio" id="vv14" type="radio" value="good"> B. The family was watching television.</label>
+            <label><input name="radio" id="vv15" type="radio" value="bad"> C. The family will watch televsion.</label>
           </fieldset>
         </form>
+        <div id="CFVI9" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center">option A is wrong because <strong>watches</strong> is verb to watch in simple present tense</p>
+          <p class="center">option C is wrong beacause <strong>will watch</strong> is a verb of simple future tense</p>
+          <p class="center">The answer is <strong>B. The family was watching televison.</strong></p>
+        </div>
+        <div id="CFVI10" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer B is right</p>
+
+        </div>
       </div>
-      <br>
-      <div id="VB6">
+
+
+      <!--q6-->
+      <div id="VI6">
         <form>
-          <fieldset data-role="controlgroup" id="VBQ6" class="VB">
-            <h3 class="hd-cent">6 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <fieldset data-role="controlgroup" class="VI" id="VIQ6">
+            <h3 class="hd-cent">6) The children ______ their classwork in the school.</h3>
+            <label><input name="radio" id="vv16" type="radio" value="good"> A. were doing</label>
+            <label><input name="radio" id="vv17" type="radio" value="bad"> B. was doing </label>
+            <label><input name="radio" id="vv18" type="radio" value="bad"> C. does </label>
           </fieldset>
         </form>
+        <div id="CFVI11" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center">option B is wrong because children are plural and <strong> was doing</strong> can be used if there was <strong>The child</strong> which is singular.</p>
+          <p class="center">option C is wrong because <strong>does</strong> is verb to do in simple present tense.</p>
+          <p class="center">The answer is <b>A. were doing</b></p>
+        </div>
+        <div id="CFVI12" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer A is right</p>
+
+        </div>
+
       </div>
-      <br>
-      <div id="VB7">
+
+
+
+
+
+
+      <!-- start of the simple future tense -->
+
+      <!--q7-->
+      <div id="VI7">
+        <div class="foto">
+          <img src="img/football.jpg" alt="house">
+          <div class="quest">What will the children do when they will reach the football ground.</div>
+        </div>
         <form>
-          <fieldset data-role="controlgroup" id="VBQ7" class="VB">
-            <h3 class="hd-cent">7 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <fieldset data-role="controlgroup" class="VI" id="VIQ7">
+            <label><input name="radio" id="vv19" type="radio" value="bad"> A. They play football </label>
+            <label><input name="radio" id="vv20" type="radio" value="bad"> B. They are playing football </label>
+            <label><input name="radio" id="vv21" type="radio" value="good"> C. They will be playing football</label>
           </fieldset>
         </form>
+        <div id="CFVI13" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center">option A is wrong because the verb is in presen continuous tense and the action <strong> to play</strong> has not yet happened</p>
+          <p class="center">option B is wrong because the verb tense is in present continuous tense</p>
+          <p class="center">The answer is <b>C. They will be playing football</b>, this answer is correct because the verb tense(future continuous)goes well with the action.</p>
+        </div>
+        <div id="CFVI14" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer C is right</p>
+
+        </div>
       </div>
-      <br>
-      <div id="VB8">
+
+
+      <!--q8-->
+      <div id="VI8">
         <form>
-          <fieldset data-role="controlgroup" id="VBQ8" class="VB">
-            <h3 class="hd-cent">8 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <fieldset data-role="controlgroup" class="VI" id="VIQ8">
+            <h3 class="hd-cent">8) Will you _______ after reaching home ?</h3>
+            <label><input name="radio" id="vv22" type="radio" value="good"> A. be cooking </label>
+            <label><input name="radio" id="vv23" type="radio" value="bad"> B. be cook</label>
+            <label><input name="radio" id="vv24" type="radio" value="bad"> C. cooks </label>
           </fieldset>
         </form>
+        <div id="CFVI15" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center">option b is wrong because because the fist part(be) in infinitive form and the second part(cook) is also in infinitive form and this type of verb tense does not exists</p>
+          <p class="center">option c is wrong because the action in the question is a contious action in the future and the verb <strong>cooks</strong> is in simple present tense.</p>
+          <p class="center">The answer is <b>A. be cooking</b></p>
+        </div>
+        <div id="CFVI16" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer A is right</p>
+
+        </div>
       </div>
+
+
+
+
+      <div>
+        <button id="VIN" class="ui-btn" style="background-color: #8B008B; color: white;">Next Chapter</button>
+      </div>
+
+    </div>
+
+
+  </div>
+  <!-- LEVEL 3 -->
+  <div data-role="page" id="VA">
+    <div data-role="header">
+
+      <h3>Learning Verbs and Tenses</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+
+      <!-- Start of present perfect tense -->
+      <div>
+        <h3 class="center">Present Perfect Tense</h3>
+        <h4>The present perfect tense refers to an action or state that either occurred at an indefinite time in the past (e.g., we have talked before) or began in the past and continued to the present time (e.g., he has grown impatient over the last
+          hour). This tense is formed by have/has + the past participle. </h4>
+        <h4>The present perfect of any verb is composed of two elements : the verb <strong>to have</strong>(present tense), plus the past participle of the main verb.The past participle of a regular verb is <strong>base+ed</strong>, e.g played,
+          arrived, looked.</h4>
+        <h4 class="center">Verb: to visit</h4>
+        <table data-role="table" id="" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+                      <th>Subject</th>
+                      <th>to have</th>
+                      <th>past participle</th>
+                    </tr>
+                </thead>
+              <tbody>
+                  <tr>
+                      <th>I</th>
+                      <td>have</td> 
+              <td>visited</td>   
+                    </tr>
+                  <tr>
+                       <th>You</th>
+                       <td>have</td> 
+              <td>visited</td>    
+                    </tr>
+            <tr>
+                      <th>He</th>
+                     <td>has</td> 
+              <td>visited</td>      
+                    </tr>
+                  <tr>
+                       <th>She</th>
+                      <td>has</td> 
+              <td>visited</td>     
+                    </tr>
+            <tr>
+                       <th>It</th>
+                      <td>has</td> 
+              <td>visited</td>      
+                    </tr>
+            <tr>
+                      <th>We</th>
+                     <td>have</td> 
+              <td>visited</td>    
+                    </tr>
+                  <tr>
+                       <th>They</th>
+                       <td>have</td> 
+              <td>visited</td>     
+                    </tr>
+                
+          </tbody>
+            </table>
+        <br>
+
+
+        <!--Affirmative-->
+        <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+              <caption>Affirmative</caption>
+                      <th>Subject</th>
+                      <th>to have</th>
+                      <th>past participle</th>
+                    
+            </tr>
+                </thead>
+              <tbody>
+             <tr>
+                       <th>He</th>
+                       <td>has</td> 
+              <td>done(verb to do)</td>   
+                    </tr>
+                </tbody>
+            </table>
+
+
+        <!--Negative-->
+        <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+              <caption>Negative</caption>
+                      <th>Subject</th>
+                     <th>to have+not</th>
+                      <th>past participle</th>
+                    
+            </tr>
+                </thead>
+              <tbody>
+             <tr>
+                       <th>He</th>
+                       <td>has not</td> 
+              <td>done</td>   
+                    </tr>
+                </tbody>
+            </table>
+
+        <!--Interrogative-->
+        <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+              <caption>Interrogative</caption>
+                      <th>to have</th>
+                      <th>subject</th>
+                      <th>past partciple</th>
+                    
+            </tr>
+                </thead>
+              <tbody>
+             <tr>
+                       <th>Has</th>
+                       <td>he</td> 
+              <td>done ?</td>   
+                    </tr>
+                </tbody>
+            </table>
+
+      </div>
+      <!-- End of present perfect tense -->
+      <br><br>
+      <!-- Start of the past perfect tense -->
+      <div>
+        <h3 class="center">Past Perfect Tense</h3>
+        <h4>The past perfect, is a verb tense used to talk about actions that were completed before some point in the past.
+          <h4>The past perfect tense is composed of two parts: the past tense of the verb to have<strong>(had)</strong> + the <strong>past participle</strong> of the main verb.</h4>
+          <h4>Example : I turned back to the house and saw that some my neighbour had broken(past participle of verb to break) my front door.</h4>
+          <h4>Many verbs past participle ends with en such as :eaten(eat), hidden(hide), forgive(forgive) and many more.</h4>
+          <h4 class="center">Verb: to give</h4>
+          <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+                <thead>
+                    <tr class="ui-bar-d">
+                        <th>Subject</th>
+                        <th>had</th>
+                        <th>past participle</th>
+                      </tr>
+                  </thead>
+                <tbody>
+                    <tr>
+                        <th>I</th>
+                        <td>had</td> 
+                <td>given</td>   
+                      </tr>
+                    <tr>
+                         <th>You</th>
+                         <td>had</td> 
+                <td>given</td>    
+                      </tr>
+              <tr>
+                        <th>He</th>
+                       <td>had</td> 
+                <td>given</td>   
+                      </tr>
+                    <tr>
+                         <th>She</th>
+                         <td>had</td> 
+                <td>given</td>  
+                      </tr>
+              <tr>
+                         <th>It</th>
+                        <td>had</td> 
+                <td>given</td>    
+                      </tr>
+              <tr>
+                        <th>We</th>
+                        <td>had</td> 
+                <td>given</td>  
+                      </tr>
+                    <tr>
+                         <th>They</th>
+                        <td>had</td> 
+                <td>given</td>   
+                      </tr>
+                  
+            </tbody>
+              </table>
+          <br>
+
+          <!--Affirmative-->
+          <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+                <thead>
+                    <tr class="ui-bar-d">
+                <caption>Affirmative</caption>
+                        <th>Subject</th>
+                        <th>had</th>
+                        <th>past participle</th>
+                      
+              </tr>
+                  </thead>
+                <tbody>
+               <tr>
+                         <th>We</th>
+                         <td>had</td> 
+                <td>finished</td>   
+                      </tr>
+                  </tbody>
+              </table>
+
+
+          <!--Negative-->
+          <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+                <thead>
+                    <tr class="ui-bar-d">
+                <caption>Negative</caption>
+                        <th>Subject</th>
+                        <th>had+not</th>
+                        <th>past participle</th>
+                      
+              </tr>
+                  </thead>
+                <tbody>
+               <tr>
+                        <th>We</th>
+                         <td>had not</td> 
+                <td>finished</td>  
+                      </tr>
+                  </tbody>
+              </table>
+
+          <!--Interrogative-->
+          <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+                <thead>
+                    <tr class="ui-bar-d">
+                <caption>Interrogative</caption>
+                        <th>was/were</th>
+                        <th>+subject</th>
+                        <th>+base +ing</th>
+                      
+              </tr>
+                  </thead>
+                <tbody>
+               <tr>
+                         <th>Had</th>
+                         <td>we</td> 
+                <td>fnished?</td>   
+                      </tr>
+                  </tbody>
+              </table>
+
+
+
+      </div>
+      <!-- End of past perfect tense -->
+
+      <!-- Start of futur perfect tense  -->
+      <div>
+        <h3 class="center">Future Perfect Tense</h3>
+        <h4>The future perfect is a verb tense used for actions that will be completed before some other point in the future.</h4>
+        <h4>The future perfect tense is composed of two parts: the simple future of the verb to have<strong>(will have)</strong> + the <strong>past participle</strong> of the main verb.</h4>
+        <h4>Example :At eight o’clock I <strong>will have left.</strong></h4>
+        <h4 class="center">Verb: to finish</h4>
+
+        <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+                      <th>Subject</th>
+                      <th>will have</th>
+                      <th>past participle</th>
+                    </tr>
+                </thead>
+              <tbody>
+                  <tr>
+                      <th>I</th>
+                      <td>will have</td> 
+              <td>finished</td>   
+                    </tr>
+                  <tr>
+                       <th>You</th>
+                      <td>will have</td> 
+              <td>finished</td>    
+                    </tr>
+            <tr>
+                      <th>He</th>
+                       <td>will have</td> 
+              <td>finished</td>   
+                    </tr>
+                  <tr>
+                       <th>She</th>
+                        <td>will have</td> 
+              <td>finished</td>   
+                    </tr>
+            <tr>
+                       <th>It</th>
+                      <td>will have</td> 
+              <td>finished</td>   
+                    </tr>
+            <tr>
+                      <th>We</th>
+                     <td>will have</td> 
+              <td>finished</td>   
+                    </tr>
+                  <tr>
+                       <th>They</th>
+                       <td>will have</td> 
+              <td>finished</td>   
+                    </tr>
+                
+          </tbody>
+            </table>
+        <br>
+
+        <!--Affirmative-->
+        <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+              <caption>Affirmative</caption>
+                      <th>Subject</th>
+                      <th>will have</th>
+                      <th>past participle</th>
+                    
+            </tr>
+                </thead>
+              <tbody>
+             <tr>
+                       <th>I</th>
+                       <td>will have</td> 
+              <td>left(verb to leave)</td>   
+                    </tr>
+                </tbody>
+            </table>
+
+
+        <!--Negative-->
+        <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+              <caption>Negative</caption>
+                      <th>Subject</th>
+                      <th>will have+not</th>
+                      <th>past participle</th>
+                    
+            </tr>
+                </thead>
+              <tbody>
+             <tr>
+                       <th>I</th>
+                       <td>will have not</td> 
+              <td>left</td>      
+                    </tr>
+                </tbody>
+            </table>
+
+        <!--Interrogative-->
+        <table data-role="table" class="ui-body-d ui-shadow table-stripe ui-responsive">
+              <thead>
+                  <tr class="ui-bar-d">
+              <caption>Interrogative</caption>
+                      <th>Will+Subject</th>
+                      <th>have</th>
+                      <th>past participle</th>
+                    
+            </tr>
+                </thead>
+              <tbody>
+             <tr>
+                       <th>Will I</th>
+                       <td>have</td> 
+              <td>left ?</td>   
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+
+      </div>
+      <br><br>
+      <!-- End of futur pefect tense -->
+
       <br>
-      <div id="VB9">
+      <h3>Choose the correct options for the questions below</h3>
+      <!--q1-->
+      <div id="VA1">
+        <div class="foto">
+          <img src="img/homework.jpg" alt="house">
+          <div class="quest">I ________ my homework yet.</div>
+        </div>
         <form>
-          <fieldset data-role="controlgroup" id="VBQ9" class="VB">
-            <h3 class="hd-cent">9 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <fieldset data-role="controlgroup" class="VA" id="VAQ1">
+
+            <label><input name="radio" id="vvv1" type="radio" value="bad"> A. have finished </label>
+            <label><input name="radio" id="vvv2" type="radio" value="bad"> B. did finished </label>
+            <label><input name="radio" id="vvv3" type="radio" value="good"> C. have not finished </label>
           </fieldset>
         </form>
+        <div id="CFVA1" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center">option A is wrong because it is a showing an action that is already done</p>
+          <p class="center">option B is wrong because this verb also is showing an action that is already done and in the sentence there is the word <strong>yet</strong> which means something is still remaining to be done</p>
+          <p class="center">The answer is <b>C. have not finished</b></p>
+        </div>
+        <div id="CFVA2" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer C is right</p>
+
+        </div>
+
       </div>
+
       <br>
-      <div id="VB10">
+      <h3>Choose the correct options for the questions below</h3>
+
+
+      <!--q2-->
+      <div id="VA2">
+
         <form>
-          <fieldset data-role="controlgroup" id="VBQ10" class="VB">
-            <h3 class="hd-cent">10 I ____ born in 1990</h3>
-            <label><input name="radio" type="radio" value="good"> A. was </label>
-            <label><input name="radio" type="radio" value="bad"> B. am </label>
-            <label><input name="radio" type="radio" value="bad"> C. were </label>
-            <label><input name="radio" type="radio" value="bad"> D. is </label>
+          <fieldset data-role="controlgroup" class="VA" id="VAQ2">
+            <h3 class="hd-cent">2) I am not hungry. I ____ just ___.</h3>
+            <label><input name="radio" id="vvv4" type="radio" value="good"> A. have eaten</label>
+            <label><input name="radio" id="vvv5" type="radio" value="bad"> B. will eat </label>
+            <label><input name="radio" id="vvv6" type="radio" value="bad"> C. has eaten</label>
           </fieldset>
         </form>
+
+        <div id="CFVA3" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center">option B is wrong because <strong> will eat</strong> is a verb of of the simple future tense and the verb needed in the sentence is present perfect.</p>
+          <p class="center">option C is wrong because <strong> has</strong> is not fot the subject I.</p>
+          <p class="center">The answer is <b>A. have eaten</b></p>
+        </div>
+        <div id="CFVA4" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer A is right</p>
+
+        </div>
+
       </div>
-      <br>
-      <br>
-      <button id="ABN">Advance</button>
+
+
+      <!--q3-->
+      <div id="VA3">
+        <div class="foto">
+          <img src="img/cinema.jpg" alt="house">
+          <div class="quest">The film _________ by the time we got to the cinema.</div>
+        </div>
+        <form>
+          <fieldset data-role="controlgroup" class="VA" id="VAQ3">
+
+            <label><input name="radio" id="vvv7" type="radio" value="bad"> A. had start </label>
+            <label><input name="radio" id="vvv8" type="radio" value="bad"> B. has started </label>
+            <label><input name="radio" id="vvv9" type="radio" value="good"> C. had started </label>
+          </fieldset>
+        </form>
+        <div id="CFVA5" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center">option A is wrong because <strong> start</strong> start is in infinitive form and for a verb to be in past perfect the verb must be in past participle form that is <strong>started</strong></p>
+          <p class="center">option B is wrong because <strong>has started</strong> is in present perfect tense but the action in the sentence above is in past perfect tense</p>
+          <p class="center">The answer is <b>C. had started</b></p>
+        </div>
+        <div id="CFVA6" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer C is right</p>
+
+        </div>
+      </div>
+
+
+
+      <!-- start of past tense -->
+
+      <!--q4-->
+      <div id="VA4">
+        <form>
+          <fieldset data-role="controlgroup" class="VA" id="VAQ4">
+            <h3 class="hd-cent">4) I was sure that I _____ her before.</h3>
+
+            <label><input name="radio" id="vvv10" type="radio" value="bad"> A. had saw </label>
+            <label><input name="radio" id="vvv11" type="radio" value="bad"> B. seen </label>
+            <label><input name="radio" id="vvv12" type="radio" value="good"> C. had seen </label>
+          </fieldset>
+        </form>
+        <div id="CFVA7" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center">option A is wrong because <strong>saw</strong> is in simple past tense and a past participle of verb to see is needed</p>
+          <p class="center">option B is wrong because <strong>seen</strong> is only a past participle and it does not fit in the sentence</p>
+          <p class="center">The answer is <b>C. had seen</b></p>
+        </div>
+        <div id="CFVA8" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer C is right</p>
+
+        </div>
+      </div>
+
+      <!--q5-->
+      <div id="VA5">
+        <form>
+
+          <fieldset data-role="controlgroup" class="VA" id="VAQ5">
+            <h3 class="hd-cent">5) I ____ by then.</h3>
+            <label><input name="radio" id="vvv13" type="radio" value="bad"> A. will be leave.</label>
+            <label><input name="radio" id="vvv14" type="radio" value="good"> B. will have left.</label>
+            <label><input name="radio" id="vvv15" type="radio" value="bad"> C. will leaving.</label>
+          </fieldset>
+        </form>
+        <div id="CFVA9" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center">option A is wrong because <strong>leave</strong> is in infinitive form, if the verb leave was in this form <strong>leaving</strong> then it will fit in the sentence</p>
+          <p class="center">option C is wrong beacause <strong>will leaving</strong> is in present participle, if it is in simple future tense<strong>will go</strong> then it will fit in the sentence.</p>
+          <p class="center">The answer is <strong>B. will have left.</strong></p>
+        </div>
+        <div id="CFVA10" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer B is right</p>
+
+        </div>
+      </div>
+
+
+      <!--q6-->
+      <div id="VA6">
+        <form>
+          <fieldset data-role="controlgroup" class="VA" id="VAQ6">
+            <h3 class="hd-cent">6) Where ______ gone ?</h3>
+            <label><input name="radio" id="vvv16" type="radio" value="good"> A. will she have</label>
+            <label><input name="radio" id="vvv17" type="radio" value="bad"> B. is she has </label>
+            <label><input name="radio" id="vvv18" type="radio" value="bad"> C. she have </label>
+          </fieldset>
+        </form>
+        <div id="CFVA11" class="er">
+          <div class="er_div"><img src="img/cross.png" alt="cross" class="cr_size">
+            <h5>Wrong Answer</h5>
+          </div>
+          <p class="center">option B is wrong because the verb <strong> has</strong> is after the subject <strong>she</strong> which is incorrect format for a question.Correct format : has she</p>
+          <p class="center">option C is wrong because <strong>have</strong> is not appropriate for the subject she, correct formm : she has</p>
+          <p class="center">The answer is <b>A. will she have</b></p>
+        </div>
+        <div id="CFVA12" class="gd">
+          <div class="er_div"><img src="img/tick.png" alt="cross" class="cr_size">
+            <h5>Correct Answer</h5>
+          </div>
+          <p class="center">Answer A is right</p>
+
+        </div>
+
+      </div>
+
+      <!-- end of the the level 3 verbs -->
+
+      <div>
+        <button id="VAN" class="ui-btn" style="background-color: #8B008B; color: white;">Next Chapter</button>
+      </div>
+
     </div>
   </div>
   <div data-role="page" id="NB">
@@ -1160,6 +2889,23 @@
       <div id="aptres">Results</div>
       <br><br>
       <div id="containercircle"></div>
+      <br><br><br><br>
+      <a href="#Khome" id="resadvance" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+        Advance
+      </a>
+    </div>
+  </div>
+  <div data-role="page" id="testresults23">
+    <div data-role="main" class="ui-content" id="resmaster">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br><br>
+      <div id="aptres">Results</div>
+      <br><br>
+      <div id="containercircle3"></div>
       <br><br><br><br>
       <a href="#Khome" id="resadvance" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
         Advance
@@ -1335,14 +3081,316 @@
     </div>
   </div>
   <!-- GLOBAL ACT TEST -->
+  <!-- Global Activity Beginner-->
   <div data-role="page" id="GB">
-    <h1>BEGINNER</h1>
+    <div data-role="header">
+
+      <h3>Summative Activity</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+
+      <h3> Please choose the correct options below to fill in the blanks</h3>
+      <!--question 1-->
+      <div>
+        <form>
+          <fieldset data-role="controlgroup" id="GBQ1">
+            <h3 class="hd-cent">1) The postman ______ the letter _____ .</h3>
+            <label><input name="radio" type="radio" value="good"> A. delivered, ysterday</label>
+            <label><input name="radio" type="radio" value="bad"> B. delivered, tomorrow </label>
+            <label><input name="radio" type="radio" value="bad"> C. delive, yesterday </label>
+          </fieldset>
+        </form>
+
+      </div>
+
+
+      <!--question 2-->
+      <div>
+        <form>
+          <fieldset data-role="controlgroup" id="GBQ2">
+            <h3 class="hd-cent">2) The boy ______ ______ behind his friend, who took the ball.</h3>
+            <label><input name="radio" type="radio" value="bad"> A. quickly, run</label>
+            <label><input name="radio" type="radio" value="good"> B. quickly, ran</label>
+            <label><input name="radio" type="radio" value="bad"> C. quick, ran </label>
+          </fieldset>
+        </form>
+
+      </div>
+
+
+      <!--question 3-->
+      <div>
+        <form>
+          <fieldset data-role="controlgroup" id="GBQ3">
+            <h3 class="hd-cent">3) The yellow ____ _____ for sale.</h3>
+            <label><input name="radio" type="radio" value="bad"> A. house, are</label>
+            <label><input name="radio" type="radio" value="bad"> B. houses, is</label>
+            <label><input name="radio" type="radio" value="good"> C. house, is </label>
+          </fieldset>
+        </form>
+
+      </div>
+
+
+      <!--question 4-->
+      <div>
+        <form>
+          <fieldset data-role="controlgroup" id="GBQ4">
+            <h3 class="hd-cent">3) Jeff ____ on a ________.</h3>
+            <label><input name="radio" type="radio" value="bad"> A. ride, skate board</label>
+            <label><input name="radio" type="radio" value="bad"> B. rides, skate</label>
+            <label><input name="radio" type="radio" value="good"> C. rode, skate board </label>
+          </fieldset>
+        </form>
+
+      </div>
+
+
+
+      <!--question 5-->
+      <div>
+        <form>
+          <fieldset data-role="controlgroup" id="GBQ5">
+            <h3 class="hd-cent">3) ______ 30 people _____ into the class yesterday.</h3>
+            <label><input name="radio" type="radio" value="bad"> A. Approximately, come</label>
+            <label><input name="radio" type="radio" value="good"> B. Approximately, came</label>
+            <label><input name="radio" type="radio" value="bad"> C. Approx, had come </label>
+          </fieldset>
+        </form>
+
+      </div>
+
+
+
+      <!--question 6-->
+      <div>
+        <form>
+          <fieldset data-role="controlgroup" id="GBQ6">
+            <h3 class="hd-cent">3) I wanted to be paid _____ the amount they _____ me.</h3>
+            <label><input name="radio" type="radio" value="bad"> A. doub, offered</label>
+            <label><input name="radio" type="radio" value="good"> B. double, offered</label>
+            <label><input nam type="radio" value="bad"> C. double, offering </label>
+          </fieldset>
+        </form>
+
+      </div>
+
+    </div>
+
+
+    <div>
+      <button id="GBB" class="ui-btn" style="background-color: #8B008B; color: white;">Submit</button>
+    </div>
+
   </div>
   <div data-role="page" id="GI">
-    <h1>INTERMEDIATE</h1>
+    <div data-role="header">
+
+      <h3>Summative Activity</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+
+      <h3> Please choose the correct options below to fill in the blanks</h3>
+      <!--question 1-->
+      <div>
+        <form>
+          <fieldset data-role="controlgroup" id="GIQ1">
+            <h3 class="hd-cent">1) Sam ______ to drive a car..</h3>
+            <label><input name="radio" type="radio" value="bad"> A. is learns</label>
+            <label><input name="radio" type="radio" value="good"> B. is learning </label>
+            <label><input name="radio" type="radio" value="bad"> C. will learned </label>
+          </fieldset>
+        </form>
+
+      </div>
+
+
+      <!--question 2-->
+      <div>
+        <form>
+          <fieldset data-role="controlgroup" id="GIQ2">
+            <h3 class="hd-cent">2) Time _____ ______.</h3>
+            <label><input name="radio" type="radio" value="bad"> A. is going, quick</label>
+            <label><input name="radio" type="radio" value="good"> B. goes, quickly</label>
+            <label><input name="radio" type="radio" value="bad"> C. going, quickly </label>
+          </fieldset>
+        </form>
+
+      </div>
+
+
+      <!--question 3-->
+      <div>
+        <form>
+          <fieldset data-role="controlgroup" id="GIQ3">
+            <h3 class="hd-cent">3) He ____ the flute _____.</h3>
+            <label><input name="radio" type="radio" value="bad"> A. is playing, beautiful</label>
+            <label><input name="radio" type="radio" value="good"> B. plays, beautifully</label>
+            <label><input name="radio" type="radio" value="bad"> C. play, beautifully </label>
+          </fieldset>
+        </form>
+
+      </div>
+
+
+      <!--question 4-->
+      <div>
+        <form>
+          <fieldset data-role="controlgroup" id="GIQ4">
+            <h3 class="hd-cent">3) ____ _____ the train _____ ?</h3>
+            <label><input name="radio" type="radio" value="bad"> A. When do, arrive</label>
+            <label><input name="radio" type="radio" value="bad"> B. When does, arrive</label>
+            <label><input name="radio" type="radio" value="good"> C. When is, arrive </label>
+          </fieldset>
+        </form>
+
+      </div>
+
+
+
+      <!--question 5-->
+      <div>
+        <form>
+          <fieldset data-role="controlgroup" id="GIQ5">
+            <h3 class="hd-cent">3) Many ____ _____ the bus stop today.</h3>
+            <label><input name="radio" type="radio" value="bad"> A. buses, pass in </label>
+            <label><input name="radio" type="radio" value="bad"> B. bus, pass by</label>
+            <label><input name="radio" type="radio" value="good"> C. buses, passed by </label>
+          </fieldset>
+        </form>
+
+      </div>
+
+
+      <!--question 6-->
+      <div>
+        <form>
+          <fieldset data-role="controlgroup" id="GIQ6">
+            <h3 class="hd-cent">3) The baby ______ after he ____ off the stairs.</h3>
+            <label><input name="radio" type="radio" value="bad"> A. cries, fell</label>
+            <label><input name="radio" type="radio" value="good"> B. was crying, fell</label>
+            <label><input name="radio" type="radio" value="bad"> C. cried, fall </label>
+          </fieldset>
+        </form>
+
+      </div>
+
+
+
+
+      <div>
+        <button id="GIB" class="ui-btn" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+    </div>
+
   </div>
   <div data-role="page" id="GA">
-    <h1>ADVANCED</h1>
+    <div data-role="header">
+
+      <h3>Summative Activity</h3>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+
+      <h3> Please choose the correct options below to fill in the blanks</h3>
+      <!--question 1-->
+      <div>
+        <form>
+          <fieldset data-role="controlgroup" id="GAQ1">
+            <h3 class="hd-cent">1) Sam ______ to drive a car..</h3>
+            <label><input name="radio" type="radio" value="bad"> A. is learns</label>
+            <label><input name="radio" type="radio" value="good"> B. is learning </label>
+            <label><input name="radio" type="radio" value="bad"> C. will learned </label>
+          </fieldset>
+        </form>
+
+      </div>
+
+
+      <!--question 2-->
+      <div>
+        <form>
+          <fieldset data-role="controlgroup" id="GAQ2">
+            <h3 class="hd-cent">2) Time _____ ______.</h3>
+            <label><input name="radio" type="radio" value="bad"> A. is going, quick</label>
+            <label><input name="radio" type="radio" value="good"> B. goes, quickly</label>
+            <label><input name="radio" type="radio" value="bad"> C. going, quickly </label>
+          </fieldset>
+        </form>
+
+      </div>
+
+
+      <!--question 3-->
+      <div>
+        <form>
+          <fieldset data-role="controlgroup" id="GAQ3">
+            <h3 class="hd-cent">3) He ____ the flute _____.</h3>
+            <label><input name="radio" type="radio" value="bad"> A. is playing, beautiful</label>
+            <label><input name="radio" type="radio" value="good"> B. plays, beautifully</label>
+            <label><input name="radio" type="radio" value="bad"> C. play, beautifully </label>
+          </fieldset>
+        </form>
+
+      </div>
+
+
+      <!--question 4-->
+      <div>
+        <form>
+          <fieldset data-role="controlgroup" id="GAQ4">
+            <h3 class="hd-cent">3) ____ _____ the train _____ ?</h3>
+            <label><input name="radio" type="radio" value="bad"> A. When do, arrive</label>
+            <label><input name="radio" type="radio" value="bad"> B. When does, arrive</label>
+            <label><input name="radio" type="radio" value="good"> C. When is, arrive </label>
+          </fieldset>
+        </form>
+
+      </div>
+
+
+
+      <!--question 5-->
+      <div>
+        <form>
+          <fieldset data-role="controlgroup" id="GAQ5">
+            <h3 class="hd-cent">3) Many ____ _____ the bus stop today.</h3>
+            <label><input name="radio" type="radio" value="bad"> A. buses, pass in </label>
+            <label><input name="radio" type="radio" value="bad"> B. bus, pass by</label>
+            <label><input name="radio" type="radio" value="good"> C. buses, passed by </label>
+          </fieldset>
+        </form>
+
+      </div>
+
+
+
+      <!--question 6-->
+      <div>
+        <form>
+          <fieldset data-role="controlgroup" id="GAQ6">
+            <h3 class="hd-cent">3) The baby ______ after he ____ off the stairs.</h3>
+            <label><input name="radio" type="radio" value="bad"> A. cries, fell</label>
+            <label><input name="radio" type="radio" value="good"> B. was crying, fell</label>
+            <label><input name="radio" type="radio" value="bad"> C. cried, fall </label>
+          </fieldset>
+        </form>
+
+      </div>
+
+
+
+
+      <div>
+        <button id="GAB" class="ui-btn" style="background-color: #8B008B; color: white;">Submit</button>
+      </div>
+
+    </div>
   </div>
   <!-- EXAM -->
   <div data-role="page" id="examup">
@@ -1352,7 +3400,7 @@
     <div data-role="main" class="ui-content">
       <form>
         <fieldset data-role="controlgroup" id="PT1">
-          <h3 class="hd-cent"> How long _________english ?</h3>
+          <h4> How long _________english ?</h4>
           <label><input name="radio" id="o65" type="radio" value="good"> A. are you learning </label>
           <label><input name="radio" id="o66" type="radio" value="bad"> B. have been learning </label>
           <label><input name="radio" id="o67" type="radio" value="bad"> C. do you learn </label>
@@ -1362,7 +3410,7 @@
       <br>
       <form>
         <fieldset data-role="controlgroup" id="PT2">
-          <h3 class="hd-cent"> Is Tom _____ Sam ?</h3>
+          <h4> Is Tom _____ Sam ?</h4>
           <label><input name="radio" id="o72" type="radio" value="bad"> A. tall as </label>
           <label><input name="radio" id="o73" type="radio" value="good"> B. as tall as </label>
           <label><input name="radio" id="o74" type="radio" value="bad"> C. tall that </label>
@@ -1371,7 +3419,7 @@
       </form>
       <br>
       <form>
-        <h3 class="hd-cent"> ______ God bless you and your child .</h3>
+        <h4> ______ God bless you and your child .</h4>
         <fieldset data-role="controlgroup" id="PT3">
           <label><input name="radio" id="o79" type="radio" value="bad"> A. Might </label>
           <label><input name="radio" id="o80" type="radio" value="bad"> B. Should </label>
@@ -1381,7 +3429,7 @@
       </form>
       <br>
       <form>
-        <h3 class="hd-cent"> Fresh flowers were strewn all ______ the way to welcome the leader.</h3>
+        <h4> Fresh flowers were strewn all ______ the way to welcome the leader.</h4>
         <fieldset data-role="controlgroup" id="PT4">
 
           <label><input name="radio" id="o86" type="radio" value="good"> A. over </label>
@@ -1393,7 +3441,7 @@
       </form>
       <br>
       <form>
-        <h3 class="hd-cent"> The toy shop is located ________ the new restaurant.</h3>
+        <h4> The toy shop is located ________ the new restaurant.</h4>
         <fieldset data-role="controlgroup" id="PT5">
 
           <label><input name="radio" id="o92" type="radio" value="bad"> A. aside </label>
@@ -1405,7 +3453,7 @@
       </form>
       <br>
       <form>
-        <h3 class="hd-cent"> _______ you and me, who is the greatest liar?.</h3>
+        <h4> _______ you and me, who is the greatest liar?.</h4>
         <fieldset data-role="controlgroup" id="PT6">
 
           <label><input name="radio" id="o98" type="radio" value="good"> A. Between </label>
@@ -1417,7 +3465,7 @@
       </form>
       <br>
       <form>
-        <h3 class="hd-cent">The earring was lying ________ the table.</h3>
+        <h4>The earring was lying ________ the table.</h4>
         <fieldset data-role="controlgroup" id="PT7">
 
           <label><input name="radio" id="o104" type="radio" value="bad"> A. Between </label>
@@ -1429,7 +3477,7 @@
       </form>
       <br>
       <form>
-        <h3 class="hd-cent">The opposit of afraid is ______.</h3>
+        <h4 class="hd-cent">The opposit of afraid is ______.</h4>
         <fieldset data-role="controlgroup" id="PT8">
 
           <label><input name="radio" id="o107" type="radio" value="bad"> A. unafraid </label>
@@ -1441,7 +3489,7 @@
       </form>
       <br>
       <form>
-        <h3 class="hd-cent">She _____ visit her old grandmother once in a while.</h3>
+        <h4>She _____ visit her old grandmother once in a while.</h4>
         <fieldset data-role="controlgroup" id="PT9">
 
           <label><input name="radio" id="o110" type="radio" value="good"> A. used to </label>
@@ -1453,7 +3501,7 @@
       </form>
       <br>
       <form>
-        <h3 class="hd-cent">Murphy _______ be receiving the guests tonight.</h3>
+        <h4>Murphy _______ be receiving the guests tonight.</h4>
         <fieldset data-role="controlgroup" id="PT10">
 
           <label><input name="radio" id="o113" type="radio" value="good"> A. will </label>
@@ -1465,7 +3513,7 @@
       </form>
       <br>
       <form>
-        <h3 class="hd-cent">I _______ be requested to replace th teacher today.</h3>
+        <h4>I _______ be requested to replace th teacher today.</h4>
         <fieldset data-role="controlgroup" id="PT11">
 
           <label><input name="radio" id="o116" type="radio" value="bad"> A. can </label>
@@ -1477,7 +3525,7 @@
       </form>
       <br>
       <form>
-        <h3 class="hd-cent">I _______ be requested to replace th teacher today.</h3>
+        <h4>I _______ be requested to replace th teacher today.</h4>
         <fieldset data-role="controlgroup" id="PT12">
 
           <label><input name="radio" id="o119" type="radio" value="bad"> A. can </label>
@@ -1490,7 +3538,7 @@
       <br>
       <form>
         <fieldset data-role="controlgroup" id="PT13">
-          <h4>1) I haven`t got ......</h4>
+          <h4>I haven`t got ......</h4>
           <label><input name="radio" id="r11" type="radio" value="bad"> A. no brothers or sisters </label>
           <label><input name="radio" id="r12" type="radio" value="bad"> B. brothers or sisters </label>
           <label><input name="radio" id="r13" type="radio" value="good"> C. any brothers or sisters </label>
@@ -1500,7 +3548,7 @@
       <br>
       <form>
         <div data-role="controlgroup" id="PT14">
-          <h4>2) Every year,he goes to the coast for his holidays ....... </h4>
+          <h4>Every year,he goes to the coast for his holidays ....... </h4>
           <label><input name="radio" id="r15" type="radio" value="bad"> A. in train</label>
           <label><input name="radio" id="r16" type="radio" value="bad"> B. on train</label>
           <label><input name="radio" id="r17" type="radio" value="good"> C. by train</label>
@@ -1511,7 +3559,7 @@
 
       <form>
         <div data-role="controlgroup" id="PT15">
-          <h4>3) The door can`t be broken! he ........</h4>
+          <h4>The door can`t be broken! he ........</h4>
           <label><input name="radio" id="r19" type="radio" value="bad"> A. is just fixed it.</label>
           <label><input name="radio" id="r20" type="radio" value="bad"> B. have just fixed it.</label>
           <label><input name="radio" id="r21" type="radio" value="bad"> C. just fix it.</label>
@@ -1541,699 +3589,1659 @@
       </a>
     </div>
   </div>
-  <script>
-    //RETRIEVE FROM APTITUDE TEST
-    const aptvalue = 30.4;
-    //LEARNING timer
-    var anstime = 0;
-    var time;
-    //LEARNING SCORE MEMORY
-    var lscore = 0;
-    var quest = 1;
-    var questionaware = 0;
-    //GLOBAL ACTIVITY
-    var globalans = 0;
-    $(document).ready(function() {
-      creattable();
-      learningcard();
-      $("#Kloginbtn").click(function() {
-        if (($('#klarge').val() == "admin") && ($('#klarge1').val() == "admin")) {
-          checkpretest();
-        } else {
-          alert('INVALID!');
-        }
-      })
-      //EXAM PASS OR FAIL
-      $("#examsub").click(function() {
-        var a = exampassorfail();
-        $.mobile.changePage("#CONGRATS1", {
-          reverse: false,
-          transition: "pop"
-        });
-        rolling1(a);
-      })
-      //ANIMATION PURPOSES
-      $("#K5").hide('fast');
-      //GLOBAL ACTIVITY BUTTONS
-      $('#globalbtn').click(function() {
-        globalactdecision();
-      })
-      //START TIMER FOR Learning
-      $("#bvb").click(function() {
-        starttimer();
-      })
-      $("#ivi").click(function() {
-        starttimer();
-      })
-      $("#ava").click(function() {
-        starttimer();
-      })
-      //ALL LEARNING BUTTONS
-      $('#VBN').click(function() {
-        $.mobile.changePage("#AB", {
-          reverse: false,
-          transition: "pop"
-        });
-      })
-      $('#VIN').click(function() {
-        $.mobile.changePage("#AI", {
-          reverse: false,
-          transition: "pop"
-        });
-      })
-      $('#VAN').click(function() {
-        $.mobile.changePage("#AA", {
-          reverse: false,
-          transition: "pop"
-        });
-      })
-      $('#ABN').click(function() {
-        $.mobile.changePage("#NB", {
-          reverse: false,
-          transition: "pop"
-        });
-      })
-      $('#AIN').click(function() {
-        $.mobile.changePage("#NI", {
-          reverse: false,
-          transition: "pop"
-        });
-      })
-      $('#AAN').click(function() {
-        $.mobile.changePage("#NA", {
-          reverse: false,
-          transition: "pop"
-        });
-      })
-      $('#NBN').click(function() {
-        $.mobile.changePage("#CONGRATS", {
-          reverse: false,
-          transition: "pop"
-        });
-        learningcomplete();
-      })
-      $('#NIN').click(function() {
-        $.mobile.changePage("#CONGRATS", {
-          reverse: false,
-          transition: "pop"
-        });
-        learningcomplete();
-      })
-      $('#NAN').click(function() {
-        $.mobile.changePage("#CONGRATS", {
-          reverse: false,
-          transition: "pop"
-        });
-        learningcomplete();
-      })
-      //LEARNING DECIDER LOGIC
-      $(".VB").change(function() {
-        var a = "#" + this.getAttribute('id');
-        let x = a + " input[name='radio']:checked";
-        var ans = $(x).val();
-        if (ans == "good") {
-          lscore++;
-        }
-        let c = a + " input[name='radio']";
-        $(c).attr('disabled', true);
-        stoptimer();
-        let b = LearningAi(anstime, (lscore / 10));
-        questionaware++;
-        console.log(questionaware);
-        decidequestion(a, b);
-        starttimer();
-      })
-      $(".VI").change(function() {
-        var a = "#" + this.getAttribute('id');
-        let x = a + " input[name='radio']:checked";
-        var ans = $(x).val();
-        if (ans == "good") {
-          lscore++;
-        }
-        let c = a + " input[name='radio']";
-        $(c).attr('disabled', true);
-        stoptimer();
-        let b = LearningAi(anstime, (lscore / 8));
-        questionaware++;
-        console.log(questionaware);
-        decidequestion(a, b);
-        starttimer();
-      })
-      $(".VA").change(function() {
-        var a = "#" + this.getAttribute('id');
-        let x = a + " input[name='radio']:checked";
-        var ans = $(x).val();
-        if (ans == "good") {
-          lscore++;
-        }
-        let c = a + " input[name='radio']";
-        $(c).attr('disabled', true);
-        stoptimer();
-        let b = LearningAi(anstime, (lscore / 6));
-        questionaware++;
-        console.log(questionaware);
-        decidequestion(a, b);
-        starttimer();
-      })
-      $(".AB").change(function() {
-        var a = "#" + this.getAttribute('id');
-        let x = a + " input[name='radio']:checked";
-        var ans = $(x).val();
-        if (ans == "good") {
-          lscore++;
-        }
-        let c = a + " input[name='radio']";
-        $(c).attr('disabled', true);
-        stoptimer();
-        let b = LearningAi(anstime, (lscore / 10));
-        questionaware++;
-        console.log(questionaware);
-        decidequestion(a, b);
-        starttimer();
-      })
-      $(".AI").change(function() {
-        var a = "#" + this.getAttribute('id');
-        let x = a + " input[name='radio']:checked";
-        var ans = $(x).val();
-        if (ans == "good") {
-          lscore++;
-        }
-        let c = a + " input[name='radio']";
-        $(c).attr('disabled', true);
-        stoptimer();
-        let b = LearningAi(anstime, (lscore / 8));
-        questionaware++;
-        console.log(questionaware);
-        decidequestion(a, b);
-        starttimer();
-      })
-      $(".AA").change(function() {
-        var a = "#" + this.getAttribute('id');
-        let x = a + " input[name='radio']:checked";
-        var ans = $(x).val();
-        if (ans == "good") {
-          lscore++;
-        }
-        let c = a + " input[name='radio']";
-        $(c).attr('disabled', true);
-        stoptimer();
-        let b = LearningAi(anstime, (lscore / 6));
-        questionaware++;
-        console.log(questionaware);
-        decidequestion(a, b);
-        starttimer();
-      })
-      $(".NB").change(function() {
-        var a = "#" + this.getAttribute('id');
-        let x = a + " input[name='radio']:checked";
-        var ans = $(x).val();
-        if (ans == "good") {
-          lscore++;
-        }
-        let c = a + " input[name='radio']";
-        $(c).attr('disabled', true);
-        stoptimer();
-        let b = LearningAi(anstime, (lscore / 10));
-        questionaware++;
-        console.log(questionaware);
-        decidequestion(a, b);
-        starttimer();
-      })
-      $(".NI").change(function() {
-        var a = "#" + this.getAttribute('id');
-        let x = a + " input[name='radio']:checked";
-        var ans = $(x).val();
-        if (ans == "good") {
-          lscore++;
-        }
-        let c = a + " input[name='radio']";
-        $(c).attr('disabled', true);
-        stoptimer();
-        let b = LearningAi(anstime, (lscore / 8));
-        questionaware++;
-        console.log(questionaware);
-        decidequestion(a, b);
-        starttimer();
-      })
-      $(".NA").change(function() {
-        var a = "#" + this.getAttribute('id');
-        let x = a + " input[name='radio']:checked";
-        var ans = $(x).val();
-        if (ans == "good") {
-          lscore++;
-        }
-        let c = a + " input[name='radio']";
-        $(c).attr('disabled', true);
-        stoptimer();
-        let b = LearningAi(anstime, (lscore / 6));
-        questionaware++;
-        console.log(questionaware);
-        decidequestion(a, b);
-        starttimer();
-      })
+  <!-- ADVERB -->
+  <!-- LEVEL1 -->
+  <div data-role="page" id="AB" class="nbgg">
 
-      //GLOBAL ACT BUTTONS
-      $("#GBB").click(function() {
-        for (let i = 1; i < 7; i++) {
-          let a = "#GBQ" + i + " input[name='radio']:checked";
-          let b = $(a).val();
-          if (b == good) {
-            globalans++;
-          }
-        }
-        if (globalans >= 5) {
-          let a = $(this).getAttribute('id');
-          incrementlevel(a);
-        }
-        $.mobile.changePage("#globalres", {
-          reverse: false,
-          transition: "pop"
-        });
-        let a = (globalans / 6) * 100;
-        rolling(a);
-        resetall();
-      })
-      $("#GIB").click(function() {
-        for (let i = 1; i < 7; i++) {
-          let a = "#GIQ" + i + " input[name='radio']:checked";
-          let b = $(a).val();
-          if (b == good) {
-            globalans++;
-          }
-        }
-        if (globalans >= 5) {
-          let a = $(this).getAttribute('id');
-          incrementlevel(a);
-        }
-        $.mobile.changePage("#globalres", {
-          reverse: false,
-          transition: "pop"
-        });
-        let a = (globalans / 6) * 100;
-        rolling(a);
-        resetall();
-      })
-      $("#GAB").click(function() {
-        for (let i = 1; i < 7; i++) {
-          let a = "#GAQ" + i + " input[name='radio']:checked";
-          let b = $(a).val();
-          if (b == good) {
-            globalans++;
-          }
-        }
-        if (globalans >= 5) {
-          let a = $(this).getAttribute('id');
-          incrementlevel(a);
-        }
-        $.mobile.changePage("#globalres", {
-          reverse: false,
-          transition: "pop"
-        });
-        let a = (globalans / 6) * 100;
-        rolling(a);
-        resetall();
-      })
-    });
+    <h2 style="text-align: center; margin-bottom:  0px"> Adverb</h2>
+    <h4 style="text-align: center; margin: 0px;"> Let's learn </h4>
+    <div style="max-width: 60px;"><input class="trans" type='button' value='🔊' id="playme" /></div>
+    <hr>
 
-    function creattable() {
-      //creates the database and size
-      db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
-      //ALLOWS execution of all functions
-      db.transaction(function(tx) {
-        //CREATE TABLE STUDENT
-        //tx.executeSql('DROP TABLE stud');
-        tx.executeSql('CREATE TABLE IF NOT EXISTS stud(name text, password text, level int,pretest text, lesson text)');
-        tx.executeSql('CREATE TABLE IF NOT EXISTS testscore(score int, time int)');
-        tx.executeSql('INSERT INTO stud(name,password,lesson) values(?,?,?)', ['Vashil Kissoon', 'admin', 'false']);
-      });
-    }
 
-    function checkpretest() {
-      db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
-      //ALLOWS execution of all functions
-      db.transaction(function(tx) {
-        //CREATE TABLE STUDENT
-        tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, results) {
-          let a = results.rows[0].pretest;
-          console.log(a);
-          if (a == null) {
-            $.mobile.changePage("#APT", {
-              reverse: false,
-              transition: "pop"
-            });
+
+    <div role="main" class="ui-content">
+
+
+      <p class="explain">An adverb tells us <span class="emphasis"> more about a verb </span>in a sentence. </p>
+      <p>Example:</p>
+      <div class="hd-cent">
+        <p> Peter runs <span class="important"> fast </span> .</p>
+
+        <p> They listened <span class="important">carefully </span> to the speech.</p>
+        <p>I <span class="important">usually</span> go out on Saturdays.</p>
+        <p>She spoke<span class="important"> well </span> .</p>
+        <hr>
+      </div>
+
+      <p class="explain">Most adverbs are formed by adding <span class="emphasis">'ly'</span> to an adjective. </p>
+      <p>Example:</p>
+      <div class="hd-cent">
+        <table>
+          <tr>
+            <td>Slow</td>
+            <td>Slowly</td>
+          </tr>
+          <tr>
+            <td>Quick</td>
+            <td>Quickly</td>
+          </tr>
+          <tr>
+            <td>Amazing</td>
+            <td>Amazingly</td>
+          </tr>
+          <tr>
+            <td>Clear</td>
+            <td>Clearly</td>
+          </tr>
+        </table>
+      </div>
+      <hr>
+
+      <p class="explain">To change adjectives ending in <SPAN class="emphasis">'y'</SPAN> into adverbs, <SPAN class="emphasis">change the 'y' to 'i' and add 'ly'.</SPAN></p>
+      <p>Example</p>
+      <div class="hd-cent">
+        <table>
+          <tr>
+            <td>Happy</td>
+            <td>Happily</td>
+          </tr>
+          <tr>
+            <td>Easy</td>
+            <td>Easily</td>
+          </tr>
+          <tr>
+            <td>Busy</td>
+            <td>Busily</td>
+          </tr>
+          <tr>
+            <td>Angry</td>
+            <td>Angrily</td>
+          </tr>
+        </table>
+      </div>
+      <hr>
+
+      <p style="text-align: center; font-weight: bolder;font-size: 20px;"> Answer the following questions: </p>
+
+      <hr>
+
+
+
+
+      <!--question 1-->
+      <div id="AB1" class="questions">
+
+        <form>
+          <fieldset data-role="controlgroup" id="ABQ1" class="AB">
+
+            <P class="hd-cent"> I spoke to them ___ about the plan.</P>
+            <label><input name="radio" id="rab1" type="radio" value="bad"> A. careful </label>
+            <label><input name="radio" id="rab2" type="radio" value="good"> B. carefully </label>
+
+
+
+          </fieldset>
+        </form>
+
+
+
+        <div id="CFAB1" class="answer">
+          <p> You have choosen careful, we should add <span class="important">'ly'</span> to the adjective.</p>
+          <p> The correct answer is <span class="important">Carefully</span> </p>
+
+        </div>
+
+        <div id="CFAB2" class="answer">
+          <p> Great, You have choosen the right answer.</p>
+          <p> We add <span class="important">'ly'</span> to the adjective which gives us <span class="important">Carefully</span>. </p>
+        </div>
+
+      </div>
+
+      <!--question 2-->
+      <div id="AB2" class="questions">
+
+        <form>
+          <fieldset data-role="controlgroup" id="ABQ2" class="AB">
+
+            <P class="hd-cent"> The car was very _____.</P>
+            <label><input name="radio" id="rab3" type="radio" value="good"> A. expensive</label>
+            <label><input name="radio" id="rab4" type="radio" value="bad"> B. expensively </label>
+
+
+
+          </fieldset>
+        </form>
+
+
+        <!--answers-->
+        <div id="CFAB3" class="answer">
+          <p> You have choosen <span class="important">expensive</span>.</p>
+          <p> It is the corect answer.</p>
+
+        </div>
+
+        <div id="CFAB4" class="answer">
+          <p> <span class="important">expensively</span> is a wrong answer</p>
+          <p> The correct answer is <span class="important">expensive</span> since it is before another adverb it will not take 'ly'. </p>
+        </div>
+
+      </div>
+
+      <!--question 3-->
+      <div id="AB3" class="questions">
+
+        <form>
+          <fieldset data-role="controlgroup" id="ABQ3" class="AB">
+
+            <P class="hd-cent"> Which sentence is NOT correct?</P>
+            <label><input name="radio" id="rab5" type="radio" value="good"> A. We worked hardly. </label>
+            <label><input name="radio" id="rab6" type="radio" value="bad"> B. They ran quickly. </label>
+            <label><input name="radio" id="rab6t" type="radio" value="bad"> B. The boys slept heavily.</label>
+
+
+
+          </fieldset>
+        </form>
+
+
+        <!--answers-->
+        <div id="CFAB5" class="answer">
+          <p> You have choosen the right sentance</p>
+          <p> Some adverbs are irregular, and do not end in ly. These include: </p>
+          <p> <span class="important">good -> well</span> She dances well. </p>
+          <p> <span class="important">hard -> hard</span> He works hard.</p>
+          <p> <span class="important">fast -> fast</span> He runs fast.</p>
+          <p> <span class="important">late -> late</span> He arrives late.</p>
+
+
+        </div>
+
+        <div id="CFAB6" class="answer">
+          <p> You have choosen the Wrong sentance</p>
+          <p> Some adverbs are irregular, and do not end in ly. These include: </p>
+          <p> <span class="important">good -> well</span> She dances well. </p>
+          <p> <span class="important">hard -> hard</span> He works hard.</p>
+          <p> <span class="important">fast -> fast</span> He runs fast.</p>
+          <p> <span class="important">late -> late</span> He arrives late.</p>
+        </div>
+
+      </div>
+
+      <!--question 4-->
+      <div id="AB4" class="questions">
+
+        <form>
+          <fieldset data-role="controlgroup" id="ABQ4" class="AB">
+
+            <P class="hd-cent"> He did that ____ well.</P>
+            <label><input name="radio" id="rab7" type="radio" value="bad"> A.extreme </label>
+            <label><input name="radio" id="rab8" type="radio" value="good"> B.extremely </label>
+
+
+
+          </fieldset>
+        </form>
+
+
+        <!--answers-->
+        <div id="CFAB7" class="answer">
+          <p> You have choosen extreme, we should add <span class="important">'ly'</span> to the adjective.</p>
+          <p> The correct answer is <span class="important">extremely</span> </p>
+
+        </div>
+
+        <div id="CFAB8" class="answer">
+          <p> Great, You have choosen the right answer.</p>
+          <p> We add <span class="important">'ly'</span> to the adjective which gives us <span class="important">extremely</span>. </p>
+        </div>
+
+      </div>
+
+      <!--question 5-->
+      <div id="AB5" class="questions">
+
+        <form>
+          <fieldset data-role="controlgroup" id="ABQ5" class="AB">
+
+            <P class="hd-cent"> We completed the task ____.</P>
+            <label><input name="radio" id="rab9" type="radio" value="bad"> A. easy </label>
+            <label><input name="radio" id="rab10" type="radio" value="good"> B. easily </label>
+
+
+
+          </fieldset>
+        </form>
+
+
+        <!--answers-->
+        <div id="CFAB9" class="answer">
+          <p> You have choosen easy, we should add <span class="important">'ly'</span> to the adjective.</p>
+          <p> The correct answer is <span class="important">easily</span> </p>
+
+        </div>
+
+        <div id="CFAB10" class="answer">
+          <p> Great, You have choosen the right answer.</p>
+          <p> We add <span class="important">'ly'</span> to the adjective which gives us <span class="important">easily</span>. </p>
+        </div>
+
+      </div>
+
+      <!--question 6-->
+      <div id="AB6" class="questions">
+
+        <form>
+          <fieldset data-role="controlgroup" id="ABQ6" class="AB">
+
+            <P class="hd-cent"> Which of the word is an adverb</P>
+            <label><input name="radio" id="rab11" type="radio" value="bad"> A. friendly </label>
+            <label><input name="radio" id="rab12" type="radio" value="good"> B. almost </label>
+
+
+
+          </fieldset>
+        </form>
+
+
+        <!--answers-->
+        <div id="CFAB11" class="answer">
+          <p> You have choosen friendly</p>
+          <p> <span class="important">friendly</span> is an adjective. </p>
+          <p> correct answer is <span class="important">almost</span> since it gives more details about the verb </p>
+
+
+        </div>
+
+        <div id="CFAB12" class="answer">
+          <p> Correct answer.</p>
+          <p> <span class="important">almost</span> is an Adverb</p>
+        </div>
+
+      </div>
+
+      <!--question 7-->
+      <div id="AB7" class="questions">
+
+        <form>
+          <fieldset data-role="controlgroup" id="ABQ7" class="AB">
+
+            <P class="hd-cent"> Sarah ran ___ into the room.</P>
+            <label><input name="radio" id="rab13" type="radio" value="good"> A. Quickly </label>
+            <label><input name="radio" id="rab14" type="radio" value="bad"> B. Quick </label>
+
+
+
+          </fieldset>
+        </form>
+
+
+        <!--answers-->
+        <div id="CFAB13" class="answer">
+          <p> You have choosen quick, we should add <span class="important">'ly'</span> to the adjective.</p>
+          <p> The correct answer is <span class="important">quickly</span> </p>
+
+        </div>
+
+        <div id="CFAB14" class="answer">
+          <p> Great, You have choosen the right answer.</p>
+          <p> We add <span class="important">'ly'</span> to the adjective which gives us <span class="important">quickly</span>. </p>
+        </div>
+
+      </div>
+
+      <!--question 8-->
+      <div id="AB8" class="questions">
+
+        <form>
+          <fieldset data-role="controlgroup" id="ABQ8" class="AB">
+
+            <P class="hd-cent"> The coffee was ___ hot.</P>
+            <label><input name="radio" id="rab15" type="radio" value="bad"> A. extremely </label>
+            <label><input name="radio" id="rab16" type="radio" value="good"> B.extreme </label>
+
+
+
+          </fieldset>
+        </form>
+
+
+        <!--answers-->
+        <div id="CFAB15" class="answer">
+          <p> You have choosen extreme, we should add <span class="important">'ly'</span> to the adjective.</p>
+          <p> The correct answer is <span class="important">extremely</span> </p>
+
+        </div>
+
+        <div id="CFAB16" class="answer">
+          <p> Great, You have choosen the right answer.</p>
+          <p> We add <span class="important">'ly'</span> to the adjective which gives us <span class="important">extremely</span>. </p>
+        </div>
+
+      </div>
+
+      <!--question 9-->
+      <div id="AB9" class="questions">
+
+        <form>
+          <fieldset data-role="controlgroup" id="ABQ9" class="AB">
+
+            <P class="hd-cent"> Which word in the following sentence is an adverb?
+              <br>
+              Sara plays the violin beautifully.</P>
+            <label><input name="radio" id="rab17" type="radio" value="good"> A. beautifully</label>
+            <label><input name="radio" id="rab18" type="radio" value="bad"> B. plays </label>
+
+
+
+          </fieldset>
+        </form>
+
+
+        <!--answers-->
+        <div id="CFAB17" class="answer">
+          <p> You have choosen plays, plays is the present tense of verb to play</p>
+          <p> The correct answer is <span class="important">beautifully</span> </p>
+
+        </div>
+
+        <div id="CFAB18" class="answer">
+          <p> Great, You have choosen the right answer.</p>
+          <p><span class="important">'ly'</span> to the adjective which gives us <span class="important">beautifully</span>. play is a verb here </p>
+        </div>
+
+      </div>
+
+
+      <!--question 10-->
+      <div id="AB10" class="questions">
+
+        <form>
+          <fieldset data-role="controlgroup" id="ABQ10" class="AB">
+
+            <P class="hd-cent"> Mr Townsend always works _____</P>
+            <label><input name="radio" id="rab19" type="radio" value="bad"> A. lately </label>
+            <label><input name="radio" id="rab20" type="radio" value="bad"> B. fastly </label>
+            <label><input name="radio" id="rab21" type="radio" value="good"> c. carefully </label>
+
+
+
+          </fieldset>
+        </form>
+
+
+        <!--answers-->
+        <div id="CFAB19" class="answer">
+          <p> You have choosen the right sentance</p>
+          <p> Some adverbs are irregular, and do not end in ly. These include: </p>
+          <p> <span class="important">good -> well</span> She dances well. </p>
+          <p> <span class="important">hard -> hard</span> He works hard.</p>
+          <p> <span class="important">fast -> fast</span> He runs fast.</p>
+          <p> <span class="important">late -> late</span> He arrives late.</p>
+
+        </div>
+
+        <div id="CFAB20" class="answer">
+          <p> You have choosen the Wrong sentance</p>
+          <p> Some adverbs are irregular, and do not end in ly. These include: </p>
+          <p> <span class="important">good -> well</span> She dances well. </p>
+          <p> <span class="important">hard -> hard</span> He works hard.</p>
+          <p> <span class="important">fast -> fast</span> He runs fast.</p>
+          <p> <span class="important">late -> late</span> He arrives late.</p>
+        </div>
+
+      </div>
+
+
+
+
+
+
+      <button id="ABN" style="background-color:#008000; color: white; width: 100%;" class="ui-btn"> Next Lesson </button>
+      <!-- <a href="#Khome" style="background-color:#8B008B; color: white; width: 100%;" class="ui-btn"> Next Lesson </a>  -->
+
+
+
+
+    </div>
+
+
+
+
+
+
+  </div>
+
+  <div data-role="page" id="AI" class="nbgg">
+
+    <h2 style="text-align: center; margin-bottom:  0px"> Adverb</h2>
+    <h4 style="text-align: center; margin: 0px;"> Let's learn </h4>
+    <div style="max-width: 60px;"><input class="trans" type='button' value='🔊' id="playme" /></div>
+    <hr>
+
+
+
+    <div role="main" class="ui-content">
+
+
+      <p class="explain">An adverb tells us <span class="emphasis"> more about a verb </span>in a sentence. </p>
+      <p>Example:</p>
+      <div class="hd-cent">
+        <p> Lesson for intermediate adverb goes here </p>
+        <hr>
+      </div>
+
+      <p class="explain"></p>
+      <p>Example:</p>
+      <div class="hd-cent">
+        <p>more text goes here</p>
+      </div>
+      <hr>
+
+      <p class="explain"></p>
+      <p>Example</p>
+      <div class="hd-cent">
+        <p> moretext goes here</p>
+        <hr>
+
+        <p style="text-align: center; font-weight: bolder;font-size: 20px;"> Answer the following questions: </p>
+
+        <hr>
+
+
+
+
+        <!--question 1-->
+        <div id="AI1" class="questions">
+
+          <form>
+            <fieldset data-role="controlgroup" id="AIQ1" class="AI">
+
+              <P class="hd-cent"> Question 1 goes here.</P>
+              <label><input name="radio" id="rai1" type="radio" value="bad"> A. BAD </label>
+              <label><input name="radio" id="rai2" type="radio" value="good"> B. GOOD </label>
+
+
+
+            </fieldset>
+          </form>
+
+
+
+          <div id="CFAI1" class="answer">
+            <p>constructive feedback BAD</p>
+
+          </div>
+
+          <div id="CFAI2" class="answer">
+            <p>constructive feedback GOOD</p>
+          </div>
+
+        </div>
+
+        <!--question 2-->
+        <div id="AI2" class="questions">
+
+          <form>
+            <fieldset data-role="controlgroup" id="AIQ2" class="AI">
+
+              <P class="hd-cent"> Question 2 goes here</P>
+              <label><input name="radio" id="rai3" type="radio" value="good"> A. good </label>
+              <label><input name="radio" id="rai4" type="radio" value="bad"> B. bad </label>
+
+
+
+            </fieldset>
+          </form>
+
+
+          <!--answers-->
+          <div id="CFAI3" class="answer">
+            <p>constructive feedback GOOD</p>
+
+          </div>
+
+          <div id="CFAI4" class="answer">
+            <p>constructive feedback BAD</p>
+          </div>
+
+        </div>
+
+        <!--question 3-->
+        <div id="AI3" class="questions">
+
+          <form>
+            <fieldset data-role="controlgroup" id="AIQ3" class="AI">
+
+              <P class="hd-cent">Question 3 goes here</P>
+              <label><input name="radio" id="rai5" type="radio" value="good"> A. good. </label>
+              <label><input name="radio" id="rai6" type="radio" value="bad"> B. bad. </label>
+              <label><input name="radio" id="rai6t" type="radio" value="bad"> B. bad.</label>
+
+
+
+            </fieldset>
+          </form>
+
+
+          <!--answers-->
+          <div id="CFAI5" class="answer">
+            <p>constructive feedback GOOD</p>
+
+
+          </div>
+
+          <div id="CFAI6" class="answer">
+            <p>constructive feedback BAD</p>
+          </div>
+
+        </div>
+
+        <!--question 4-->
+        <div id="AI4" class="questions">
+
+          <form>
+            <fieldset data-role="controlgroup" id="AIQ4" class="AI">
+
+              <P class="hd-cent"> Question 4 goes here</P>
+              <label><input name="radio" id="rai7" type="radio" value="bad"> A.bad</label>
+              <label><input name="radio" id="rai8" type="radio" value="good"> B.good </label>
+
+
+
+            </fieldset>
+          </form>
+
+
+          <!--answers-->
+          <div id="CFAI7" class="answer">
+            <p>constructive feedback BAD</p>
+          </div>
+
+          <div id="CFAI8" class="answer">
+            <p>constructive feedback GOOD</p>
+          </div>
+
+        </div>
+
+        <!--question 5-->
+        <div id="AI5" class="questions">
+
+          <form>
+            <fieldset data-role="controlgroup" id="AIQ5" class="AI">
+
+              <P class="hd-cent"> Question 5 goes here</P>
+              <label><input name="radio" id="rai9" type="radio" value="bad"> A. bad </label>
+              <label><input name="radio" id="rai10" type="radio" value="good"> B. good </label>
+
+
+
+            </fieldset>
+          </form>
+
+
+          <!--answers-->
+          <div id="CFAI9" class="answer">
+            <p>constructive feedback BAD</p>
+          </div>
+
+          <div id="CFAI10" class="answer">
+            <p>constructive feedback GOOD</p>
+          </div>
+
+        </div>
+
+        <!--question 6-->
+        <div id="AI6" class="questions">
+
+          <form>
+            <fieldset data-role="controlgroup" id="AIQ6" class="AI">
+
+              <P class="hd-cent"> Question 6 goes here</P>
+              <label><input name="radio" id="rai11" type="radio" value="bad"> A. bad </label>
+              <label><input name="radio" id="rai12" type="radio" value="good"> B. good </label>
+
+
+
+            </fieldset>
+          </form>
+
+
+          <!--answers-->
+          <div id="CFAI11" class="answer">
+            <p>constructive feedback BAD</p>
+
+
+          </div>
+
+          <div id="CFAI12" class="answer">
+            <p>constructive feedback GOOD</p>
+          </div>
+
+        </div>
+
+        <!--question 7-->
+        <div id="AI7" class="questions">
+
+          <form>
+            <fieldset data-role="controlgroup" id="AIQ7" class="AI">
+
+              <P class="hd-cent"> Question 7 goes here</P>
+              <label><input name="radio" id="rai13" type="radio" value="good"> A.good </label>
+              <label><input name="radio" id="rai14" type="radio" value="bad"> B. bad </label>
+
+
+
+            </fieldset>
+          </form>
+
+
+          <!--answers-->
+          <div id="CFAI13" class="answer">
+            <p>constructive feedback BAD</p>
+
+          </div>
+
+          <div id="CFAI14" class="answer">
+            <p>constructive feedback GOOD</p>
+
+          </div>
+
+        </div>
+
+        <!--question 8-->
+        <div id="AI8" class="questions">
+
+          <form>
+            <fieldset data-role="controlgroup" id="AIQ8" class="AI">
+
+              <P class="hd-cent"> Question 8 goes here</P>
+              <label><input name="radio" id="rai15" type="radio" value="bad"> A. bad </label>
+              <label><input name="radio" id="rai16" type="radio" value="good"> B.good </label>
+
+
+
+            </fieldset>
+          </form>
+
+
+          <!--answers-->
+          <div id="CFAI15" class="answer">
+            <p>constructive feedback BAD</p>
+
+          </div>
+
+          <div id="CFAI16" class="answer">
+            <p>constructive feedback GOOD</p>
+          </div>
+
+        </div>
+
+        <button id="AIN" style="background-color:#008000; color: white; width: 100%;" class="ui-btn"> Next Lesson </button>
+        <!-- <a href="#Khome" style="background-color:#8B008B; color: white; width: 100%;" class="ui-btn"> Next Lesson </a>  -->
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <div data-role="page" id="AA" class="nbgg">
+
+    <h2 style="text-align: center; margin-bottom:  0px"> Adverb</h2>
+    <h4 style="text-align: center; margin: 0px;"> Let's learn </h4>
+    <div style="max-width: 60px;"><input class="trans" type='button' value='🔊' id="playme" /></div>
+    <hr>
+
+
+
+    <div role="main" class="ui-content">
+
+
+      <p class="explain">An adverb tells us <span class="emphasis"> more about a verb </span>in a sentence. </p>
+      <p>Example:</p>
+      <div class="hd-cent">
+        <p> Lesson for Advance adverb goes here </p>
+        <hr>
+      </div>
+
+      <p class="explain"></p>
+      <p>Example:</p>
+      <div class="hd-cent">
+        <p>more text goes here</p>
+      </div>
+      <hr>
+
+      <p class="explain"></p>
+      <p>Example</p>
+      <div class="hd-cent">
+        <p> moretext goes here</p>
+        <hr>
+
+        <p style="text-align: center; font-weight: bolder;font-size: 20px;"> Answer the following questions: </p>
+
+        <hr>
+
+
+
+
+        <!--question 1-->
+        <div id="AA1" class="questions">
+
+          <form>
+            <fieldset data-role="controlgroup" id="AAQ1" class="AA">
+
+              <P class="hd-cent"> Question 1 goes here.</P>
+              <label><input name="radio" id="raa1" type="radio" value="bad"> A. BAD </label>
+              <label><input name="radio" id="raa2" type="radio" value="good"> B. GOOD </label>
+
+
+
+            </fieldset>
+          </form>
+
+
+
+          <div id="CFAA1" class="answer">
+            <p>constructive feedback BAD</p>
+
+          </div>
+
+          <div id="CFAA2" class="answer">
+            <p> constructive feedback GOOD</p>
+          </div>
+
+        </div>
+
+        <!--question 2-->
+        <div id="AA2" class="questions">
+
+          <form>
+            <fieldset data-role="controlgroup" id="AAQ2" class="AA">
+
+              <P class="hd-cent"> Question 2 goes here</P>
+              <label><input name="radio" id="raa3" type="radio" value="good"> A.good </label>
+              <label><input name="radio" id="raa4" type="radio" value="bad"> B. bad </label>
+
+
+
+            </fieldset>
+          </form>
+
+
+          <!--answers-->
+          <div id="CFAA3" class="answer">
+            <p> constructive feedback GOOD</p>
+
+          </div>
+
+          <div id="CFAA4" class="answer">
+            <p> constructive feedback BAD</p>
+          </div>
+
+        </div>
+
+        <!--question 3-->
+        <div id="AA3" class="questions">
+
+          <form>
+            <fieldset data-role="controlgroup" id="AAQ3" class="AA">
+
+              <P class="hd-cent">Question 3 goes here</P>
+              <label><input name="radio" id="raa5" type="radio" value="good"> A. good . </label>
+              <label><input name="radio" id="raa6" type="radio" value="bad"> B. bad </label>
+              <label><input name="radio" id="rabat" type="radio" value="bad"> B. bad.</label>
+
+
+
+            </fieldset>
+          </form>
+
+
+          <!--answers-->
+          <div id="CFAA5" class="answer">
+            <p> constructive feedback GOOD</p>
+
+
+          </div>
+
+          <div id="CFAA6" class="answer">
+            <p> constructive feedback BAD</p>
+          </div>
+
+        </div>
+
+        <!--question 4-->
+        <div id="AA4" class="questions">
+
+          <form>
+            <fieldset data-role="controlgroup" id="AAQ4" class="AA">
+
+              <P class="hd-cent"> Question 4 goes here</P>
+              <label><input name="radio" id="raa7" type="radio" value="bad"> A.bad </label>
+              <label><input name="radio" id="raa8" type="radio" value="good"> B.good </label>
+
+
+
+            </fieldset>
+          </form>
+
+
+          <!--answers-->
+          <div id="CFAA7" class="answer">
+            <p> constructive feedback BAD</p>
+
+          </div>
+
+          <div id="CFAA8" class="answer">
+            <p> constructive feedback GOOD</p>
+          </div>
+
+        </div>
+
+        <!--question 5-->
+        <div id="AA5" class="questions">
+
+          <form>
+            <fieldset data-role="controlgroup" id="AAQ5" class="AA">
+
+              <P class="hd-cent"> Question 5 goes here</P>
+              <label><input name="radio" id="raa9" type="radio" value="bad"> A. bad </label>
+              <label><input name="radio" id="raa10" type="radio" value="good"> B. good </label>
+
+
+
+            </fieldset>
+          </form>
+
+
+          <!--answers-->
+          <div id="CFAA9" class="answer">
+            <p> constructive feedback BAD</p>
+
+          </div>
+
+          <div id="CFAA10" class="answer">
+            <p> constructive feedback GOOD</p>
+          </div>
+
+        </div>
+
+        <!--question 6-->
+        <div id="AA6" class="questions">
+
+          <form>
+            <fieldset data-role="controlgroup" id="AAQ6" class="AA">
+
+              <P class="hd-cent"> Question 6 goes here</P>
+              <label><input name="radio" id="raa11" type="radio" value="bad"> A. bad </label>
+              <label><input name="radio" id="raa12" type="radio" value="good"> B. good </label>
+
+
+
+            </fieldset>
+          </form>
+
+
+          <!--answers-->
+          <div id="CFAA11" class="answer">
+            <p> constructive feedback BAD</p>
+
+
+          </div>
+
+          <div id="CFAA12" class="answer">
+            <p> constructive feedback GOOD</p>
+          </div>
+
+        </div>
+          <button id="AAN" style="background-color:#008000; color: white; width: 100%;" class="ui-btn"> Next Lesson </button>
+          <!-- <a href="#Khome" style="background-color:#8B008B; color: white; width: 100%;" class="ui-btn"> Next Lesson </a>  -->
+
+
+
+
+
+      </div>
+    </div>
+    <script>
+      //RETRIEVE FROM APTITUDE TEST
+      const aptvalue = 30.4;
+      //LEARNING timer
+      var anstime = 0;
+      var time;
+      //LEARNING SCORE MEMORY
+      var lscore = 0;
+      var quest = 1;
+      var questionaware = 0;
+      //GLOBAL ACTIVITY
+      var globalans = 0;
+      $(document).ready(function() {
+        creattable();
+        learningcard();
+        $("#Kloginbtn").click(function() {
+          if (($('#klarge').val() == "admin") && ($('#klarge1').val() == "admin")) {
+            checkpretest();
           } else {
-            $.mobile.changePage("#Khome", {
-              reverse: false,
-              transition: "pop"
-            });
+            alert('INVALID!');
           }
-        });
-      });
-    }
-
-    function learningcard() {
-      db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
-      db.transaction(function(tx) {
-        tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, results) {
-          var apt = results.rows[0].level;
-          if ((apt > 0) && (apt <= 40)) {
-            $('#K1').show('fast');
-            $('#K2').hide('fast');
-            $('#K3').hide('fast');
-          } else if ((apt > 40) && (apt <= 80)) {
-            $('#K1').show('fast');
-            $('#K2').show('fast');
-            $('#K3').hide('fast');
-          } else if ((apt > 80) && (apt <= 100)) {
-            $('#K1').show('fast');
-            $('#K2').show('fast');
-            $('#K3').show('fast');
+        })
+        //EXAM PASS OR FAIL
+        $("#examsub").click(function() {
+          var a = exampassorfail();
+          $.mobile.changePage("#CONGRATS1", {
+            reverse: false,
+            transition: "pop"
+          });
+          rolling1(a);
+        })
+        //ANIMATION PURPOSES
+        $("#K5").hide('fast');
+        //GLOBAL ACTIVITY BUTTONS
+        $('#globalbtn').click(function() {
+          globalactdecision();
+        })
+        //START TIMER FOR Learning
+        $("#bvb").click(function() {
+          starttimer();
+        })
+        $("#ivi").click(function() {
+          starttimer();
+        })
+        $("#ava").click(function() {
+          starttimer();
+        })
+        //ALL LEARNING BUTTONS
+        $('#VBN').click(function() {
+          $.mobile.changePage("#AB", {
+            reverse: false,
+            transition: "pop"
+          });
+        })
+        $('#VIN').click(function() {
+          $.mobile.changePage("#AI", {
+            reverse: false,
+            transition: "pop"
+          });
+        })
+        $('#VAN').click(function() {
+          $.mobile.changePage("#AA", {
+            reverse: false,
+            transition: "pop"
+          });
+        })
+        $('#ABN').click(function() {
+          $.mobile.changePage("#CONGRATS", {
+            reverse: false,
+            transition: "pop"
+          });
+          learningcomplete();
+        })
+        $('#AIN').click(function() {
+          $.mobile.changePage("#CONGRATS", {
+            reverse: false,
+            transition: "pop"
+          });
+          learningcomplete();
+        })
+        $('#AAN').click(function() {
+          $.mobile.changePage("#CONGRATS", {
+            reverse: false,
+            transition: "pop"
+          });
+          learningcomplete();
+        })
+        /*
+        $('#NBN').click(function() {
+          $.mobile.changePage("#CONGRATS", {
+            reverse: false,
+            transition: "pop"
+          });
+          learningcomplete();
+        })
+        $('#NIN').click(function() {
+          $.mobile.changePage("#CONGRATS", {
+            reverse: false,
+            transition: "pop"
+          });
+          learningcomplete();
+        })
+        $('#NAN').click(function() {
+          $.mobile.changePage("#CONGRATS", {
+            reverse: false,
+            transition: "pop"
+          });
+          learningcomplete();
+        })
+        */
+        //LEARNING DECIDER LOGIC
+        $(".VB").change(function() {
+          var a = "#" + this.getAttribute('id');
+          let x = a + " input[name='radio']:checked";
+          var ans = $(x).val();
+          if (ans == "good") {
+            lscore++;
           }
-        });
-      });
-    }
+          let c = a + " input[name='radio']";
+          $(c).attr('disabled', true);
+          stoptimer();
+          let b = LearningAi(anstime, (lscore / 10));
+          questionaware++;
+          console.log(questionaware);
+          decidequestion(a, b);
+          starttimer();
+        })
+        $(".VI").change(function() {
+          var a = "#" + this.getAttribute('id');
+          let x = a + " input[name='radio']:checked";
+          var ans = $(x).val();
+          if (ans == "good") {
+            lscore++;
+          }
+          let c = a + " input[name='radio']";
+          $(c).attr('disabled', true);
+          stoptimer();
+          let b = LearningAi(anstime, (lscore / 8));
+          questionaware++;
+          console.log(questionaware);
+          decidequestion(a, b);
+          starttimer();
+        })
+        $(".VA").change(function() {
+          var a = "#" + this.getAttribute('id');
+          let x = a + " input[name='radio']:checked";
+          var ans = $(x).val();
+          if (ans == "good") {
+            lscore++;
+          }
+          let c = a + " input[name='radio']";
+          $(c).attr('disabled', true);
+          stoptimer();
+          let b = LearningAi(anstime, (lscore / 6));
+          questionaware++;
+          console.log(questionaware);
+          decidequestion(a, b);
+          starttimer();
+        })
+        $(".AB").change(function() {
+          var a = "#" + this.getAttribute('id');
+          let x = a + " input[name='radio']:checked";
+          var ans = $(x).val();
+          if (ans == "good") {
+            lscore++;
+          }
+          let c = a + " input[name='radio']";
+          $(c).attr('disabled', true);
+          stoptimer();
+          let b = LearningAi(anstime, (lscore / 10));
+          questionaware++;
+          console.log(questionaware);
+          decidequestion(a, b);
+          starttimer();
+        })
+        $(".AI").change(function() {
+          var a = "#" + this.getAttribute('id');
+          let x = a + " input[name='radio']:checked";
+          var ans = $(x).val();
+          if (ans == "good") {
+            lscore++;
+          }
+          let c = a + " input[name='radio']";
+          $(c).attr('disabled', true);
+          stoptimer();
+          let b = LearningAi(anstime, (lscore / 8));
+          questionaware++;
+          console.log(questionaware);
+          decidequestion(a, b);
+          starttimer();
+        })
+        $(".AA").change(function() {
+          var a = "#" + this.getAttribute('id');
+          let x = a + " input[name='radio']:checked";
+          var ans = $(x).val();
+          if (ans == "good") {
+            lscore++;
+          }
+          let c = a + " input[name='radio']";
+          $(c).attr('disabled', true);
+          stoptimer();
+          let b = LearningAi(anstime, (lscore / 6));
+          questionaware++;
+          console.log(questionaware);
+          decidequestion(a, b);
+          starttimer();
+        })
+        $(".NB").change(function() {
+          var a = "#" + this.getAttribute('id');
+          let x = a + " input[name='radio']:checked";
+          var ans = $(x).val();
+          if (ans == "good") {
+            lscore++;
+          }
+          let c = a + " input[name='radio']";
+          $(c).attr('disabled', true);
+          stoptimer();
+          let b = LearningAi(anstime, (lscore / 10));
+          questionaware++;
+          console.log(questionaware);
+          decidequestion(a, b);
+          starttimer();
+        })
+        $(".NI").change(function() {
+          var a = "#" + this.getAttribute('id');
+          let x = a + " input[name='radio']:checked";
+          var ans = $(x).val();
+          if (ans == "good") {
+            lscore++;
+          }
+          let c = a + " input[name='radio']";
+          $(c).attr('disabled', true);
+          stoptimer();
+          let b = LearningAi(anstime, (lscore / 8));
+          questionaware++;
+          console.log(questionaware);
+          decidequestion(a, b);
+          starttimer();
+        })
+        $(".NA").change(function() {
+          var a = "#" + this.getAttribute('id');
+          let x = a + " input[name='radio']:checked";
+          var ans = $(x).val();
+          if (ans == "good") {
+            lscore++;
+          }
+          let c = a + " input[name='radio']";
+          $(c).attr('disabled', true);
+          stoptimer();
+          let b = LearningAi(anstime, (lscore / 6));
+          questionaware++;
+          console.log(questionaware);
+          decidequestion(a, b);
+          starttimer();
+        })
 
-    function globalactdecision() {
-      db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
-      //ALLOWS execution of all functions
-      db.transaction(function(tx) {
-        //CREATE TABLE STUDENT
-        tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, results) {
-          var a = results.rows[0].level;
-          var b = results.rows[0].lesson;
-          if (b == "false") {
-            $.mobile.changePage("#globalalert", {
-              reverse: false,
-              transition: "pop"
-            });
-          } else {
-            if ((a >= 0) && (a <= 40)) {
-              $.mobile.changePage("#GB", {
+        //GLOBAL ACT BUTTONS
+        $("#GBB").click(function() {
+          for (let i = 1; i < 7; i++) {
+            let a = "#GBQ" + i + " input[name='radio']:checked";
+            let b = $(a).val();
+            if (b == 'good') {
+              globalans++;
+            }
+          }
+          if (globalans >= 5) {
+            incrementlevel('GBB');
+          }
+          $.mobile.changePage("#globalres", {
+            reverse: false,
+            transition: "pop"
+          });
+          let a = (globalans / 6) * 100;
+          rolling(a);
+          resetall();
+        })
+        $("#GIB").click(function() {
+          for (let i = 1; i < 7; i++) {
+            let a = "#GIQ" + i + " input[name='radio']:checked";
+            let b = $(a).val();
+            if (b == 'good') {
+              globalans++;
+            }
+          }
+          if (globalans >= 5) {
+            incrementlevel('GIB');
+          }
+          $.mobile.changePage("#testresults23", {
+            reverse: false,
+            transition: "pop"
+          });
+          let a = (globalans / 6) * 100;
+          rolling(a);
+          resetall();
+        })
+        $("#GAB").click(function() {
+          for (let i = 1; i < 7; i++) {
+            let a = "#GAQ" + i + " input[name='radio']:checked";
+            let b = $(a).val();
+            if (b == 'good') {
+              globalans++;
+            }
+          }
+          if (globalans >= 5) {
+            incrementlevel('GAB');
+          }
+          $.mobile.changePage("#globalres", {
+            reverse: false,
+            transition: "pop"
+          });
+          let a = (globalans / 6) * 100;
+          rolling2(a);
+          resetall();
+        })
+      });
+
+      function creattable() {
+        //creates the database and size
+        db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
+        //ALLOWS execution of all functions
+        db.transaction(function(tx) {
+          //CREATE TABLE STUDENT
+          tx.executeSql('DROP TABLE stud');
+          tx.executeSql('CREATE TABLE IF NOT EXISTS stud(name text, password text, level int,pretest text, lesson text)');
+          tx.executeSql('CREATE TABLE IF NOT EXISTS testscore(score int, time int)');
+          tx.executeSql('INSERT INTO stud(name,password,lesson) values(?,?,?)', ['Vashil Kissoon', 'admin', 'false']);
+        });
+      }
+
+      function checkpretest() {
+        db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
+        //ALLOWS execution of all functions
+        db.transaction(function(tx) {
+          //CREATE TABLE STUDENT
+          tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, results) {
+            let a = results.rows[0].pretest;
+            console.log(a);
+            if (a == null) {
+              $.mobile.changePage("#APT", {
                 reverse: false,
                 transition: "pop"
               });
-            } else if ((a > 40) && (a <= 80)) {
-              $.mobile.changePage("#GI", {
-                reverse: false,
-                transition: "pop"
-              });
-            } else if ((a > 80) && (a <= 100)) {
-              $.mobile.changePage("#GA", {
+            } else {
+              $.mobile.changePage("#Khome", {
                 reverse: false,
                 transition: "pop"
               });
             }
-          }
-        });
-      });
-    }
-
-    //FUNCTION TIMER
-    function starttimer() {
-      time = setInterval(count, 1000);
-    }
-
-    function count() {
-      anstime += 1000;
-    }
-
-    function stoptimer() {
-      clearInterval(time);
-      anstime = 0;
-    }
-
-    function LearningAi(x, y) {
-      const stu = [{
-        time: (2000 / 1000000),
-        ans: 1
-      }, {
-        time: (2000 / 1000000),
-        ans: 0.8
-      }, {
-        time: (2000 / 1000000),
-        ans: 0
-      }, {
-        time: (120000 / 1000000),
-        ans: 1
-      }, {
-        time: (120000 / 1000000),
-        ans: 0
-      }, {
-        time: (300000 / 1000000),
-        ans: 1
-      }, {
-        time: (300000 / 1000000),
-        ans: 0
-      }, {
-        time: (600000 / 1000000),
-        ans: 1
-      }, {
-        time: (600000 / 1000000),
-        ans: 0
-      }];
-
-      const outing = [{
-          level: 1
-        },
-        {
-          level: 1
-        },
-        {
-          level: 0
-        },
-        {
-          level: 0.86
-        }, {
-          level: 0
-        }, {
-          level: 0.9
-        }, {
-          level: 0
-        }, {
-          level: 0.7
-        }, {
-          level: 0
-        }
-      ];
-
-      const trainingData = [];
-
-      for (let i = 0; i < stu.length; i++) {
-        trainingData.push({
-          input: stu[i],
-          output: outing[i]
+          });
         });
       }
 
-      const net = new brain.NeuralNetwork({
-        hiddenLayers: [3],
-        errorThresh: 0.0001
-      })
-
-      const stats = net.train(trainingData);
-
-      console.log(stats);
-
-      var a = net.run({
-        time: (x / 1000000),
-        ans: y
-      });
-      return a.level;
-    }
-
-    function decidequestion(xid, lv) {
-      console.log("LEVEL IS: " + lv);
-      if (lv < 0.5) {
-        starttimer();
-        if ((xid.includes("VB") == true) && (questionaware > 4)) {
-          let a = questionaware + 1;
-          let b = "#VB" + a;
-          $(b).show("fast");
-        } else if ((xid.includes("VIQ5") == true) && (questionaware > 3)) {
-          let a = questionaware + 1;
-          let b = "#VI" + a;
-          $(b).show("fast");
-        } else if ((xid.includes("VAQ5") == true) && (questionaware > 2)) {
-          let a = questionaware + 1;
-          let b = "#VA" + a;
-          $(b).show("fast");
-        } else if ((xid.includes("ABQ5") == true) && (questionaware > 4)) {
-          let a = questionaware + 1;
-          let b = "#AB" + a;
-          $(b).show("fast");
-        } else if ((xid.includes("AIQ5") == true) && (questionaware > 3)) {
-          let a = questionaware + 1;
-          let b = "#AI" + a;
-          $(b).show("fast");
-        } else if ((xid.includes("AAQ5") == true) && (questionaware > 2)) {
-          let a = questionaware + 1;
-          let b = "#AA" + a;
-          $(b).show("fast");
-        } else if ((xid.includes("NBQ5") == true) && (questionaware > 4)) {
-          let a = questionaware + 1;
-          let b = "#NB" + a;
-          $(b).show("fast");
-        } else if ((xid.includes("NIQ5") == true) && (questionaware > 3)) {
-          let a = questionaware + 1;
-          let b = "#NI" + a;
-          $(b).show("fast");
-        } else if ((xid.includes("NAQ5") == true) && (questionaware > 2)) {
-          let a = questionaware + 1;
-          let b = "#NA" + a;
-          $(b).show("fast");
-        }
+      function learningcard() {
+        db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
+        db.transaction(function(tx) {
+          tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, results) {
+            var apt = results.rows[0].level;
+            if ((apt > 0) && (apt <= 40)) {
+              $('#K1').show('fast');
+              $('#K2').hide('fast');
+              $('#K3').hide('fast');
+            } else if ((apt > 40) && (apt <= 80)) {
+              $('#K1').show('fast');
+              $('#K2').show('fast');
+              $('#K3').hide('fast');
+            } else if ((apt > 80) && (apt <= 100)) {
+              $('#K1').show('fast');
+              $('#K2').show('fast');
+              $('#K3').show('fast');
+            }
+          });
+        });
       }
-    }
 
-    function learningcomplete() {
-      db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
-      //ALLOWS execution of all functions
-      db.transaction(function(tx) {
-        //CREATE TABLE STUDENT
-        tx.executeSql('UPDATE stud SET lesson=? WHERE rowid=1', ["true"]);
-      });
-    }
-
-    function incrementlevel(lv) {
-      if (lv.includes("GBB")) {
+      function globalactdecision() {
         db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
         //ALLOWS execution of all functions
         db.transaction(function(tx) {
           //CREATE TABLE STUDENT
-          tx.executeSql('UPDATE stud SET level=?, lesson=? WHERE rowid=1', [70, "false"]);
           tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, results) {
-            let a = results.rows[0].level;
-            learningcard(a);
-          })
+            var a = results.rows[0].level;
+            var b = results.rows[0].lesson;
+            if (b == "false") {
+              $.mobile.changePage("#globalalert", {
+                reverse: false,
+                transition: "pop"
+              });
+            } else {
+              if ((a >= 0) && (a <= 40)) {
+                $.mobile.changePage("#GB", {
+                  reverse: false,
+                  transition: "pop"
+                });
+              } else if ((a > 40) && (a <= 80)) {
+                $.mobile.changePage("#GI", {
+                  reverse: false,
+                  transition: "pop"
+                });
+              } else if ((a > 80) && (a <= 100)) {
+                $.mobile.changePage("#GA", {
+                  reverse: false,
+                  transition: "pop"
+                });
+              }
+            }
+          });
         });
-      } else if (lv.includes("GIB")) {
+      }
+
+      //FUNCTION TIMER
+      function starttimer() {
+        time = setInterval(count, 1000);
+      }
+
+      function count() {
+        anstime += 1000;
+      }
+
+      function stoptimer() {
+        clearInterval(time);
+        anstime = 0;
+      }
+
+      function LearningAi(x, y) {
+        const stu = [{
+          time: (2000 / 1000000),
+          ans: 1
+        }, {
+          time: (2000 / 1000000),
+          ans: 0.8
+        }, {
+          time: (2000 / 1000000),
+          ans: 0
+        }, {
+          time: (120000 / 1000000),
+          ans: 1
+        }, {
+          time: (120000 / 1000000),
+          ans: 0
+        }, {
+          time: (300000 / 1000000),
+          ans: 1
+        }, {
+          time: (300000 / 1000000),
+          ans: 0
+        }, {
+          time: (600000 / 1000000),
+          ans: 1
+        }, {
+          time: (600000 / 1000000),
+          ans: 0
+        }];
+
+        const outing = [{
+            level: 1
+          },
+          {
+            level: 1
+          },
+          {
+            level: 0
+          },
+          {
+            level: 0.86
+          }, {
+            level: 0
+          }, {
+            level: 0.9
+          }, {
+            level: 0
+          }, {
+            level: 0.7
+          }, {
+            level: 0
+          }
+        ];
+
+        const trainingData = [];
+
+        for (let i = 0; i < stu.length; i++) {
+          trainingData.push({
+            input: stu[i],
+            output: outing[i]
+          });
+        }
+
+        const net = new brain.NeuralNetwork({
+          hiddenLayers: [3],
+          errorThresh: 0.0001
+        })
+
+        const stats = net.train(trainingData);
+
+        console.log(stats);
+
+        var a = net.run({
+          time: (x / 1000000),
+          ans: y
+        });
+        return a.level;
+      }
+
+      function decidequestion(xid, lv) {
+        console.log("LEVEL IS: " + lv);
+        if (lv < 0.5) {
+          starttimer();
+          if ((xid.includes("VB") == true) && (questionaware > 4)) {
+            let a = questionaware + 1;
+            let b = "#VB" + a;
+            $(b).show("fast");
+          } else if ((xid.includes("VIQ5") == true) && (questionaware > 3)) {
+            let a = questionaware + 1;
+            let b = "#VI" + a;
+            $(b).show("fast");
+          } else if ((xid.includes("VAQ5") == true) && (questionaware > 2)) {
+            let a = questionaware + 1;
+            let b = "#VA" + a;
+            $(b).show("fast");
+          } else if ((xid.includes("ABQ5") == true) && (questionaware > 4)) {
+            let a = questionaware + 1;
+            let b = "#AB" + a;
+            $(b).show("fast");
+          } else if ((xid.includes("AIQ5") == true) && (questionaware > 3)) {
+            let a = questionaware + 1;
+            let b = "#AI" + a;
+            $(b).show("fast");
+          } else if ((xid.includes("AAQ5") == true) && (questionaware > 2)) {
+            let a = questionaware + 1;
+            let b = "#AA" + a;
+            $(b).show("fast");
+          } else if ((xid.includes("NBQ5") == true) && (questionaware > 4)) {
+            let a = questionaware + 1;
+            let b = "#NB" + a;
+            $(b).show("fast");
+          } else if ((xid.includes("NIQ5") == true) && (questionaware > 3)) {
+            let a = questionaware + 1;
+            let b = "#NI" + a;
+            $(b).show("fast");
+          } else if ((xid.includes("NAQ5") == true) && (questionaware > 2)) {
+            let a = questionaware + 1;
+            let b = "#NA" + a;
+            $(b).show("fast");
+          }
+        }
+      }
+
+      function learningcomplete() {
         db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
         //ALLOWS execution of all functions
         db.transaction(function(tx) {
           //CREATE TABLE STUDENT
-          tx.executeSql('UPDATE stud SET level=?, lesson=? WHERE rowid=1', [90, "false"]);
-          tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, results) {
-            let a = results.rows[0].level;
-            learningcard(a);
-          })
+          tx.executeSql('UPDATE stud SET lesson=? WHERE rowid=1', ["true"]);
         });
-      } else if (lv.includes("GAB")) {
+      }
 
-        db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
-        //ALLOWS execution of all functions
-        db.transaction(function(tx) {
-          //CREATE TABLE STUDENT
-          tx.executeSql('UPDATE stud SET level=?, lesson=? WHERE rowid=1', [100, "false"]);
-          tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, results) {
-            let a = results.rows[0].level;
-            learningcard(a);
-          })
+      function incrementlevel(lv) {
+        if (lv.includes("GBB")) {
+          db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
+          //ALLOWS execution of all functions
+          db.transaction(function(tx) {
+            //CREATE TABLE STUDENT
+            tx.executeSql('UPDATE stud SET level=?, lesson=? WHERE rowid=1', [70, "false"]);
+            tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, results) {
+              let a = results.rows[0].level;
+              learningcard(a);
+            })
+          });
+        } else if (lv.includes("GIB")) {
+          db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
+          //ALLOWS execution of all functions
+          db.transaction(function(tx) {
+            //CREATE TABLE STUDENT
+            tx.executeSql('UPDATE stud SET level=?, lesson=? WHERE rowid=1', [90, "false"]);
+            tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, results) {
+              let a = results.rows[0].level;
+              learningcard(a);
+            })
+          });
+        } else if (lv.includes("GAB")) {
+
+          db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
+          //ALLOWS execution of all functions
+          db.transaction(function(tx) {
+            //CREATE TABLE STUDENT
+            tx.executeSql('UPDATE stud SET level=?, lesson=? WHERE rowid=1', [100, "false"]);
+            tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, results) {
+              let a = results.rows[0].level;
+              learningcard(a);
+            })
+          });
+          $("#K5").show('fast');
+        }
+      }
+
+      function resetall() {
+        lscore = 0;
+        quest = 1;
+        questionaware = 0;
+        globalans = 0;
+        $("input[name='radio']").attr('disabled', false);
+      }
+
+      function exampassorfail() {
+        var res = 0;
+        for (let i = 1; i < 16; i++) {
+          let a = "#PT" + i + " input[name='radio']:checked";
+          var b = $(a).val();
+          if (b == "good") {
+            res++;
+          }
+        }
+        var n = (res / 15) * 100;
+        return n;
+      }
+
+      function rolling(x) {
+        var bar = new ProgressBar.Circle(containercircle1, {
+          color: '#aaa',
+          // This has to be the same size as the maximum width to
+          // prevent clipping
+          strokeWidth: 4,
+          trailWidth: 1,
+          easing: 'easeInOut',
+          duration: 1400,
+          text: {
+            autoStyleContainer: false
+          },
+          from: {
+            color: '#F00030',
+            width: 1
+          },
+          to: {
+            color: '#8ED47D',
+            width: 4
+          },
+          // Set default step function for all animate calls
+          step: function(state, circle) {
+            circle.path.setAttribute('stroke', state.color);
+            circle.path.setAttribute('stroke-width', state.width);
+
+            var value = Math.round(x);
+            if (value === 0) {
+              circle.setText('');
+            } else {
+              circle.setText(value + '%');
+            }
+
+          }
         });
-        $("#K5").show('fast');
+        var b = x / 100;
+        bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+        bar.text.style.fontSize = '2rem';
+        bar.animate(b); // Number from 0.0 to 1.0
       }
-    }
 
-    function resetall() {
-      lscore = 0;
-      quest = 1;
-      questionaware = 0;
-      globalans = 0;
-      $("input[name='radio']").attr('disabled', false);
-    }
+      function rolling1(x) {
+        var bar = new ProgressBar.Circle(containercircle2, {
+          color: '#aaa',
+          // This has to be the same size as the maximum width to
+          // prevent clipping
+          strokeWidth: 4,
+          trailWidth: 1,
+          easing: 'easeInOut',
+          duration: 1400,
+          text: {
+            autoStyleContainer: false
+          },
+          from: {
+            color: '#F00030',
+            width: 1
+          },
+          to: {
+            color: '#8ED47D',
+            width: 4
+          },
+          // Set default step function for all animate calls
+          step: function(state, circle) {
+            circle.path.setAttribute('stroke', state.color);
+            circle.path.setAttribute('stroke-width', state.width);
 
-    function exampassorfail() {
-      var res = 0;
-      for (let i = 1; i < 16; i++) {
-        let a = "#PT" + i + " input[name='radio']:checked";
-        var b = $(a).val();
-        if (b == "good") {
-          res++;
-        }
+            var value = Math.round(x);
+            if (value === 0) {
+              circle.setText('');
+            } else {
+              circle.setText(value);
+            }
+
+          }
+        });
+        var b = x / 100;
+        bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+        bar.text.style.fontSize = '2rem';
+        bar.animate(b); // Number from 0.0 to 1.0
       }
-      var n = (res / 15) * 100;
-      return n;
-    }
+      function rolling2(x) {
+        var bar = new ProgressBar.Circle(containercircle3, {
+          color: '#aaa',
+          // This has to be the same size as the maximum width to
+          // prevent clipping
+          strokeWidth: 4,
+          trailWidth: 1,
+          easing: 'easeInOut',
+          duration: 1400,
+          text: {
+            autoStyleContainer: false
+          },
+          from: {
+            color: '#F00030',
+            width: 1
+          },
+          to: {
+            color: '#8ED47D',
+            width: 4
+          },
+          // Set default step function for all animate calls
+          step: function(state, circle) {
+            circle.path.setAttribute('stroke', state.color);
+            circle.path.setAttribute('stroke-width', state.width);
 
-    function rolling(x) {
-      var bar = new ProgressBar.Circle(containercircle1, {
-        color: '#aaa',
-        // This has to be the same size as the maximum width to
-        // prevent clipping
-        strokeWidth: 4,
-        trailWidth: 1,
-        easing: 'easeInOut',
-        duration: 1400,
-        text: {
-          autoStyleContainer: false
-        },
-        from: {
-          color: '#F00030',
-          width: 1
-        },
-        to: {
-          color: '#8ED47D',
-          width: 4
-        },
-        // Set default step function for all animate calls
-        step: function(state, circle) {
-          circle.path.setAttribute('stroke', state.color);
-          circle.path.setAttribute('stroke-width', state.width);
+            var value = Math.round(x);
+            if (value === 0) {
+              circle.setText('');
+            } else {
+              circle.setText(value);
+            }
 
-          var value = Math.round(x);
-          if (value === 0) {
-            circle.setText('');
-          } else {
-            circle.setText(value);
           }
+        });
+        var b = x / 100;
+        bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+        bar.text.style.fontSize = '2rem';
+        bar.animate(b); // Number from 0.0 to 1.0
+      }
 
-        }
-      });
-      var b = x / 100;
-      bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-      bar.text.style.fontSize = '2rem';
-      bar.animate(b); // Number from 0.0 to 1.0
-    }
+    </script>
 
-    function rolling1(x) {
-      var bar = new ProgressBar.Circle(containercircle2, {
-        color: '#aaa',
-        // This has to be the same size as the maximum width to
-        // prevent clipping
-        strokeWidth: 4,
-        trailWidth: 1,
-        easing: 'easeInOut',
-        duration: 1400,
-        text: {
-          autoStyleContainer: false
-        },
-        from: {
-          color: '#F00030',
-          width: 1
-        },
-        to: {
-          color: '#8ED47D',
-          width: 4
-        },
-        // Set default step function for all animate calls
-        step: function(state, circle) {
-          circle.path.setAttribute('stroke', state.color);
-          circle.path.setAttribute('stroke-width', state.width);
 
-          var value = Math.round(x);
-          if (value === 0) {
-            circle.setText('');
-          } else {
-            circle.setText(value);
-          }
-
-        }
-      });
-      var b = x / 100;
-      bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-      bar.text.style.fontSize = '2rem';
-      bar.animate(b); // Number from 0.0 to 1.0
-    }
-  </script>
 </body>
 
 </html>
