@@ -5081,6 +5081,7 @@
             tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, results) {
               let a = results.rows[0].level;
               learningcard(a);
+              $("#K5").show();
             })
           });
         } else if (lv.includes("GAB")) {
@@ -5093,6 +5094,7 @@
             tx.executeSql('SELECT * FROM stud WHERE rowid=1', [], function(tx, results) {
               let a = results.rows[0].level;
               learningcard(a);
+              $('#K5').show();
             })
           });
         }
