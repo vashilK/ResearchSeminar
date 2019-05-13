@@ -2907,7 +2907,7 @@
       <br><br>
       <div id="containercircle3"></div>
       <br><br><br><br>
-      <a href="#Khome" id="resadvance" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+      <a href="#Khome" id="final" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
         Advance
       </a>
     </div>
@@ -4496,8 +4496,8 @@
           </div>
 
         </div>
-          <button id="AAN" style="background-color:#008000; color: white; width: 100%;" class="ui-btn"> Next Lesson </button>
-          <!-- <a href="#Khome" style="background-color:#8B008B; color: white; width: 100%;" class="ui-btn"> Next Lesson </a>  -->
+        <button id="AAN" style="background-color:#008000; color: white; width: 100%;" class="ui-btn"> Next Lesson </button>
+        <!-- <a href="#Khome" style="background-color:#8B008B; color: white; width: 100%;" class="ui-btn"> Next Lesson </a>  -->
 
 
 
@@ -4797,7 +4797,7 @@
             transition: "pop"
           });
           let a = (globalans / 6) * 100;
-          rolling(a);
+          rolling2(a);
           resetall();
         })
         $("#GAB").click(function() {
@@ -5083,6 +5083,7 @@
               learningcard(a);
             })
           });
+          $("#K5").show('fast');
         } else if (lv.includes("GAB")) {
 
           db = openDatabase("EngAi", "1.0", "Database for Ai", 2 * 1024 * 1024);
@@ -5095,7 +5096,6 @@
               learningcard(a);
             })
           });
-          $("#K5").show('fast');
         }
       }
 
@@ -5199,6 +5199,7 @@
         bar.text.style.fontSize = '2rem';
         bar.animate(b); // Number from 0.0 to 1.0
       }
+
       function rolling2(x) {
         var bar = new ProgressBar.Circle(containercircle3, {
           color: '#aaa',
@@ -5238,7 +5239,6 @@
         bar.text.style.fontSize = '2rem';
         bar.animate(b); // Number from 0.0 to 1.0
       }
-
     </script>
 
 
