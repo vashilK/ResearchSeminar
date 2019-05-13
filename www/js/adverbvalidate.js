@@ -483,6 +483,7 @@ $(document).ready(function() {
         }
 
       });
+      
 
       //quest6 constructive feedback
       $("#AAQ6").change(function() {
@@ -501,4 +502,5 @@ $(document).ready(function() {
         }
 
 
+      });
       });
